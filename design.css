@@ -43,7 +43,11 @@ body {
 
 #tab_quest, #tab_inventory, #tab_cauldron { 
     display:none; 
-}  
+}
+
+#my_file {
+    display: none;
+}
 
 .clear {
 	clear:both;
@@ -118,4 +122,8 @@ button.tooltip:hover span {
 
 #tab_quest_left_panel {
     margin-right:15px;
+}
+
+#restartButton {
+    margin-left: 30px;
 }

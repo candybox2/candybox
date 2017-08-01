@@ -157,7 +157,9 @@ var shop = {
     setShown : function(value){
         // If the new value is true but it was false before, we show the shop
         if(value == true && this.shown == false)
-            this.show();
+        {
+			this.show();
+		}
         
         // We change the value
         this.shown = value;
