@@ -28,8 +28,8 @@ var candies = {
         }
         
         this.nbrOwned = value;
-        if(this.nbrOwned != 1) htmlInteraction.setInnerHtml("candies", "You have " + this.nbrOwned + " candies!");
-        else htmlInteraction.setInnerHtml("candies", "You have 1 candy!");
+        if(this.nbrOwned != 1) htmlInteraction.setInnerHtml("candies", "You've computed " + this.nbrOwned + " hashes!");
+        else htmlInteraction.setInnerHtml("candies", "You've computed 1 hash!");
         buttons.checkCandies();
         shop.check();
         cauldron.updateActionsInfoOnPage();
@@ -37,8 +37,8 @@ var candies = {
     
     setNbrEaten : function(value){
         this.nbrEaten = value;
-        if(this.nbrEaten != 1) htmlInteraction.setInnerHtml("candies_eaten", "You have eaten " + this.nbrEaten + " candies!");
-        else htmlInteraction.setInnerHtml("candies_eaten", "You have eaten 1 candy!");
+        if(this.nbrEaten != 1) htmlInteraction.setInnerHtml("candies_eaten", "You've spent " + this.nbrEaten + " hashes securing the network.");
+        else htmlInteraction.setInnerHtml("candies_eaten", "You've spent 1 hash securing the network.");
         htmlInteraction.setElementVisibility("candies_eaten", true);
     },
     
@@ -61,8 +61,8 @@ var candies = {
         else if(this.nbrThrown <= 90) smiley = "...? <tt>:'(</tt>";
         else smiley = "...? <tt>(;_;)</tt>";
         
-        if(this.nbrThrown != 1) htmlInteraction.setInnerHtml("candies_thrown", "You threw " + this.nbrThrown + " candies on the ground" + smiley);
-        else htmlInteraction.setInnerHtml("candies_thrown", "You threw 1 candy on the ground" + smiley);
+        if(this.nbrThrown != 1) htmlInteraction.setInnerHtml("candies_thrown", "You've deleted " + this.nbrThrown + " hashes" + smiley);
+        else htmlInteraction.setInnerHtml("candies_thrown", "You've deleted 1 hash" + smiley);
         htmlInteraction.setElementVisibility("candies_thrown", true);
     },
     
