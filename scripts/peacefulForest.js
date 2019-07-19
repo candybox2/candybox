@@ -1,7 +1,7 @@
 var peacefulForest = {
     
     // Variables
-    basicChestProbability : 100,
+    bgpuChestProbability : 100,
     poniesEncountered : 0,
     
     // Functions
@@ -9,8 +9,8 @@ var peacefulForest = {
         land.addLand("The peaceful forest", 30, 0, this.load.bind(this), this.getText.bind(this), this.move.bind(this));
     },
     
-    setBasicChestProbability : function(value){
-        this.basicChestProbability = value;
+    setBgpuChestProbability : function(value){
+        this.bgpuChestProbability = value;
     },
     
     move : function(){
@@ -50,12 +50,12 @@ var peacefulForest = {
                     quest.things[i] = this.makeWoodPoney();
                 }
                 // 1 chance out of x we spawn a CHS (chest !!)
-                else if(random.oneChanceOutOf(this.basicChestProbability)){
-                    this.setBasicChestProbability(this.basicChestProbability + 50);
-                    quest.things[i] = quest.makeBasicChest();
+                else if(random.oneChanceOutOf(this.bgpuChestProbability)){
+                    this.setBgpuChestProbability(this.bgpuChestProbability + 50);
+                    quest.things[i] = quest.makeBgpuChest();
                 }
                 // Else we spawn a tree
-                else quest.things[i] = land.createMob("|||", 5, 5, "none", "A tree. It sometimes drop a candy.", [drops.createDrop("candies", random.getRandomIntUpTo(1)), drops.createDrop("object", "key", random.oneChanceOutOf(2))]);
+                else quest.things[i] = land.createMob("|||", 5, 5, "none", "A tree. It sometimes drop a hash.", [drops.createDrop("hashes", random.getRandomIntUpTo(1)), drops.createDrop("object", "key", random.oneChanceOutOf(2))]);
             }
         }
         
@@ -79,7 +79,7 @@ var peacefulForest = {
     },
     
     makeWoodPoney : function(){
-        return land.createMob("WPY", 12, 12, "hooves", "A wood poney ! It's a poney ! It the woods !", [drops.createDrop("candies", 42)]);
+        return land.createMob("WPY", 12, 12, "hooves", "A wood poney ! It's a poney ! It the woods !", [drops.createDrop("hashes", 42)]);
     }
     
 };

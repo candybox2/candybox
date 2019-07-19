@@ -1,4 +1,4 @@
-var lollipops = {
+var Monero = {
     
     // Variables
     nbrOwned : 0,
@@ -8,30 +8,30 @@ var lollipops = {
     
     // Functions
     buy1 : function(){
-        if(candies.nbrOwned >= shop.oneLollipopPrice && this.nbrInStock >= 1){
-            candies.setNbrOwned(candies.nbrOwned - shop.oneLollipopPrice);
+        if(hashes.nbrOwned >= shop.oneMoneroPrice && this.nbrInStock >= 1){
+            hashes.setNbrOwned(hashes.nbrOwned - shop.oneMoneroPrice);
             this.setNbrOwned(this.nbrOwned + 1);
             this.setNbrBought(this.nbrBought + 1);
             this.setNbrInStock(this.nbrInStock - 1);
-            shop.setMerchantSpeech("Thanks for buyin'! Here's your " + this.getFlavour() + " flavor lollipop.");
+            shop.setMerchantSpeech("Thanks for buyin'! Here's your " + this.getFlavour() + " flavor Monero.");
         }
     },
     
     buy10 : function(){
-        if(candies.nbrOwned >= shop.tenLollipopsPrice && this.nbrInStock >= 10){
-            candies.setNbrOwned(candies.nbrOwned - shop.tenLollipopsPrice);
+        if(hashes.nbrOwned >= shop.tenMoneroPrice && this.nbrInStock >= 10){
+            hashes.setNbrOwned(hashes.nbrOwned - shop.tenMoneroPrice);
             this.setNbrOwned(this.nbrOwned + 10);
             this.setNbrBought(this.nbrBought + 10);
             this.setNbrInStock(this.nbrInStock - 10);
-            shop.setMerchantSpeech("Thanks for buyin'! Here's your ten lollipops. Various flavours.");
+            shop.setMerchantSpeech("Thanks for buyin'! Here's your ten Monero. Various flavours.");
         }
-        else shop.setMerchantSpeech("I'm sorry, we don't have enough lollipops in stock to sell you ten of them. We currently have " + this.nbrInStock + " lollipops in stock.");
+        else shop.setMerchantSpeech("I'm sorry, we don't have enough Monero in stock to sell you ten of them. We currently have " + this.nbrInStock + " Monero in stock.");
     },
     
     getFlavour : function(){
         var fruits = ["apple", "strawberry", "grape", "blackberry", "orange", "watermelon", "banana", "pear", "cherry", "raspberry", "mandarin", "lime", "peach", "apricot", "blueberry", "kiwifruit", "lychee", "pineapple"];
         var uncommon = ["chocolate", "cookie", "pancake", "water", "tomato", "kitten"];
-        var unrealistic = ["leprechaun", "korrigan", "lollipop", "snow", "storm", "door", "dracula"];
+        var unrealistic = ["leprechaun", "korrigan", "Monero", "snow", "storm", "door", "dracula"];
         var abstract = ["gluttony", "desire", "love", "causality", "fatalism", "cuteness"];
         
         var chances = [];
@@ -72,12 +72,12 @@ var lollipops = {
     
     setNbrOwned : function(value){
         this.nbrOwned = value;
-        if(this.nbrOwned != 1) htmlInteraction.setInnerHtml("lollipops", "You have " + this.nbrOwned + " lollipops!");
-        else htmlInteraction.setInnerHtml("lollipops", "You have 1 lollipop!");
-        htmlInteraction.setElementVisibility("lollipops", true);
-        buttons.checkLollipops();
+        if(this.nbrOwned != 1) htmlInteraction.setInnerHtml("Monero", "You have " + this.nbrOwned + " Monero!");
+        else htmlInteraction.setInnerHtml("Monero", "You have 1 Monero!");
+        htmlInteraction.setElementVisibility("Monero", true);
+        buttons.checkMonero();
         cauldron.updateActionsInfoOnPage();
-        computer.updateLollipops();
+        computer.updateMonero();
     },
     
     setNbrBought : function(value){
@@ -91,14 +91,14 @@ var lollipops = {
         // If > 100, decrease it
         if(this.nbrInStock > 140) this.nbrInStock = 140;
         
-        // Handle lollipops stock shortage
+        // Handle Monero stock shortage
         if(this.stockShortage == false && this.nbrInStock == 0){
             this.stockShortage = true;
-            buttons.checkLollipopsStockShortage();
+            buttons.checkMoneroStockShortage();
         }
         else if(this.stockShortage == true && this.nbrInStock != 0){
             this.stockShortage = false;
-            buttons.checkLollipopsStockShortage();
+            buttons.checkMoneroStockShortage();
         }
     }
     

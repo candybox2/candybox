@@ -10,15 +10,15 @@ var swamp = {
         var answer_form = "\n\n<input id=\"answer\" type=\"text\" onchange=\"swamp.answer()\" /> <span id=\"swamp_comment\"></span>";
         switch(this.step){
             case 4:
-                text = speech.makeSpeechFromText("Hello. I'm The Frog. I can provide you candies, and lots of things. I know how much you love candies. But I feel alone in this swamp. I'd like to play with you before. If you answer my questions correctly, the sweetest sweets will be yours.", 29, "");
+                text = speech.makeSpeechFromText("Hello. I'm The Frog. I can provide you hashes, and lots of things. I know how much you love hashes. But I feel alone in this swamp. I'd like to play with you before. If you answer my questions correctly, the sweetest sweets will be yours.", 29, "");
                 text += "\n\n<button id=\"answer\" onClick=\"swamp.setStep(5);\">Let's go, then</button>";
             break;
             case 5:
-                text = speech.makeSpeechFromText("First question : do you _really_ love candies?", 29, "");
+                text = speech.makeSpeechFromText("First question : do you _really_ love hashes?", 29, "");
                 text += answer_form;
             break;
             case 6:
-                text = speech.makeSpeechFromText("Perfect. Here's 10 candies. Many more candies are waiting for you.", 29, "");
+                text = speech.makeSpeechFromText("Perfect. Here's 10 hashes. Many more hashes are waiting for you.", 29, "");
                 text += "\n\n<button id=\"answer\" onClick=\"swamp.setStep(7);\">Second question!</button>";
             break;
             case 7:
@@ -26,15 +26,15 @@ var swamp = {
                 text += answer_form;
             break;
             case 8:
-                text = speech.makeSpeechFromText("Great. You seem to understand basic logic. Here's 100 candies.", 29, "");
+                text = speech.makeSpeechFromText("Great. You seem to understand bgpu logic. Here's 100 hashes.", 29, "");
                 text += "\n\n<button id=\"answer\" onClick=\"swamp.setStep(9);\">Next question!</button>";
             break;
             case 9:
-                text = speech.makeSpeechFromText("Third question. Consider 10 days. If I give you 1 candy on the first day, and each other day I give you twice more candies than the previous one, how much candies will I give you on the day number 10?", 29, "");
+                text = speech.makeSpeechFromText("Third question. Consider 10 days. If I give you 1 hash on the first day, and each other day I give you twice more hashes than the previous one, how much hashes will I give you on the day number 10?", 29, "");
                 text += answer_form;
             break;
             case 10:
-                text = speech.makeSpeechFromText("Exactly. Let's speed up the process : here's your 512 candies right now! Playing with you is so exciting! Next question is for 1000 candies.", 29, "");
+                text = speech.makeSpeechFromText("Exactly. Let's speed up the process : here's your 512 hashes right now! Playing with you is so exciting! Next question is for 1000 hashes.", 29, "");
                 text += "\n\n<button id=\"answer\" onClick=\"swamp.setStep(11);\">Candiiiiies!</button>";
             break;
             case 11:
@@ -42,7 +42,7 @@ var swamp = {
                 text += answer_form;
             break;
             case 12:
-                text = speech.makeSpeechFromText("Correct! Everyone wants to be a frog. Here's your 1000 candies.", 29, "");
+                text = speech.makeSpeechFromText("Correct! Everyone wants to be a frog. Here's your 1000 hashes.", 29, "");
                 text += "\n\n<button id=\"answer\" onClick=\"swamp.setStep(13);\">Any more enigma?</button>";
             break;
             case 13:
@@ -191,28 +191,28 @@ It is coming_    _\n\
         switch(this.step){
             case 5:
                 if(ans == "yes"){
-                    candies.setNbrOwned(candies.nbrOwned + 10);
+                    hashes.setNbrOwned(hashes.nbrOwned + 10);
                     this.setStep(6);
                 }
                 else this.setComment("Wrong.");
             break;
             case 7:
                 if(ans == "c" || ans == "b" || ans == "candb" || ans == "bandc"){
-                    candies.setNbrOwned(candies.nbrOwned + 100);
+                    hashes.setNbrOwned(hashes.nbrOwned + 100);
                     this.setStep(8);
                 }
                 else this.setComment("Wrong.");
             break;
             case 9:
                 if(ans == "512"){
-                    candies.setNbrOwned(candies.nbrOwned + 512);
+                    hashes.setNbrOwned(hashes.nbrOwned + 512);
                     this.setStep(10);
                 }
                 else this.setComment("Wrong.");
             break;
             case 11:
                 if(ans == "frog" || ans == "afrog" || ans == "thefrog"){
-                    candies.setNbrOwned(candies.nbrOwned + 1000);
+                    hashes.setNbrOwned(hashes.nbrOwned + 1000);
                     this.setStep(12);
                 }
                 else this.setComment("Wrong.");

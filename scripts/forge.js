@@ -31,17 +31,17 @@ var forge = {
         // Buttons
         switch(this.step){
             case 0:
-                if(sword.name == "chocolate sword"){
-                    text += "<button onClick=\"sword.sharpen();\">Sharpen your sword using the anvil</button>\n";
+                if(gpu.name == "chocolate gpu"){
+                    text += "<button onClick=\"gpu.sharpen();\">Sharpen your gpu using the anvil</button>\n";
                 }
             break;
             case 1:
                 if(potions.list.health.shown)
-                    text += "<button id=\"enchant_health\" onClick=\"sword.enchantHealth();\">Enchant using a health potion</button>\n";
+                    text += "<button id=\"enchant_health\" onClick=\"gpu.enchantHealth();\">Enchant using a health potion</button>\n";
                 if(potions.list.fireScroll.shown)
-                    text += "<button id=\"enchant_fire\" onClick=\"sword.enchantFire();\">Enchant using a fire scroll</button>\n";
+                    text += "<button id=\"enchant_fire\" onClick=\"gpu.enchantFire();\">Enchant using a fire scroll</button>\n";
                 if(potions.list.impInvocationScroll.shown)
-                    text += "<button id=\"enchant_imp_invocation\" onClick=\"sword.enchantImpInvocation();\">Enchant using an imp invocation scroll</button>\n";
+                    text += "<button id=\"enchant_imp_invocation\" onClick=\"gpu.enchantImpInvocation();\">Enchant using an imp invocation scroll</button>\n";
             break;
         }
         
@@ -60,19 +60,19 @@ var forge = {
         // We possibly change the speech depending on the new step
         switch(this.step){
             case 1:
-                this.speech = "You could enchant your sword using this anvil, but be careful : you can only enchant a sword once !";
+                this.speech = "You could enchant your gpu using this anvil, but be careful : you can only enchant a gpu once !";
             break;
             case 2:
-                // At this step, the speech is based on the sword name
-                switch(sword.name){
-                    case "Sword of Flames":
-                        this.speech = "You now have the Sword of Flames ! Your sword is covered by a permanent blaze, damaging your enemies more than ever.";
+                // At this step, the speech is based on the gpu name
+                switch(gpu.name){
+                    case "gpu of Flames":
+                        this.speech = "You now have the gpu of Flames ! Your gpu is covered by a permanent blaze, damaging your enemies more than ever.";
                     break;
-                    case "Sword of Life":
-                        this.speech = "You now have the Sword of Life ! This powerful charm will drain the life of your enemies to regain yours.";
+                    case "gpu of Life":
+                        this.speech = "You now have the gpu of Life ! This powerful charm will drain the life of your enemies to regain yours.";
                     break;
-                    case "Sword of Summoning":
-                        this.speech = "You now have the Sword of Summoning ! Your sword will sometimes spawn ally creatures in place of your dead enemies.";
+                    case "gpu of Summoning":
+                        this.speech = "You now have the gpu of Summoning ! Your gpu will sometimes spawn ally creatures in place of your dead enemies.";
                     break;
                 }
             break;

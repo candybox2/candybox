@@ -8,9 +8,9 @@
     <head>
         <title>Monero box !</title>
 		<meta name="title" content="Monero Box">
-		<meta name="keywords" content="Monero,Box,Monerobox,Candybox,game,ascii,save">
+		<meta name="keywords" content="Monero,Box,Monerobox,hashbox,game,ascii,save">
 		<meta name="author" content="aniwey">
-		<meta name="description" content="Candy Box is a role-playing browser video game featuring ASCII art. It was developed by indie game developer aniwey, and reskinned by dginovker.">
+		<meta name="description" content="hash Box is a role-playing browser video game featuring ASCII art. It was developed by indie game developer aniwey, and reskinned by dginovker.">
 		<meta http-equiv="Cache-control" content="no-cache">
         <link rel="shortcut icon" href="./favicon.ico"/> <!-- Favicon by HacksawUnit \o/ Thanks to him ! -->
         
@@ -31,7 +31,7 @@
         
         <!-- Shop -->
         <script type="text/javascript" src="./scripts/shop.js"></script>
-        <script type="text/javascript" src="./scripts/sword.js"></script>
+        <script type="text/javascript" src="./scripts/gpu.js"></script>
         
         <!-- Inventory -->
         <script type="text/javascript" src="./scripts/inventory.js"></script>
@@ -61,10 +61,10 @@
         <script type="text/javascript" src="./scripts/developperMoat.js"></script>
         <script type="text/javascript" src="./scripts/developperComputer.js"></script>
         
-        <!-- Data stuff : candies, lollipops.. -->
-        <script type="text/javascript" src="./scripts/candies.js"></script>
+        <!-- Data stuff : hashes, Monero.. -->
+        <script type="text/javascript" src="./scripts/hashes.js"></script>
         <script type="text/javascript" src="./scripts/chocolateBars.js"></script>
-        <script type="text/javascript" src="./scripts/lollipops.js"></script>
+        <script type="text/javascript" src="./scripts/Monero.js"></script>
         
         <!-- Objects stuff -->
 		<!-- The objects.js file -->
@@ -77,7 +77,7 @@
 		<script type="text/javascript" src="./scripts/swamp.js"></script>
 		<script type="text/javascript" src="./scripts/wishingWell.js"></script>
 		<script type="text/javascript" src="./scripts/forge.js"></script>
-		<script type="text/javascript" src="./scripts/candiesConverter.js"></script>
+		<script type="text/javascript" src="./scripts/hashesConverter.js"></script>
 		<script type="text/javascript" src="./scripts/cauldron.js"></script>
 		<script type="text/javascript" src="./scripts/computer.js"></script>
 
@@ -104,7 +104,7 @@
         
         <div id="tabBar" style="display:none">
             <ul id="tabs">
-                <li><button class="tab-0" tab="tab_candy_box">Candy box</button></li>
+                <li><button class="tab-0" tab="tab_hash_box">hash box</button></li>
                 <li><button class="tab-1" tab="tab_inventory">Inventory</button></li>
                 <li><button class="tab-2" tab="tab_quest">Quest</button></li>
                 <li><button class="tab-3" tab="tab_cauldron">Cauldron</button></li>
@@ -113,10 +113,10 @@
         </div>
         
         <!-- *************** -->
-        <!-- TAB : CANDY BOX -->
+        <!-- TAB : hash BOX -->
         <!-- *************** -->
         
-        <div id="tab_candy_box">
+        <div id="tab_hash_box">
             
             <!-- *************************************** -->
             <!-- Right panel : the farm and some objects -->
@@ -126,7 +126,7 @@
                     <span id="farm" style="visibility:hidden">
 <pre>
                  _.-^-._     .'''.
-              .-'   _   '-. | <span id="farm_big_lollipop" onclick="farm.clickedOnTheBigLollipop();"> ~ </span> |
+              .-'   _   '-. | <span id="farm_big_Monero" onclick="farm.clickedOnTheBigMonero();"> ~ </span> |
              /     |_|     \ '._.'
             /               \  |
            /|     _____     |\ |
@@ -135,7 +135,7 @@
 |---|---|---|    |==|==|    |  |
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
         
-        The lollipop farm
+        The Monero farm
         
 </pre>
         
@@ -157,25 +157,25 @@
 				<button class="home_button" id="loadButton" onclick="load();" style="visibility:visible">Load</button><span id="load"></span>
 				<button class="home_button" id="restartButton" onclick="restart();" style="visibility:visible">Restart Game</button><span id="restart"></span><br/><br/>
 				<input type="file" style="display:none" id="my_file" name="file" enctype="multipart/form-data" />
-                <span id="candies"></span><br/>
-                <pre id="candies_converter" style="display:none">
+                <span id="hashes"></span><br/>
+                <pre id="hashes_converter" style="display:none">
   |
-  |  <input type="checkbox" id="candies_converter_checkbox" onclick="candiesConverter.checkedValueChange();"/> Candies converter
+  |  <input type="checkbox" id="hashes_converter_checkbox" onclick="hashesConverter.checkedValueChange();"/> hashes converter
   V
 </pre>
-                <span id="lollipops" style="visibility:hidden"></span><br/>
+                <span id="Monero" style="visibility:hidden"></span><br/>
                 <span id="chocolate_bars" style="visibility:hidden"></span><br/><br/>
                 
-                <span id="candies_eaten" style="visibility:hidden"></span><br/>
-                <span id="candies_thrown" style="visibility:hidden"></span><br/>
+                <span id="hashes_eaten" style="visibility:hidden"></span><br/>
+                <span id="hashes_thrown" style="visibility:hidden"></span><br/>
                 
                 <br/>
         
-                <button class="home_button" id="eat" onclick="candies.eat();" style="visibility:hidden">Use hashes to secure network</button><br/>
-                <button class="home_button" id="throw_10" onclick="candies.throw10Candies();" style="visibility:hidden">Delete 10 hashes</button><br/>
-                <button class="home_button" id="encrust" onclick="sword.encrust();" style="visibility:hidden;">Use 101 candies to encrust your diamond sword and make it even more powerful</button>
-                <button class="home_button" id="polish" onclick="sword.polish();" style="visibility:hidden; display:none">Use 30 lollipops to make lollipop powder to polish your candy sword and make it awesome (and more powerful)</button>
-                <button class="home_button" id="coat" onclick="sword.coat();" style="visibility:hidden; display:none">Use 1 chocolate bar to coat your sword with melted chocolate and make it incredibly powerful</button><br/>
+                <button class="home_button" id="eat" onclick="hashes.eat();" style="visibility:hidden">Use hashes to secure network</button><br/>
+                <button class="home_button" id="throw_10" onclick="hashes.throw10hashes();" style="visibility:hidden">Delete 10 hashes</button><br/>
+                <button class="home_button" id="encrust" onclick="gpu.encrust();" style="visibility:hidden;">Use 101 hashes to encrust your diamond gpu and make it even more powerful</button>
+                <button class="home_button" id="polish" onclick="gpu.polish();" style="visibility:hidden; display:none">Use 30 Monero to make Monero powder to polish your hash gpu and make it awesome (and more powerful)</button>
+                <button class="home_button" id="coat" onclick="gpu.coat();" style="visibility:hidden; display:none">Use 1 chocolate bar to coat your gpu with melted chocolate and make it incredibly powerful</button><br/>
 
 <pre id="shop" style="visibility:hidden; float:left;">
         <span onclick="shop.clickedOnHat();">.---.</span>
@@ -197,36 +197,36 @@
  \  /|##| o  |.|    /
   \/ \::|/\_ /  ---'|
   
-   The candy merchant
+   The hash merchant
     
 <span id="merchant_speech"></span>
 </pre>
 
 <div style="float:left;">
 
-<pre id="lollipop" style="visibility:hidden">
+<pre id="Monero" style="visibility:hidden">
     _
-   (<span onclick="shop.clickedOnLollipop();">_</span>)  <button class="home_button" id="buy_1_lollipop" onclick="lollipops.buy1();"></button>
-    |   <span id="lollipops_stock_shortage" style="visibility:hidden">Stock shortage : we will be restocked soon.</span>
-    |   <button class="home_button" id="buy_10_lollipops" onclick="lollipops.buy10();" style="visibility:hidden"></button>
+   (<span onclick="shop.clickedOnMonero();">_</span>)  <button class="home_button" id="buy_1_Monero" onclick="Monero.buy1();"></button>
+    |   <span id="Monero_stock_shortage" style="visibility:hidden">Stock shortage : we will be restocked soon.</span>
+    |   <button class="home_button" id="buy_10_Monero" onclick="Monero.buy10();" style="visibility:hidden"></button>
     |</pre>
         
-<pre id="sword_with_button"></pre>
+<pre id="gpu_with_button"></pre>
          
-<pre id="products_after_swords" style="visibility:hidden; display:none">
+<pre id="products_after_gpus" style="visibility:hidden; display:none">
         
     {}
-    )(   <button class="home_button" id="buy_health_potion" onclick="potions.buyPotion(potions.list.health, 600);">Buy a health potion (600 candies)</button>
+    )(   <button class="home_button" id="buy_health_potion" onclick="potions.buyPotion(potions.list.health, 600);">Buy a health potion (600 hashes)</button>
    (__)
    
     ()
-    ||   <button class="home_button" id="buy_escape_potion" onclick="potions.buyPotion(potions.list.escape, 150);">Buy an escape potion (150 candies)</button>
+    ||   <button class="home_button" id="buy_escape_potion" onclick="potions.buyPotion(potions.list.escape, 150);">Buy an escape potion (150 hashes)</button>
    (__)
 
     ,------.
    (_\      \
       |   c  |
-      | n    |  <button class="home_button" id="buy_scroll" onclick="potions.buyScroll(400);">Buy a scroll (400 candies)</button>
+      | n    |  <button class="home_button" id="buy_scroll" onclick="potions.buyScroll(400);">Buy a scroll (400 hashes)</button>
      _|   d  |
     (_/______/
 </pre>
@@ -237,7 +237,7 @@
         
             </div> <!-- Close the left panel -->
             <br class="clear"/>
-        </div> <!-- Close the candy box tab -->
+        </div> <!-- Close the hash box tab -->
         
     <!-- *************** -->
         <!-- TAB : INVENTORY -->
@@ -247,7 +247,7 @@
         <div style="float:left">
             <table style="margin-right:10px;">
                 <tr>
-                    <td rowspan="4"><pre id="sword_without_button"></pre></td>
+                    <td rowspan="4"><pre id="gpu_without_button"></pre></td>
                     <td><span class="tooltip" id="inventory_key"></span></td>
                     <td><span class="tooltip" id="inventory_plate_armour"></span></td>
                     <td><span class="tooltip" id="inventory_horn_of_plenty"></td>
@@ -255,7 +255,7 @@
                 </tr>
                 <tr>
                     <td><span class="tooltip" id="inventory_boots"></span></td>
-                    <td><span class="tooltip" id="inventory_candies_converter"></span></td>
+                    <td><span class="tooltip" id="inventory_hashes_converter"></span></td>
                     <td><span class="tooltip" id="inventory_old_amulet"></td>
                     <td><span class="tooltip" id="inventory_hut_map"></span></td>
                 </tr>
@@ -273,7 +273,7 @@
                 </tr>
             </table>
             
-            <span id="hardmode" style="visibility:hidden">If you want more challenge,<br/>you can play the hard mode <a href="https://web.archive.org/web/20170610192852/http://candies-hardmode.aniwey.net/">here !</a></span>
+            <span id="hardmode" style="visibility:hidden">If you want more challenge,<br/>you can play the hard mode <a href="https://web.archive.org/web/20170610192852/http://hashes-hardmode.aniwey.net/">here !</a></span>
             </div>
             <div style="overflow:auto">
             
@@ -307,7 +307,7 @@
                 
             <div style="float:left">
                 
-                <span id="sword"></span><br/>
+                <span id="gpu"></span><br/>
                 <span id="mood"></span><br/>
                 
                 <span id="quest_form">
@@ -346,9 +346,9 @@
         <div id="tab_computer" style="visibility:hidden">
             You are inside the developper's computer !<br/>
             This computer is able to affect the game in the strangest ways...<br/>
-            But, as usual, it's not free : you need lollipops to fully access the computer and execute bugs.<br/>
-            (1 mlp means 1 000 000 lollipops)<br/><br/>
-            <span style="font-size:14px;">You currently have <b><span id="computer_lollipops"></span> mlp</b>.</span><br/><br/>
+            But, as usual, it's not free : you need Monero to fully access the computer and execute bugs.<br/>
+            (1 mlp means 1 000 000 Monero)<br/><br/>
+            <span style="font-size:14px;">You currently have <b><span id="computer_Monero"></span> mlp</b>.</span><br/><br/>
             <button id="computer_bug_1" onclick="computer.bug1();" style="visibility:hidden">Make a level 1 bug (1 mlp)</button> <span id="computer_comment_1"></span><br/>
             <button id="computer_bug_2" onclick="computer.bug2();" style="visibility:hidden">Make a level 2 bug (10 mlp)</button> <span id="computer_comment_2"></span><br/>
             <button id="computer_bug_3" onclick="computer.bug3();" style="visibility:hidden">Make a level 3 bug (100 mlp)</button> <span id="computer_comment_3"></span><br/>
@@ -362,17 +362,17 @@
                 Welcome to the bug factory !<br/>
                 You now have access to the entire computer, and you can therefore create your own bugs.<br/><br/>
                 Randomize...<br/>
-                <button onclick="candies.setNbrOwned(random.pure());">candies</button>
-                <button onclick="candies.setNbrThrown(random.pure());">candies thrown</button>
-                <button onclick="candies.setNbrEaten(random.pure());">candies eaten</button>
-                <button onclick="candies.setCandiesPerSecond(random.pure());">candies per second</button><br/>
-                <button onclick="lollipops.setNbrOwned(random.pure());">lollipops</button>
-                <button onclick="farm.setLollipopsPlanted(random.pure());">lollipops planted</button><br/>
+                <button onclick="hashes.setNbrOwned(random.pure());">hashes</button>
+                <button onclick="hashes.setNbrThrown(random.pure());">hashes thrown</button>
+                <button onclick="hashes.setNbrEaten(random.pure());">hashes eaten</button>
+                <button onclick="hashes.sethashesPerSecond(random.pure());">hashes per second</button><br/>
+                <button onclick="Monero.setNbrOwned(random.pure());">Monero</button>
+                <button onclick="farm.setMoneroPlanted(random.pure());">Monero planted</button><br/>
                 <button onclick="chocolateBars.setNbrOwned(random.pure());">chocolate bars</button><br/>
                 <button onclick="potions.setPotionNbrOwned(potions.list.impInvocationScroll, random.pure()); potions.setPotionNbrOwned(potions.list.earthquakeScroll, random.pure()); potions.setPotionNbrOwned(potions.list.teleportScroll, random.pure()); potions.setPotionNbrOwned(potions.list.fireScroll, random.pure()); potions.setPotionNbrOwned(potions.list.acidRainScroll, random.pure()); potions.updateOnPage();">scrolls</button>
                 <button onclick="potions.setPotionNbrOwned(potions.list.gmooh, random.pure()); potions.setPotionNbrOwned(potions.list.superman, random.pure()); potions.setPotionNbrOwned(potions.list.cloning, random.pure()); potions.setPotionNbrOwned(potions.list.seed, random.pure()); potions.setPotionNbrOwned(potions.list.jelly, random.pure()); potions.setPotionNbrOwned(potions.list.turtle, random.pure()); potions.setPotionNbrOwned(potions.list.invulnerability, random.pure()); potions.setPotionNbrOwned(potions.list.majorHealth, random.pure()); potions.setPotionNbrOwned(potions.list.berserk, random.pure()); potions.setPotionNbrOwned(potions.list.escape, random.pure()); potions.setPotionNbrOwned(potions.list.health, random.pure()); potions.updateOnPage();">potions</button>
-                <button onclick="sword.setName(random.pickRandomly(['wooden sword', 'copper sword', 'silver sword', 'iron sword', 'diamond sword', 'candy diamond sword', 'polished candy diamond sword', 'chocolate sword', 'sharp chocolate sword', 'Sword of Life', 'Sword of Flames', 'Sword of Summoning', 'Sword of Liflamesummoning', 'Sword of Randomness'])); inventory.updateOnPage();">sword</button>
-                <button onclick="sword.setSpecialPower(random.pure()); inventory.updateOnPage();">sword power</button><br/><br/>
+                <button onclick="gpu.setName(random.pickRandomly(['wooden gpu', 'copper gpu', 'silver gpu', 'iron gpu', 'diamond gpu', 'hash diamond gpu', 'polished hash diamond gpu', 'chocolate gpu', 'sharp chocolate gpu', 'gpu of Life', 'gpu of Flames', 'gpu of Summoning', 'gpu of Liflamesummoning', 'gpu of Randomness'])); inventory.updateOnPage();">gpu</button>
+                <button onclick="gpu.setSpecialPower(random.pure()); inventory.updateOnPage();">gpu power</button><br/><br/>
                 Add a bug...<br/>
                 <button onclick="computer.background();">background color (*)</button>
                 <button onclick="computer.textColor();">text color (*)</button>
@@ -391,7 +391,7 @@
             <a target="_blank" href="./faq.html">F.A.Q.</a> - 
             <a target="_blank" href="./credits.html">Credits</a> - 
             <a target="_blank" href="https://github.com/dginovker/Monero-History-Box">Source Code</a> - 
-            <b><a target="_blank" href="http://candybox2.github.io/candybox">Original Game</a></b>
+            <b><a target="_blank" href="http://hashbox2.github.io/hashbox">Original Game</a></b>
             <br/><br/>
         </div>
 

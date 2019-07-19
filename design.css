@@ -33,11 +33,11 @@ body {
 	border:1px solid #464c54;
 }
 
-#tab_candy_box {
+#tab_hash_box {
     display:block;
 }
 
-#tab_candy_box, #tab_quest, #tab_inventory, #tab_cauldron {
+#tab_hash_box, #tab_quest, #tab_inventory, #tab_cauldron {
     border: 2px solid transparent;
 }
 

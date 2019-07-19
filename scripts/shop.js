@@ -1,35 +1,35 @@
 var shop = {
 
     // Variables
-    buy10LollipopsButtonShown : false, // True if the buy 10 lollipops button should be shown
+    buy10MoneroButtonShown : false, // True if the buy 10 Monero button should be shown
     shown : false, // True if the shop is currently shown
     ticklingStep : 0, // Tickling step (increase when we click on the merchant's hat
-    clickingOnLollipopStep : 0, // Clicking on lollipop step (increase when we clicked on the top of the lollipop sold at the shop)
-    oneLollipopPrice : 0, // Price of one lollipop, calculated depending on the clicking on lollipop step
-    tenLollipopsPrice : 0, // Price of ten lollipops, calculated the same way as above
-    currentSwordButtonId : "none", // Contains the id of the current sword buying button
-    currentSwordPrice : 0, // Contains the price of the current sword being sold by the merchant
+    clickingOnMonerotep : 0, // Clicking on Monero step (increase when we clicked on the top of the Monero sold at the shop)
+    oneMoneroPrice : 0, // Price of one Monero, calculated depending on the clicking on Monero step
+    tenMoneroPrice : 0, // Price of ten Monero, calculated the same way as above
+    currentgpuButtonId : "none", // Contains the id of the current gpu buying button
+    currentgpuPrice : 0, // Contains the price of the current gpu being sold by the merchant
     
     // Functions
     onload : function(){
-        lollipops.delivery(); // The merchant must have some lollipops in stock at the beginning, so we make a delivery
-        this.setClickingOnLollipopStep(0); // This also set the lollipops price !
+        Monero.delivery(); // The merchant must have some Monero in stock at the beginning, so we make a delivery
+        this.setClickingOnMonerotep(0); // This also set the Monero price !
     },
     
     check : function(){
-        if(candies.nbrOwned >= this.oneLollipopPrice){
+        if(hashes.nbrOwned >= this.oneMoneroPrice){
             this.setShown(true);
         }
-        if(candies.nbrOwned >= 150){
-            // If we don't have any sword and there's no sword to sell yet, we show the wooden sword
-            if(sword.name == "none" && this.currentSwordButtonId == "none"){
-                this.showProduct("wooden_sword");
+        if(hashes.nbrOwned >= 150){
+            // If we don't have any gpu and there's no gpu to sell yet, we show the wooden gpu
+            if(gpu.name == "none" && this.currentgpuButtonId == "none"){
+                this.showProduct("wooden_gpu");
             }
         }
     },
     
-    setBuy10LollipopsButtonShown : function(value){
-        this.buy10LollipopsButtonShown = value;
+    setBuy10MoneroButtonShown : function(value){
+        this.buy10MoneroButtonShown = value;
     },
     
     clickedOnHat : function(){
@@ -44,8 +44,8 @@ var shop = {
                 this.setMerchantSpeech("Hahahaha ! I'm so ticklish !");
             break;
             case 3:
-                this.setMerchantSpeech("Listen, listen : I give you 100 candies ! But stop that please !");
-                candies.setNbrOwned(candies.nbrOwned + 100);
+                this.setMerchantSpeech("Listen, listen : I give you 100 hashes ! But stop that please !");
+                hashes.setNbrOwned(hashes.nbrOwned + 100);
             break;
         }
         
@@ -56,40 +56,40 @@ var shop = {
         this.ticklingStep = value;
     },
     
-    setClickingOnLollipopStep : function(value){
-        this.clickingOnLollipopStep = value;
+    setClickingOnMonerotep : function(value){
+        this.clickingOnMonerotep = value;
         
         // Set the buttons value if the step is 0 or the price is reducing or is reduced
-        if(this.clickingOnLollipopStep <= 4){
-            this.oneLollipopPrice = 60;
-            this.tenLollipopsPrice = 500;
-            htmlInteraction.setInnerHtml("buy_1_lollipop", "Buy a lollipop (60 candies)");
-            htmlInteraction.setInnerHtml("buy_10_lollipops", "Buy 10 lollipop (500 candies)");
+        if(this.clickingOnMonerotep <= 4){
+            this.oneMoneroPrice = 60;
+            this.tenMoneroPrice = 500;
+            htmlInteraction.setInnerHtml("buy_1_Monero", "Buy 1 Monero (60 hashes)");
+            htmlInteraction.setInnerHtml("buy_10_Monero", "Buy 10 Monero (500 hashes)");
         }
-        else if(this.clickingOnLollipopStep >= 5 && this.clickingOnLollipopStep < 15){
-            this.oneLollipopPrice = 60 - (this.clickingOnLollipopStep - 4);
-            this.tenLollipopsPrice = 500 - (this.clickingOnLollipopStep - 4) * 5;
-            htmlInteraction.setInnerHtml("buy_1_lollipop", "Buy a lollipop (" + this.oneLollipopPrice + " candies)");
-            htmlInteraction.setInnerHtml("buy_10_lollipops", "Buy 10 lollipop (" + this.tenLollipopsPrice + " candies)");
+        else if(this.clickingOnMonerotep >= 5 && this.clickingOnMonerotep < 15){
+            this.oneMoneroPrice = 60 - (this.clickingOnMonerotep - 4);
+            this.tenMoneroPrice = 500 - (this.clickingOnMonerotep - 4) * 5;
+            htmlInteraction.setInnerHtml("buy_1_Monero", "Buy a Monero (" + this.oneMoneroPrice + " hashes)");
+            htmlInteraction.setInnerHtml("buy_10_Monero", "Buy 10 Monero (" + this.tenMoneroPrice + " hashes)");
         }
         else{
-            this.oneLollipopPrice = 60 - (14 - 4);
-            this.tenLollipopsPrice = 500 - (14 - 4) * 5;
-            htmlInteraction.setInnerHtml("buy_1_lollipop", "Buy a lollipop (" + this.oneLollipopPrice + " candies)");
-            htmlInteraction.setInnerHtml("buy_10_lollipops", "Buy 10 lollipop (" + this.tenLollipopsPrice + " candies)");
+            this.oneMoneroPrice = 60 - (14 - 4);
+            this.tenMoneroPrice = 500 - (14 - 4) * 5;
+            htmlInteraction.setInnerHtml("buy_1_Monero", "Buy a Monero (" + this.oneMoneroPrice + " hashes)");
+            htmlInteraction.setInnerHtml("buy_10_Monero", "Buy 10 Monero (" + this.tenMoneroPrice + " hashes)");
         }
     },
     
-    clickedOnLollipop : function(){
-        this.setClickingOnLollipopStep(this.clickingOnLollipopStep + 1);
+    clickedOnMonero : function(){
+        this.setClickingOnMonerotep(this.clickingOnMonerotep + 1);
         
         // Possibly change the merchant speech
-        switch(this.clickingOnLollipopStep){
+        switch(this.clickingOnMonerotep){
             case 1:
                 this.setMerchantSpeech("Hey ! Don't touch the products !");
             break;
             case 2:
-                this.setMerchantSpeech("Seriously, don't touch this lollipop.");
+                this.setMerchantSpeech("Seriously, don't touch this Monero.");
             break;
             case 3:
                 this.setMerchantSpeech("Don't touch it ! Other customers may lick it after that, that's gross !");
@@ -102,7 +102,7 @@ var shop = {
             break;
         }
         
-        if(this.clickingOnLollipopStep >= 5 && this.clickingOnLollipopStep < 15){
+        if(this.clickingOnMonerotep >= 5 && this.clickingOnMonerotep < 15){
             this.setMerchantSpeech("Okay, okay, I lower the price, but stop touching it !");
         }
     },
@@ -110,30 +110,30 @@ var shop = {
     showProduct : function(id){
         switch(id){
             // If it's a special product
-            case "wooden_sword":
-                htmlInteraction.setInnerHtml("sword_with_button", sword.asciiWoodenSwordWithButton);
-                this.currentSwordButtonId = "buy_wooden_sword";
-                this.currentSwordPrice = 150;
+            case "wooden_gpu":
+                htmlInteraction.setInnerHtml("gpu_with_button", gpu.asciiWoodengpuWithButton);
+                this.currentgpuButtonId = "buy_wooden_gpu";
+                this.currentgpuPrice = 150;
             break;
-            case "copper_sword":
-                htmlInteraction.setInnerHtml("sword_with_button", sword.asciiCopperSwordWithButton);
-                this.currentSwordButtonId = "buy_copper_sword";
-                this.currentSwordPrice = 300;
+            case "copper_gpu":
+                htmlInteraction.setInnerHtml("gpu_with_button", gpu.asciiCoppergpuWithButton);
+                this.currentgpuButtonId = "buy_copper_gpu";
+                this.currentgpuPrice = 300;
             break;
-            case "iron_sword":
-                htmlInteraction.setInnerHtml("sword_with_button", sword.asciiIronSwordWithButton);
-                this.currentSwordButtonId = "buy_iron_sword";
-                this.currentSwordPrice = 500;
+            case "iron_gpu":
+                htmlInteraction.setInnerHtml("gpu_with_button", gpu.asciiIrongpuWithButton);
+                this.currentgpuButtonId = "buy_iron_gpu";
+                this.currentgpuPrice = 500;
             break;
-            case "silver_sword":
-                htmlInteraction.setInnerHtml("sword_with_button", sword.asciiSilverSwordWithButton);
-                this.currentSwordButtonId = "buy_silver_sword";
-                this.currentSwordPrice = 1000;
+            case "silver_gpu":
+                htmlInteraction.setInnerHtml("gpu_with_button", gpu.asciiSilvergpuWithButton);
+                this.currentgpuButtonId = "buy_silver_gpu";
+                this.currentgpuPrice = 1000;
             break;
-            case "diamond_sword":
-                htmlInteraction.setInnerHtml("sword_with_button", sword.asciiDiamondSwordWithButton);
-                this.currentSwordButtonId = "buy_diamond_sword";
-                this.currentSwordPrice = 2000;
+            case "diamond_gpu":
+                htmlInteraction.setInnerHtml("gpu_with_button", gpu.asciiDiamondgpuWithButton);
+                this.currentgpuButtonId = "buy_diamond_gpu";
+                this.currentgpuPrice = 2000;
             break;
             // Else, we just show the html element corresponding to the received id
             default:
@@ -147,11 +147,11 @@ var shop = {
         // We show the shop
         if(htmlInteraction.isElementVisible("shop") == false){ // If the shop isn't already visible
             htmlInteraction.setElementVisibility("shop", true);
-            this.setMerchantSpeech("Hello, I'm the candy merchant. I would do anything for candies. My lollipops are delicious!");
+            this.setMerchantSpeech("Hello, I'm the hash merchant. I would do anything for hashes. My Monero are delicious!");
         }
         
-        // And the lollipop we can buy :)
-        this.showProduct("lollipop");
+        // And the Monero we can buy :)
+        this.showProduct("Monero");
     },
     
     setShown : function(value){
@@ -167,9 +167,9 @@ var shop = {
     
     hideProduct : function(id){
         // If it's a special product
-        if(id == "sword"){
-            this.currentSwordButtonId = "none";
-            htmlInteraction.setInnerHtml("sword_with_button", "");
+        if(id == "gpu"){
+            this.currentgpuButtonId = "none";
+            htmlInteraction.setInnerHtml("gpu_with_button", "");
         }
         // Else
         else{

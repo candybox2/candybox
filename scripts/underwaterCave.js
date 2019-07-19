@@ -42,13 +42,13 @@ var underwaterCave = {
                 if(i > 2){ // If we're underwater
                     if(i >= 26 && i <= 35){ // Eel zone
                         if(random.oneChanceOutOf(3)){
-                            quest.things[i] = land.createMob("EEL", 3, 3, "electric tail", "An eel. Weak, but aggressive.", [drops.createDrop("candies", 50 + random.getRandomIntUpTo(50))]);
+                            quest.things[i] = land.createMob("EEL", 3, 3, "electric tail", "An eel. Weak, but aggressive.", [drops.createDrop("hashes", 50 + random.getRandomIntUpTo(50))]);
                         }
                     }
                     else{
                         if(random.flipACoin()){
                             var n = 9 + random.getRandomIntUpTo(3);
-                            quest.things[i] = land.createMob("F~H", n, n, "fins", "A fish. Easy to beat.", [drops.createDrop("candies", 5)]);
+                            quest.things[i] = land.createMob("F~H", n, n, "fins", "A fish. Easy to beat.", [drops.createDrop("hashes", 5)]);
                         }
                     }
                 }
@@ -58,7 +58,7 @@ var underwaterCave = {
                     quest.things[i] = land.createMob("OCT", 45, 45, "tentacles", "An octopus guardian. It looks dangerous.", []);
             }
             else if(i == 51){ // It's the whale (52 and 53 must be void)
-                quest.things[i] = land.createMob("The Whale.", 100, 100, "giant tail", "The Whale does not like to be disturbed.", [drops.createDrop("candies", 400 + random.getRandomIntUpTo(400)), drops.createDrop("object", "key", true), drops.createDrop("object", "hutMap", true), drops.createDrop("object", "swampMap", true), drops.createDrop("object", "boots", true), drops.createDrop("object", "wellMap", true), drops.createDrop("object", "magicianHat", true), drops.createDrop("object", "pinkRing", true), drops.createDrop("object", "forgeMap", true)]);
+                quest.things[i] = land.createMob("The Whale.", 100, 100, "giant tail", "The Whale does not like to be disturbed.", [drops.createDrop("hashes", 400 + random.getRandomIntUpTo(400)), drops.createDrop("object", "key", true), drops.createDrop("object", "hutMap", true), drops.createDrop("object", "swampMap", true), drops.createDrop("object", "boots", true), drops.createDrop("object", "wellMap", true), drops.createDrop("object", "magicianHat", true), drops.createDrop("object", "pinkRing", true), drops.createDrop("object", "forgeMap", true)]);
             }
         }
     },

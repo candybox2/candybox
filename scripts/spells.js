@@ -2,15 +2,15 @@ var spells = {
 
     // Variables
     list : [],
-    fasterCandiesFiboPrev : 1,
-    fasterCandiesFiboCurr : 2,
+    fasterhashesFiboPrev : 1,
+    fasterhashesFiboCurr : 2,
     
     // Functions
     onload : function(){
         // We add the spells
-        this.addSpell("Candies, faster candies !", this.getFasterCandiesPrice.bind(this), this.fasterCandies.bind(this), "Congratulations ! You will now gain more candies each second !", []);
-        this.addSpell("Candies, more candies !", this.getMoreCandiesPrice.bind(this), this.moreCandies.bind(this), "///", []);
-        this.addSpell("Sword, better sword !", this.getBetterSwordPrice.bind(this), this.betterSword.bind(this), "///", ["specialSword"]);
+        this.addSpell("hashes, faster hashes !", this.getFasterhashesPrice.bind(this), this.fasterhashes.bind(this), "Congratulations ! You will now gain more hashes each second !", []);
+        this.addSpell("hashes, more hashes !", this.getMorehashesPrice.bind(this), this.morehashes.bind(this), "///", []);
+        this.addSpell("gpu, better gpu !", this.getBettergpuPrice.bind(this), this.bettergpu.bind(this), "///", ["specialgpu"]);
     
         // We sort the list
         this.sortListDependingOnPrice();
@@ -29,69 +29,69 @@ var spells = {
         return 0;
     },
     
-    getBetterSwordPrice : function(){
-        return Math.floor(Math.pow(sword.specialPower+1, 2.6)) * 10000;
+    getBettergpuPrice : function(){
+        return Math.floor(Math.pow(gpu.specialPower+1, 2.6)) * 10000;
     },
     
-    getFasterCandiesPrice : function(){
-        return Math.pow(this.fasterCandiesFiboCurr, 2) * 10000;
+    getFasterhashesPrice : function(){
+        return Math.pow(this.fasterhashesFiboCurr, 2) * 10000;
     },
     
     addSpell : function(name, price, effect, speech, conditions){
         this.list.push({name:name, price:price, effect:effect, speech:speech, conditions:conditions});
     },
     
-    getMoreCandiesPrice : function(){
+    getMorehashesPrice : function(){
         return 300000;
     },
     
-    betterSword : function(){
-        sword.setSpecialPower(sword.specialPower + 1);
+    bettergpu : function(){
+        gpu.setSpecialPower(gpu.specialPower + 1);
         this.sortListDependingOnPrice();
         
         // And we change the hut's speech by ourselves
-        switch(sword.name){
-            case "Sword of Life":
-                hut.setSpeech("Your Sword of Life will now drain more energy from your enemies.");
+        switch(gpu.name){
+            case "gpu of Life":
+                hut.setSpeech("Your gpu of Life will now drain more energy from your enemies.");
             break;
-            case "Sword of Flames":
-                hut.setSpeech("Your Sword of Flames is now more powerful.")
+            case "gpu of Flames":
+                hut.setSpeech("Your gpu of Flames is now more powerful.")
             break;
-            case "Sword of Summoning":
-                hut.setSpeech("You can now summon " + sword.summonList[sword.getIndexOfBetterToSummon()].name + " !");
+            case "gpu of Summoning":
+                hut.setSpeech("You can now summon " + gpu.summonList[gpu.getIndexOfBetterToSummon()].name + " !");
             break;
         }
     },
     
-    moreCandies : function(){
-        var nbr = Math.floor(candies.nbrTotal/20);
+    morehashes : function(){
+        var nbr = Math.floor(hashes.nbrTotal/20);
         
-        // We can't gain more candies than the price we pay for the spell !
+        // We can't gain more hashes than the price we pay for the spell !
         if(nbr > 300000) nbr = 300000;
         
-        candies.setNbrOwned(candies.nbrOwned + nbr);
-        hut.setSpeech("Here's " + nbr + " candies for you !");
+        hashes.setNbrOwned(hashes.nbrOwned + nbr);
+        hut.setSpeech("Here's " + nbr + " hashes for you !");
     },
     
-    nextFasterCandiesFiboStep : function(){
-        this.setFasterCandiesFibo(this.fasterCandiesFiboCurr, this.fasterCandiesFiboPrev + this.fasterCandiesFiboCurr);
+    nextFasterhashesFiboStep : function(){
+        this.setFasterhashesFibo(this.fasterhashesFiboCurr, this.fasterhashesFiboPrev + this.fasterhashesFiboCurr);
     },
     
-    setFasterCandiesFibo : function(prev, curr){
+    setFasterhashesFibo : function(prev, curr){
         // Set the new values
-        this.fasterCandiesFiboPrev = prev;
-        this.fasterCandiesFiboCurr = curr;
+        this.fasterhashesFiboPrev = prev;
+        this.fasterhashesFiboCurr = curr;
         
-        // Sort the spells list depending on their price, since the price of the faster candies spell just changed
+        // Sort the spells list depending on their price, since the price of the faster hashes spell just changed
         this.sortListDependingOnPrice();
     },
     
-    fasterCandies : function(){
-        // We change candies per second
-        candies.setCandiesPerSecond(this.fasterCandiesFiboCurr);
+    fasterhashes : function(){
+        // We change hashes per second
+        hashes.sethashesPerSecond(this.fasterhashesFiboCurr);
         
         // We continue fibo
-        this.nextFasterCandiesFiboStep();
+        this.nextFasterhashesFiboStep();
     }
 
 };

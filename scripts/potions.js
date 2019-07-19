@@ -22,8 +22,8 @@ var potions = {
         this.addPotion("invulnerability", "Invulnerability potion", "#ef893b", "potions.invulnerability();", "This invulnerability potion will make you invincible for some time, but it fills your stomach : you won't be able to drink another potion for a long time after using it.", "potion");
         this.addPotion("turtle", "Turtle potion", "#008a13", "potions.turtle();", "When you drink a turtle potion, you become a turtle. Drawback : you walk slower. Benefit : you're way more resistant to your ennemies' attacks.", "potion");
         this.addPotion("jelly", "Jelly", "#9500b5", "potions.jelly();", "This skillfully prepared jelly explodes on contact of anything trying to go through it, dealing high damage. Using it will place it behind you.", "special");
-        this.addPotion("seed", "Seed", "#3dab3a", "potions.seed();", "This seed is able to make grow a candy tree. The candy tree is made of candies, and it takes a lot of time to cut it down. Using the seed will grow a tree in front of you, if there's enough place.", "special");
-        this.addPotion("cloning", "Cloning potion", "#6d6d6d", "potions.cloning();", "This cloning potion will, well... clone you. Your clone will have the same health points as you when you drank the potion, but he won't have your armor nor your sword. He will fight using a \"cloned sword\", which deals a correct amount of damage. The clone will be placed in front of you, if there's enough place.", "potion");
+        this.addPotion("seed", "Seed", "#3dab3a", "potions.seed();", "This seed is able to make grow a hash tree. The hash tree is made of hashes, and it takes a lot of time to cut it down. Using the seed will grow a tree in front of you, if there's enough place.", "special");
+        this.addPotion("cloning", "Cloning potion", "#6d6d6d", "potions.cloning();", "This cloning potion will, well... clone you. Your clone will have the same health points as you when you drank the potion, but he won't have your armor nor your gpu. He will fight using a \"cloned gpu\", which deals a correct amount of damage. The clone will be placed in front of you, if there's enough place.", "potion");
         this.addPotion("superman", "Superman potion", "#ddef17", "potions.superman();", "This superman potion will give you a cape and make you look like superman for the rest of the quest !", "potion");
         this.addPotion("gmooh", "G.M.O.O.H. potion", "#ff00c0", "potions.gmooh();", "This \"Get Me Out Of Here\" potion will teleport you somewhere else. The destination isn't predictable at all.", "potion");
     },
@@ -104,7 +104,7 @@ var potions = {
     
     buyPotion : function(potion, price){
         this.getPotions(potion, 1);
-        candies.setNbrOwned(candies.nbrOwned - price);
+        hashes.setNbrOwned(hashes.nbrOwned - price);
         shop.setMerchantSpeech(potion.merchantSpeech);
     },
     
@@ -154,19 +154,19 @@ var potions = {
     },
     
     makeClone : function(hp, max_hp){
-        return land.createAlly("\\o/", max_hp, hp, "cloned sword", "A clone of you.", []);
+        return land.createAlly("\\o/", max_hp, hp, "cloned gpu", "A clone of you.", []);
     },
     
-    makeCandyTree : function(){
+    makehashTree : function(){
         var hp = 0;
         
         // One chance out of 100 to spawn the Yggdrasil \o/
         if(random.oneChanceOutOf(100)){
-            return land.createTrap("/Y\\", 10000, 10000, "none", "Yggdrasill is its name, a tall tree, showered with shining loam.", [drops.createDrop("candies", 10000)]);
+            return land.createTrap("/Y\\", 10000, 10000, "none", "Yggdrasill is its name, a tall tree, showered with shining loam.", [drops.createDrop("hashes", 10000)]);
         }
         else{
             hp = 500 + 100 * random.getRandomIntUpTo(4); // 500 / 600 / 700 / 800 / 900
-            return land.createTrap("\\|/", hp, hp, "none", "A candy tree. I hope you're carrying a good axe.", []);
+            return land.createTrap("\\|/", hp, hp, "none", "A hash tree. I hope you're carrying a good axe.", []);
         }
     },
     
@@ -402,8 +402,8 @@ var potions = {
             // We decrement nbrOwned
             this.list.seed.nbrOwned -= 1;
         
-            // We place a candy tree
-            quest.things[index+1] = this.makeCandyTree();
+            // We place a hash tree
+            quest.things[index+1] = this.makehashTree();
         
             // We update the quest and the potions on page
             quest.updateOnPage();

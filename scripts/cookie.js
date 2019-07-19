@@ -29,45 +29,45 @@ var cookie = {
 
 	autoSave : function() {
 		
-		cookie.createCookie("CandyCookie", cookie.getData(), 365);
+		cookie.createCookie("hashCookie", cookie.getData(), 365);
 		
 	},
 	
 	getData : function() {
 		
 		return "" + ((code === undefined || code == null || code.length == "") ? 0 : code) +
-					":" + sword.name +
-					":" + getPhpStuff(sword.specialSword) +
-					":" + sword.specialPower +
-					":" + candies.nbrOwned +
-					":" + candies.nbrThrown +
-					":" + candies.nbrEaten +
-					":" + candies.nbrTotal +
-					":" + candies.candiesPerSecond +
-					":" + getPhpStuff(candiesConverter.activated) +
+					":" + gpu.name +
+					":" + getPhpStuff(gpu.specialgpu) +
+					":" + gpu.specialPower +
+					":" + hashes.nbrOwned +
+					":" + hashes.nbrThrown +
+					":" + hashes.nbrEaten +
+					":" + hashes.nbrTotal +
+					":" + hashes.hashesPerSecond +
+					":" + getPhpStuff(hashesConverter.activated) +
 					":" + cauldron.bookPage +
-					":" + cauldron.candiesInTheCauldron +
-					":" + cauldron.lollipopsInTheCauldron +
+					":" + cauldron.hashesInTheCauldron +
+					":" + cauldron.MoneroInTheCauldron +
 					":" + chocolateBars.nbrOwned +
-					":" + farm.lollipopsPlanted +
+					":" + farm.MoneroPlanted +
 					":" + farm.currentFlagIndex +
 					":" + farm.plantingButtonsStep +
 					":" + forge.step +
-					":" + getPhpStuff(shop.buy10LollipopsButtonShown) +
+					":" + getPhpStuff(shop.buy10MoneroButtonShown) +
 					":" + getPhpStuff(shop.shown) +
 					":" + shop.ticklingStep +
-					":" + shop.clickingOnLollipopStep +
+					":" + shop.clickingOnMonerotep +
 					":" + hut.step +
 					":" + hut.speech +
 					":" + inventory.magicianHatLetter +
-					":" + lollipops.nbrOwned +
-					":" + lollipops.nbrInStock +
-					":" + lollipops.nbrBought +
+					":" + Monero.nbrOwned +
+					":" + Monero.nbrInStock +
+					":" + Monero.nbrBought +
 					":" + main.nbrOfSecondsSinceLastMinInterval +
 					":" + main.nbrOfSecondsSinceLastHourInterval +
 					":" + main.nbrOfSecondsSinceLastDayInterval +
-					":" + mountGoblin.basicChestProbability +
-					":" + peacefulForest.basicChestProbability +
+					":" + mountGoblin.bgpuChestProbability +
+					":" + peacefulForest.bgpuChestProbability +
 					":" + peacefulForest.poniesEncountered +
 					":" + getPhpStuff(objects.list.key.have) +
 					":" + getPhpStuff(objects.list.hutMap.have) +
@@ -77,7 +77,7 @@ var cookie = {
 					":" + getPhpStuff(objects.list.magicianHat.have) +
 					":" + getPhpStuff(objects.list.pinkRing.have) +
 					":" + getPhpStuff(objects.list.forgeMap.have) +
-					":" + getPhpStuff(objects.list.candiesConverter.have) +
+					":" + getPhpStuff(objects.list.hashesConverter.have) +
 					":" + getPhpStuff(objects.list.plateArmour.have) +
 					":" + getPhpStuff(objects.list.cauldron.have) +
 					":" + getPhpStuff(objects.list.magicalHorn.have) +
@@ -117,8 +117,8 @@ var cookie = {
 					":" + potions.list.gmooh.nbrOwned +
 					":" + quest.maxLandOrder +
 					":" + quest.tiredTime +
-					":" + spells.fasterCandiesFiboPrev +
-					":" + spells.fasterCandiesFiboCurr +
+					":" + spells.fasterhashesFiboPrev +
+					":" + spells.fasterhashesFiboCurr +
 					":" + swamp.step +
 					":" + tabs.animation +
 					":" + wishingWell.speech +
@@ -132,13 +132,13 @@ var cookie = {
 		
 		var var_list = []
 		
-		var payload = cookie.readCookie("CandyCookie");
+		var payload = cookie.readCookie("hashCookie");
 		var_list = payload.split(":");
 
 		if(var_list.length != 90)
 		{
-			alert("ERROR: Corrupt Candycookie Length:" + var_list.length);
-			console.log("ERROR: Corrupt Candycookie Length:" + var_list.length); 
+			alert("ERROR: Corrupt hashcookie Length:" + var_list.length);
+			console.log("ERROR: Corrupt hashcookie Length:" + var_list.length); 
 			return null;
 		}
 		
@@ -160,44 +160,44 @@ var cookie = {
 
 		if(var_list[1] != "none")
 		{
-			sword.setName(var_list[1]);
+			gpu.setName(var_list[1]);
 		}
 		else
 		{
-			sword.name = var_list[1];
+			gpu.name = var_list[1];
 		}
 		
-		sword.setSpecialSword(setPhpStuff(Number(var_list[2])));
+		gpu.setSpecialgpu(setPhpStuff(Number(var_list[2])));
 		
-		sword.setSpecialPower(Number(var_list[3]));
-        candies.setNbrOwned(Number(var_list[4]));
+		gpu.setSpecialPower(Number(var_list[3]));
+        hashes.setNbrOwned(Number(var_list[4]));
 		
 		if(Number(var_list[5]) != 0)
 		{
-			candies.setNbrThrown(Number(var_list[5]));
+			hashes.setNbrThrown(Number(var_list[5]));
 		}
 		else
 		{
-			candies.nbrThrown = Number(var_list[5]);
+			hashes.nbrThrown = Number(var_list[5]);
 		}
 		
         if(Number(var_list[6]) != 0)
 		{
-			candies.setNbrEaten(Number(var_list[6]));
+			hashes.setNbrEaten(Number(var_list[6]));
 		}
 		else
 		{
-			candies.nbrEaten = Number(var_list[6]);
+			hashes.nbrEaten = Number(var_list[6]);
 		}
         
 		
-		candies.setNbrTotal(Number(var_list[7]));
+		hashes.setNbrTotal(Number(var_list[7]));
 		
-        candies.setCandiesPerSecond(Number(var_list[8]));
-		candiesConverter.setActivated(setPhpStuff(Number(var_list[9])));
+        hashes.sethashesPerSecond(Number(var_list[8]));
+		hashesConverter.setActivated(setPhpStuff(Number(var_list[9])));
 		cauldron.setBookPage(Number(var_list[10]));
-        cauldron.setCandiesInTheCauldron(Number(var_list[11]));
-        cauldron.setLollipopsInTheCauldron(Number(var_list[12]));
+        cauldron.sethashesInTheCauldron(Number(var_list[11]));
+        cauldron.setMoneroInTheCauldron(Number(var_list[12]));
   
 		if(Number(var_list[13]) != 0)
 		{
@@ -208,18 +208,18 @@ var cookie = {
 			chocolateBars.nbrOwned = Number(var_list[13]);
 		}
 		
-        farm.setLollipopsPlanted(Number(var_list[14]));
+        farm.setMoneroPlanted(Number(var_list[14]));
 		
 		
 		farm.setCurrentFlagIndex(Number(var_list[15]));
 		farm.setPlantingButtonsStep(Number(var_list[16]));
 		forge.setStep(Number(var_list[17]));
-		shop.setBuy10LollipopsButtonShown(setPhpStuff(Number(var_list[18])));
+		shop.setBuy10MoneroButtonShown(setPhpStuff(Number(var_list[18])));
 		shop.setShown(setPhpStuff(Number(var_list[19])));
 		shop.setTicklingStep(Number(var_list[20]));
 		
 		
-		shop.setClickingOnLollipopStep(Number(var_list[21]));
+		shop.setClickingOnMonerotep(Number(var_list[21]));
 		
 		hut.setStep(Number(var_list[22]));
 		hut.setSpeech(var_list[23]); //vermutlich string
@@ -227,23 +227,23 @@ var cookie = {
 		
 		if(Number(var_list[25]) != 0)
 		{
-			lollipops.setNbrOwned(Number(var_list[25]));
+			Monero.setNbrOwned(Number(var_list[25]));
 		}
 		else
 		{
-			lollipops.nbrOwned = Number(var_list[25]);
+			Monero.nbrOwned = Number(var_list[25]);
 		}
 		
 		//
-		lollipops.setNbrInStock(Number(var_list[26]));
+		Monero.setNbrInStock(Number(var_list[26]));
 		
-		lollipops.setNbrBought(Number(var_list[27]));
+		Monero.setNbrBought(Number(var_list[27]));
 		
 		main.setNbrOfSecondsSinceLastMinInterval(Number(var_list[28]));
 		main.setNbrOfSecondsSinceLastHourInterval(Number(var_list[29]));
 		main.setNbrOfSecondsSinceLastDayInterval(Number(var_list[30]));
-		mountGoblin.setBasicChestProbability(Number(var_list[31]));
-		peacefulForest.setBasicChestProbability(Number(var_list[32]));
+		mountGoblin.setBgpuChestProbability(Number(var_list[31]));
+		peacefulForest.setBgpuChestProbability(Number(var_list[32]));
 		peacefulForest.setPoniesEncountered(Number(var_list[33]));
 		//
 		
@@ -255,7 +255,7 @@ var cookie = {
         objects.setHaveObject("magicianHat", setPhpStuff(Number(var_list[39])));
         objects.setHaveObject("pinkRing", setPhpStuff(Number(var_list[40])));
         objects.setHaveObject("forgeMap", setPhpStuff(Number(var_list[41])));
-        objects.setHaveObject("candiesConverter", setPhpStuff(Number(var_list[42])));
+        objects.setHaveObject("hashesConverter", setPhpStuff(Number(var_list[42])));
         objects.setHaveObject("plateArmour", setPhpStuff(Number(var_list[43])));
         objects.setHaveObject("cauldron", setPhpStuff(Number(var_list[44])));
         objects.setHaveObject("magicalHorn", setPhpStuff(Number(var_list[45])));
@@ -276,7 +276,7 @@ var cookie = {
         quest.setTiredTime(Number(var_list[81]));
 		
 		//
-		spells.setFasterCandiesFibo(Number(var_list[82]), Number(var_list[83]));
+		spells.setFasterhashesFibo(Number(var_list[82]), Number(var_list[83]));
 
 		swamp.setStep(Number(var_list[84]));
 		tabs.setAnimation(var_list[85]);

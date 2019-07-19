@@ -1,9 +1,9 @@
-var sword = {
+var gpu = {
   
     // Variables
     name : "none",
-    specialSword : false,
-    specialPower : 1, // How many the Sword of Life can steal hp, additional damage of the Sword of Flames...
+    specialgpu : false,
+    specialPower : 1, // How many the gpu of Life can steal hp, additional damage of the gpu of Flames...
     // List of summoned things with the level we need to summon them
     summonList : [],
     
@@ -16,64 +16,64 @@ var sword = {
         this.summonList.push({name:"a chupacabra", summonFunction:quest.makeChupacabra.bind(quest), powerNeeded:4});
         this.summonList.push({name:"a golem", summonFunction:quest.makeGolem.bind(quest), powerNeeded:5});
         this.summonList.push({name:"a chimera", summonFunction:quest.makeChimera.bind(quest), powerNeeded:6});
-        this.summonList.push({name:"a candy monster", summonFunction:quest.makeCandyMonster.bind(quest), powerNeeded:7});
+        this.summonList.push({name:"a hash monster", summonFunction:quest.makehashMonster.bind(quest), powerNeeded:7});
     },
     
-    buyThisSword : function(name){
-        if(this.name != name){ // If we're not trying to buy the current sword
+    buyThisgpu : function(name){
+        if(this.name != name){ // If we're not trying to buy the current gpu
             switch(name){
-                case "wooden sword":
-                    if(candies.nbrOwned >= shop.currentSwordPrice){
-                        candies.setNbrOwned(candies.nbrOwned - shop.currentSwordPrice);
-                        shop.setMerchantSpeech("Great! This wooden sword isn't the best, for sure, but it really didn't cost so much.");
-                        shop.hideProduct("sword");
+                case "wooden gpu":
+                    if(hashes.nbrOwned >= shop.currentgpuPrice){
+                        hashes.setNbrOwned(hashes.nbrOwned - shop.currentgpuPrice);
+                        shop.setMerchantSpeech("Great! This wooden gpu isn't the best, for sure, but it really didn't cost so much.");
+                        shop.hideProduct("gpu");
                     }
                     else{
-                        shop.setMerchantSpeech("You don't have enough candies. You should save up candies to buy it : swords are useful nowadays.");
+                        shop.setMerchantSpeech("You don't have enough hashes. You should save up hashes to buy it : gpus are useful nowadays.");
                         return;
                     }
                 break;
-                case "copper sword":
-                    if(candies.nbrOwned >= shop.currentSwordPrice){
-                        candies.setNbrOwned(candies.nbrOwned - shop.currentSwordPrice);
-                        shop.setMerchantSpeech("This copper sword is quite heavy, but it slays efficiently.");
-                        shop.hideProduct("sword");
+                case "copper gpu":
+                    if(hashes.nbrOwned >= shop.currentgpuPrice){
+                        hashes.setNbrOwned(hashes.nbrOwned - shop.currentgpuPrice);
+                        shop.setMerchantSpeech("This copper gpu is quite heavy, but it slays efficiently.");
+                        shop.hideProduct("gpu");
                     }
                     else{
-                        shop.setMerchantSpeech("You need 300 candies to buy that sword! Did you know that copper slowly reacts with atmospheric oxygen forming a layer of brown-black copper oxide?");
+                        shop.setMerchantSpeech("You need 300 hashes to buy that gpu! Did you know that copper slowly reacts with atmospheric oxygen forming a layer of brown-black copper oxide?");
                         return;
                     }
                 break;
-                case "iron sword":
-                    if(candies.nbrOwned >= shop.currentSwordPrice){
-                        candies.setNbrOwned(candies.nbrOwned - shop.currentSwordPrice);
-                        shop.setMerchantSpeech("This iron sword could cut almost anything, if you're strong enough to use it.");
-                        shop.hideProduct("sword");
+                case "iron gpu":
+                    if(hashes.nbrOwned >= shop.currentgpuPrice){
+                        hashes.setNbrOwned(hashes.nbrOwned - shop.currentgpuPrice);
+                        shop.setMerchantSpeech("This iron gpu could cut almost anything, if you're strong enough to use it.");
+                        shop.hideProduct("gpu");
                     }
                     else{
-                        shop.setMerchantSpeech("You need more candies for the iron sword. Iron is strong. Iron is reliable. Iron will obey your slaying desire.");
+                        shop.setMerchantSpeech("You need more hashes for the iron gpu. Iron is strong. Iron is reliable. Iron will obey your slaying desire.");
                         return;
                     }
                 break;
-                case "silver sword":
-                    if(candies.nbrOwned >= shop.currentSwordPrice){
-                        candies.setNbrOwned(candies.nbrOwned - shop.currentSwordPrice);
-                        shop.setMerchantSpeech("One thousand candies for meeee! Uh, I mean, this silver sword is even stronger than the iron one! You had to buy it.");
-                        shop.hideProduct("sword");
+                case "silver gpu":
+                    if(hashes.nbrOwned >= shop.currentgpuPrice){
+                        hashes.setNbrOwned(hashes.nbrOwned - shop.currentgpuPrice);
+                        shop.setMerchantSpeech("One thousand hashes for meeee! Uh, I mean, this silver gpu is even stronger than the iron one! You had to buy it.");
+                        shop.hideProduct("gpu");
                     }
                     else{
-                        shop.setMerchantSpeech("One thousand candies for the silver sword! My marginal profit can't handle less than that.");
+                        shop.setMerchantSpeech("One thousand hashes for the silver gpu! My marginal profit can't handle less than that.");
                         return;
                     }
                 break;
-                case "diamond sword":
-                    if(candies.nbrOwned >= shop.currentSwordPrice){
-                        candies.setNbrOwned(candies.nbrOwned - shop.currentSwordPrice);
-                        shop.setMerchantSpeech("Diamond! This is the best sword I can sell you. It will cut rocks as if they were made of butter.");
-                        shop.hideProduct("sword");
+                case "diamond gpu":
+                    if(hashes.nbrOwned >= shop.currentgpuPrice){
+                        hashes.setNbrOwned(hashes.nbrOwned - shop.currentgpuPrice);
+                        shop.setMerchantSpeech("Diamond! This is the best gpu I can sell you. It will cut rocks as if they were made of butter.");
+                        shop.hideProduct("gpu");
                     }
                     else{
-                        shop.setMerchantSpeech("You need more candies. The diamond sword is quite expensive, but it's worth it!");
+                        shop.setMerchantSpeech("You need more hashes. The diamond gpu is quite expensive, but it's worth it!");
                         return;
                     }
                 break;
@@ -84,16 +84,16 @@ var sword = {
     
     enchantImpInvocation : function(){
         if(potions.list.impInvocationScroll.nbrOwned > 0){
-        this.setSpecialSword(true);
-        this.setName("Sword of Summoning");
+        this.setSpecialgpu(true);
+        this.setName("gpu of Summoning");
         potions.list.impInvocationScroll.nbrOwned -= 1;
         potions.updateOnPage();
         forge.setStep(2);
 }
     },
     
-    setSpecialSword : function(value){
-        this.specialSword = value;
+    setSpecialgpu : function(value){
+        this.specialgpu = value;
     },
     
     setSpecialPower : function(value){
@@ -126,8 +126,8 @@ var sword = {
     
     enchantFire : function(){
 if(potions.list.fireScroll.nbrOwned > 0){
-        this.setSpecialSword(true);
-        this.setName("Sword of Flames");
+        this.setSpecialgpu(true);
+        this.setName("gpu of Flames");
         potions.list.fireScroll.nbrOwned -= 1;
         potions.updateOnPage();
         forge.setStep(2);
@@ -136,8 +136,8 @@ if(potions.list.fireScroll.nbrOwned > 0){
     
     enchantHealth : function(){
 if(potions.list.health.nbrOwned > 0){
-        this.setSpecialSword(true);
-        this.setName("Sword of Life");
+        this.setSpecialgpu(true);
+        this.setName("gpu of Life");
         potions.list.health.nbrOwned -= 1;
         potions.updateOnPage();
         forge.setStep(2);
@@ -145,30 +145,30 @@ if(potions.list.health.nbrOwned > 0){
     },
     
     sharpen : function(){
-        this.setName("sharp chocolate sword");
+        this.setName("sharp chocolate gpu");
         forge.setStep(1);
     },
     
     coat : function(){
         if(chocolateBars.nbrOwned >= 1){
             chocolateBars.setNbrOwned(chocolateBars.nbrOwned - 1);
-            this.setName("chocolate sword");
+            this.setName("chocolate gpu");
             htmlInteraction.hideButton("coat");
         }
     },
     
     encrust : function(){
-        if(candies.nbrOwned >= 101){
-            candies.setNbrOwned(candies.nbrOwned - 101);
-            this.setName("candy diamond sword");
+        if(hashes.nbrOwned >= 101){
+            hashes.setNbrOwned(hashes.nbrOwned - 101);
+            this.setName("hash diamond gpu");
             htmlInteraction.hideButton("encrust");
         }
     },
     
     polish : function(){
-        if(lollipops.nbrOwned >= 30){
-            lollipops.setNbrOwned(lollipops.nbrOwned - 30);
-            this.setName("polished candy diamond sword");
+        if(Monero.nbrOwned >= 30){
+            Monero.setNbrOwned(Monero.nbrOwned - 30);
+            this.setName("polished hash diamond gpu");
             htmlInteraction.hideButton("polish");
         }
     },
@@ -177,37 +177,37 @@ if(potions.list.health.nbrOwned > 0){
         // We change the value
         this.name = value;
         
-        // We possibly show a new product in the shop depending on the new sword name
+        // We possibly show a new product in the shop depending on the new gpu name
         switch(this.name){
-            case "wooden sword": shop.showProduct("copper_sword"); break;
-            case "copper sword": shop.showProduct("iron_sword"); break;
-            case "iron sword": shop.showProduct("silver_sword"); break;
-            case "silver sword": shop.showProduct("diamond_sword"); break;
-            default: shop.showProduct("products_after_swords"); break;
+            case "wooden gpu": shop.showProduct("copper_gpu"); break;
+            case "copper gpu": shop.showProduct("iron_gpu"); break;
+            case "iron gpu": shop.showProduct("silver_gpu"); break;
+            case "silver gpu": shop.showProduct("diamond_gpu"); break;
+            default: shop.showProduct("products_after_gpus"); break;
         }
         
         // Other stuff
-        htmlInteraction.setInnerHtml("sword", "You currently have a " + this.name + ".");
+        htmlInteraction.setInnerHtml("gpu", "You currently have a " + this.name + ".");
         quest.defineMood();
-        htmlInteraction.setElementVisibility("sword", true);
+        htmlInteraction.setElementVisibility("gpu", true);
         htmlInteraction.setElementVisibility("quest_form", true);
-        buttons.checkSword();
+        buttons.checkgpu();
         inventory.updateOnPage();
     },
     
     // Ascii art
-    asciiWoodenSwordWithButton : "\
+    asciiWoodengpuWithButton : "\
       .\n\
      / \\\n\
      | |\n\
-     | |  <button class=\"home_button\" id=\"buy_wooden_sword\" onClick=\"sword.buyThisSword(\'wooden sword\');\">Buy the wooden sword (150 candies)</button>\n\
+     | |  <button class=\"home_button\" id=\"buy_wooden_gpu\" onClick=\"gpu.buyThisgpu(\'wooden gpu\');\">Buy a wooden tier gpu (150 hashes)</button>\n\
      | |\n\
      | |\n\
    `--8--\'\n\
       8\n\
       0",
       
-    asciiWoodenSwordWithoutButton : "Wooden sword\n\
+    asciiWoodengpuWithoutButton : "Wooden gpu\n\
      .\n\
     / \\\n\
     | |\n\
@@ -218,18 +218,18 @@ if(potions.list.health.nbrOwned > 0){
      8\n\
      0",
       
-    asciiCopperSwordWithButton : "\
+    asciiCoppergpuWithButton : "\
       .\n\
      /:\\\n\
      |||\n\
-     |||  <button class=\"home_button\" id=\"buy_copper_sword\" onClick=\"sword.buyThisSword(\'copper sword\');\">Buy the copper sword (300 candies)</button>\n\
+     |||  <button class=\"home_button\" id=\"buy_copper_gpu\" onClick=\"gpu.buyThisgpu(\'copper gpu\');\">Buy a copper tier gpu (300 hashes)</button>\n\
      |||\n\
      |||\n\
    `--8--\'\n\
       8\n\
       0",
       
-    asciiCopperSwordWithoutButton : "Copper sword\n\
+    asciiCoppergpuWithoutButton : "Copper gpu\n\
      .\n\
     /:\\\n\
     |||\n\
@@ -240,11 +240,11 @@ if(potions.list.health.nbrOwned > 0){
      8\n\
      0",
       
-    asciiIronSwordWithButton : "\
+    asciiIrongpuWithButton : "\
       /|\n\
      |\\|\n\
      |||\n\
-     |||  <button class=\"home_button\" id=\"buy_iron_sword\" onClick=\"sword.buyThisSword(\'iron sword\');\">Buy the iron sword (500 candies)</button>\n\
+     |||  <button class=\"home_button\" id=\"buy_iron_gpu\" onClick=\"gpu.buyThisgpu(\'iron gpu\');\">Buy an iron tier gpu (500 hashes)</button>\n\
      |||\n\
      |||\n\
      |||\n\
@@ -254,7 +254,7 @@ if(potions.list.health.nbrOwned > 0){
      |/|\n\
      `0\'",
      
-    asciiIronSwordWithoutButton : "Iron sword\n\
+    asciiIrongpuWithoutButton : "Iron gpu\n\
     /|\n\
    |\\|\n\
    |||\n\
@@ -268,11 +268,11 @@ if(potions.list.health.nbrOwned > 0){
    |/|\n\
    `0\'",
      
-    asciiSilverSwordWithButton : "\
+    asciiSilvergpuWithButton : "\
      |\\\n\
      |/|\n\
      |||\n\
-     [|]  <button class=\"home_button\" id=\"buy_silver_sword\" onClick=\"sword.buyThisSword(\'silver sword\');\">Buy the silver sword (1000 candies)</button>\n\
+     [|]  <button class=\"home_button\" id=\"buy_silver_gpu\" onClick=\"gpu.buyThisgpu(\'silver gpu\');\">Buy a silver tier gpu (1000 hashes)</button>\n\
      |||\n\
      [|]\n\
      |||\n\
@@ -282,7 +282,7 @@ if(potions.list.health.nbrOwned > 0){
      |/|\n\
      `0\'",
      
-    asciiSilverSwordWithoutButton : "Silver sword\n\n\
+    asciiSilvergpuWithoutButton : "Silver gpu\n\n\
     |\\\n\
     |/|\n\
     |||\n\
@@ -296,11 +296,11 @@ if(potions.list.health.nbrOwned > 0){
     |/|\n\
     `0\'",
      
-    asciiDiamondSwordWithButton : "\
+    asciiDiamondgpuWithButton : "\
       /|\n\
      |;|\n\
      |:|\n\
-     |;|  <button class=\"home_button\" id=\"buy_diamond_sword\" onClick=\"sword.buyThisSword(\'diamond sword\');\">Buy the diamond sword (2000 candies)</button>\n\
+     |;|  <button class=\"home_button\" id=\"buy_diamond_gpu\" onClick=\"gpu.buyThisgpu(\'diamond gpu\');\">Buy a diamond tier gpu (2000 hashes)</button>\n\
      |:|\n\
      |;|\n\
      |:|\n\
@@ -311,7 +311,7 @@ if(potions.list.health.nbrOwned > 0){
      |D|\n\
      `0\'",
      
-    asciiDiamondSwordWithoutButton : "Diamond sword\n\n\
+    asciiDiamondgpuWithoutButton : "Diamond gpu\n\n\
       /|\n\
      |;|\n\
      |:|\n\
@@ -326,7 +326,7 @@ if(potions.list.health.nbrOwned > 0){
      |D|\n\
      `0\'",
      
-    asciiCandyDiamondSword : "Candy diamond sword\n\n\
+    asciihashDiamondgpu : "hash diamond gpu\n\n\
         /|\n\
        |o|\n\
        |:|\n\
@@ -341,7 +341,7 @@ if(potions.list.health.nbrOwned > 0){
        |D|\n\
        'O'",
     
-    asciiPolishedCandyDiamondSword : "Polished candy diamond sword\n\n\
+    asciiPolishedhashDiamondgpu : "Polished hash diamond gpu\n\n\
             /|\n\
            |o|\n\
            | |\n\
@@ -356,7 +356,7 @@ if(potions.list.health.nbrOwned > 0){
            | |\n\
            'O'",
     
-    asciiChocolateSword : "Chocolate sword\n\n\
+    asciiChocolategpu : "Chocolate gpu\n\n\
        /|\n\
       |o|\n\
       |~|\n\
@@ -371,7 +371,7 @@ if(potions.list.health.nbrOwned > 0){
       |~|\n\
       'O'",
     
-    asciiSharpChocolateSword : "Sharp chocolate sword\n\n\
+    asciiSharpChocolategpu : "Sharp chocolate gpu\n\n\
          /|\n\
         |^|\n\
         |~|\n\
@@ -386,7 +386,7 @@ if(potions.list.health.nbrOwned > 0){
         |~|\n\
         'O'",
     
-    asciiSwordOfFlames : "Sword of Flames\n\n\
+    asciigpuOfFlames : "gpu of Flames\n\n\
        _\n\
       /#|\n\
      |##|\n\
@@ -406,7 +406,7 @@ if(potions.list.health.nbrOwned > 0){
      |``|\n\
      \"##\"",
     
-    asciiSwordOfLife : "Sword of Life\n\n\
+    asciigpuOfLife : "gpu of Life\n\n\
    _    _\n\
   ( `\\/' )\n\
   `\\    /'\n\
@@ -427,7 +427,7 @@ if(potions.list.health.nbrOwned > 0){
     |  |\n\
     \"OO\"",
     
-    asciiSwordOfSummoning : "Sword of Summoning\n\n\
+    asciigpuOfSummoning : "gpu of Summoning\n\n\
        _\n\
       /*|      _\n\
      |% |     / \\\n\
@@ -447,7 +447,7 @@ if(potions.list.health.nbrOwned > 0){
      |*&|\n\
      \'42\'",
      
-    asciiSwordOfLiflamesummoning : "Sword of Liflamesummoning\n\n\
+    asciigpuOfLiflamesummoning : "gpu of Liflamesummoning\n\n\
       _    _\n\
      ( `\\/' )\n\
      `\\    /'\n\
@@ -469,7 +469,7 @@ if(potions.list.health.nbrOwned > 0){
        |s%|\n\
        \'42\'",
        
-    asciiSwordOfRandomness : "  Sword of Randomness\n\n\
+    asciigpuOfRandomness : "  gpu of Randomness\n\n\
       _    _\n\
  À    ( `\\/' )\n\
     À `\\ e  /'\n\

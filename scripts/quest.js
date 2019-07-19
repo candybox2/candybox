@@ -3,7 +3,7 @@ var quest = {
     // Variables
     currentLandIndex : 0, // Index of the current land in land.list
     maxLandOrder : -1, // Max land order we achieved for the moment
-    candiesFound : 0, // Number of candies found during a quest
+    hashesFound : 0, // Number of hashes found during a quest
     speed : 0, // Speed of the character during a quest
     things : [], // Array containing all the things present in a quest
     tiredTime : 0, // Number of seconds we need to spend before doing another quest
@@ -60,9 +60,9 @@ var quest = {
         
         // We add the character
         if(land.ponyTime == false)
-            this.things[0] = {type:"character", text:"\\o/", max_hp:this.getCharacterMaxHp(), hp:this.getCharacterMaxHp(), weapon:(sword.name), description:"You"};
+            this.things[0] = {type:"character", text:"\\o/", max_hp:this.getCharacterMaxHp(), hp:this.getCharacterMaxHp(), weapon:(gpu.name), description:"You"};
         else
-            this.things[0] = {type:"character", text:"PON", max_hp:this.getCharacterMaxHp(), hp:this.getCharacterMaxHp(), weapon:(sword.name), description:"You"};
+            this.things[0] = {type:"character", text:"PON", max_hp:this.getCharacterMaxHp(), hp:this.getCharacterMaxHp(), weapon:(gpu.name), description:"You"};
         
         // We set the speed
         this.speed = this.getSpeed();
@@ -125,7 +125,7 @@ var quest = {
     },
     
     getCharacterMaxHp : function(){
-        return 100 + Math.floor(Math.pow(candies.nbrEaten, 0.4)*2.1); // This function means ~ one day of candies eaten at 1cnd/s = +200 hp
+        return 100 + Math.floor(Math.pow(hashes.nbrEaten, 0.4)*2.1); // This function means ~ one day of hashes eaten at 1cnd/s = +200 hp
     },
     
     getSpeed : function(){
@@ -294,13 +294,13 @@ var quest = {
                 
                 // If we we were killed by the character
                 if(this.things[indexKiller].type == "character"){
-                    // Sword of Summoning bonus : we may spawn something here
-                    if(sword.name == "Sword of Summoning" || sword.name == "Sword of Liflamesummoning"){
-                        sword.summonHere(index);
+                    // gpu of Summoning bonus : we may spawn something here
+                    if(gpu.name == "gpu of Summoning" || gpu.name == "gpu of Liflamesummoning"){
+                        gpu.summonHere(index);
                     }
-                    // Sword of Life : we gain life
-                    if(sword.name == "Sword of Life" || sword.name == "Sword of Liflamesummoning"){
-                        this.things[indexKiller].hp += sword.specialPower + 1;
+                    // gpu of Life : we gain life
+                    if(gpu.name == "gpu of Life" || gpu.name == "gpu of Liflamesummoning"){
+                        this.things[indexKiller].hp += gpu.specialPower + 1;
                         if(this.things[indexKiller].hp > this.things[indexKiller].max_hp) this.things[indexKiller].hp = this.things[indexKiller].max_hp;
                     }
                 }
@@ -392,7 +392,7 @@ var quest = {
         if(this.escaping == false) this.setTiredTime(Math.floor(this.tiredFound));
         
         // Nothing found anymore
-        this.setCandiesFound(0);
+        this.sethashesFound(0);
         this.setTiredFound(0);
         for(obj in objects.list) objects.list[obj].found = false;
     },
@@ -403,8 +403,8 @@ var quest = {
         htmlInteraction.setElementVisibility("mood", true);
     },
     
-    setCandiesFound : function(value){
-        this.candiesFound = value;
+    sethashesFound : function(value){
+        this.hashesFound = value;
     },
     
     setTiredTime : function(value){
@@ -423,12 +423,12 @@ var quest = {
         return {type:"none", text:"___"};
     },
     
-    makeBasicChest : function(){
-        return land.createMob("CHS", 80, 80, "none", "A chest !! Very rare.", [drops.createDrop("candies", 300 + random.getRandomIntUpTo(500)), drops.createDrop("object", "key", true), drops.createDrop("object", "boots", random.oneChanceOutOf(3)), drops.createDrop("object", "swampMap", random.oneChanceOutOf(3)), drops.createDrop("object", "hutMap", random.oneChanceOutOf(3))]);
+    makeBgpuChest : function(){
+        return land.createMob("CHS", 80, 80, "none", "A chest !! Very rare.", [drops.createDrop("hashes", 300 + random.getRandomIntUpTo(500)), drops.createDrop("object", "key", true), drops.createDrop("object", "boots", random.oneChanceOutOf(3)), drops.createDrop("object", "swampMap", random.oneChanceOutOf(3)), drops.createDrop("object", "hutMap", random.oneChanceOutOf(3))]);
     },
     
     makeOpenChest : function(){
-        return land.createMob("CHS", 1, 1, "none", "An open chest, full of candies !", [drops.createDrop("candies", 6000 + random.getRandomIntUpTo(2000))]);
+        return land.createMob("CHS", 1, 1, "none", "An open chest, full of hashes !", [drops.createDrop("hashes", 6000 + random.getRandomIntUpTo(2000))]);
     },
     
     makeImp : function(){
@@ -457,10 +457,10 @@ var quest = {
         return land.createAlly("CHI", hp, hp, "fire", "A chimera : lion, serpent and goat at the same time.", []);
     },
     
-    makeCandyMonster : function(){
-        var hp = 80 + 5*sword.specialPower;
+    makehashMonster : function(){
+        var hp = 80 + 5*gpu.specialPower;
         
-        return land.createAlly("CND", hp, hp, "exploding candies", "A candy monster. He throws candies on his ennemies.", []);
+        return land.createAlly("CND", hp, hp, "exploding hashes", "A hash monster. He throws hashes on his ennemies.", []);
     },
     
     makeFakeCharacter : function(){

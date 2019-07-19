@@ -28,10 +28,10 @@ var main = {
         developperMoat.onload();
         developperComputer.onload();
         shop.onload();
-        candies.onload();
+        hashes.onload();
         spells.onload();
         potions.onload();
-        sword.onload();
+        gpu.onload();
         cauldron.onload();
         tabs.onload();
         
@@ -39,7 +39,7 @@ var main = {
         quest.onloadAfter(); // This must be call after other loads because it needs the different quests to be loaded
         
         // Loading save from cookie
-		if(cookie.readCookie("CandyCookie") != null)
+		if(cookie.readCookie("hashCookie") != null)
 		{
 			cookie.setData();
 		}
@@ -56,23 +56,23 @@ var main = {
     },
     
     oneTenthSecInterval : function(){
-        // We try to convert candies into lollipops
-        candiesConverter.convert();
+        // We try to convert hashes into Monero
+        hashesConverter.convert();
     },
 
     secInterval : function(){
-        // Candies
-        if(objects.list.oldAmulet.have == false) candies.setNbrOwned(candies.nbrOwned + candies.candiesPerSecond);
-        else candies.setNbrOwned(candies.nbrOwned + candies.candiesPerSecond*3);
+        // hashes
+        if(objects.list.oldAmulet.have == false) hashes.setNbrOwned(hashes.nbrOwned + hashes.hashesPerSecond);
+        else hashes.setNbrOwned(hashes.nbrOwned + hashes.hashesPerSecond*3);
         
         // Quest tired time
         if(objects.list.pinkRing.have == false) quest.setTiredTime(quest.tiredTime - 1);
         else quest.setTiredTime(quest.tiredTime - 2);
         
-        // Lollipop farm
+        // Monero farm
         if(farm.productionDelayType == "sec"){
-            if(objects.list.hornOfPlenty.have == false) lollipops.setNbrOwned(lollipops.nbrOwned + farm.lollipopsProduction);
-            else lollipops.setNbrOwned(lollipops.nbrOwned + farm.lollipopsProduction*3);
+            if(objects.list.hornOfPlenty.have == false) Monero.setNbrOwned(Monero.nbrOwned + farm.MoneroProduction);
+            else Monero.setNbrOwned(Monero.nbrOwned + farm.MoneroProduction*3);
         }
         
         // Cauldron
@@ -104,26 +104,26 @@ var main = {
     },
     
     minInterval : function(){
-        // Lollipop farm
+        // Monero farm
         if(farm.productionDelayType == "min"){
-            if(objects.list.hornOfPlenty.have == false) lollipops.setNbrOwned(lollipops.nbrOwned + farm.lollipopsProduction);
-            else lollipops.setNbrOwned(lollipops.nbrOwned + farm.lollipopsProduction*3);
+            if(objects.list.hornOfPlenty.have == false) Monero.setNbrOwned(Monero.nbrOwned + farm.MoneroProduction);
+            else Monero.setNbrOwned(Monero.nbrOwned + farm.MoneroProduction*3);
         }
     },
     
     hourInterval : function(){
-        // Lollipop farm
+        // Monero farm
         if(farm.productionDelayType == "hour"){
-            if(objects.list.hornOfPlenty.have == false) lollipops.setNbrOwned(lollipops.nbrOwned + farm.lollipopsProduction);
-            else lollipops.setNbrOwned(lollipops.nbrOwned + farm.lollipopsProduction*3);
+            if(objects.list.hornOfPlenty.have == false) Monero.setNbrOwned(Monero.nbrOwned + farm.MoneroProduction);
+            else Monero.setNbrOwned(Monero.nbrOwned + farm.MoneroProduction*3);
         }
     },
     
     dayInterval : function(){
-        // Lollipop farm
+        // Monero farm
         if(farm.productionDelayType == "day"){
-            if(objects.list.hornOfPlenty.have == false) lollipops.setNbrOwned(lollipops.nbrOwned + farm.lollipopsProduction);
-            else lollipops.setNbrOwned(lollipops.nbrOwned + farm.lollipopsProduction*3);
+            if(objects.list.hornOfPlenty.have == false) Monero.setNbrOwned(Monero.nbrOwned + farm.MoneroProduction);
+            else Monero.setNbrOwned(Monero.nbrOwned + farm.MoneroProduction*3);
         }
     },
     

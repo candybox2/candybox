@@ -53,7 +53,7 @@ var yourself = {
     makeYourself : function(){
         var index = quest.getCharacterIndex();
         
-        return land.createMob("\\o/", quest.things[index].hp, quest.things[index].max_hp, sword.name, "You", []);
+        return land.createMob("\\o/", quest.things[index].hp, quest.things[index].max_hp, gpu.name, "You", []);
     }
     
 };

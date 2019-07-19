@@ -16,7 +16,7 @@ function load() {
 
 function restart() {
 	clearInterval(cookie.cookiehandler);
-	cookie.eraseCookie("CandyCookie");
+	cookie.eraseCookie("hashCookie");
 	//location.reload();
 	window.location.reload(true); 
 }
@@ -36,8 +36,8 @@ function readFile (evt) {
 		
 		if(lines.length != 90)
 		{
-			alert("ERROR: Corrupt Candysave Lines: " + lines.length);
-			console.log("ERROR: Corrupt Candysave Lines: " + lines.length); 
+			alert("ERROR: Corrupt hashsave Lines: " + lines.length);
+			console.log("ERROR: Corrupt hashsave Lines: " + lines.length); 
 			return null;
 		}
 		
@@ -47,8 +47,8 @@ function readFile (evt) {
 			
 			if(split.length != 2)
 			{
-				alert("ERROR: Corrupt Candysave @Line #" + (i+1));
-				console.log("ERROR: Corrupt Candysave @Line #" + (i+1)); 
+				alert("ERROR: Corrupt hashsave @Line #" + (i+1));
+				console.log("ERROR: Corrupt hashsave @Line #" + (i+1)); 
 				return null;
 			}
 			
@@ -59,13 +59,13 @@ function readFile (evt) {
 		}
 		
 		//reset all
-		cookie.eraseCookie("CandyCookie");
+		cookie.eraseCookie("hashCookie");
 		main.onload();
 		
 		
 		
 		cookie.updateData(var_list);
-		cookie.createCookie("CandyCookie", cookie.getData(), 365);
+		cookie.createCookie("hashCookie", cookie.getData(), 365);
 		
 		window.location.reload(true); 
 		

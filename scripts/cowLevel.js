@@ -75,11 +75,11 @@ var cowLevel = {
     },
     
     makeCow : function(){
-        return land.createMob("COW", 12, 12, "horns", "A cow ! Mooooo !", [drops.createDrop("candies", 100)]);
+        return land.createMob("COW", 12, 12, "horns", "A cow ! Mooooo !", [drops.createDrop("hashes", 100)]);
     },
     
     makeCowKing : function(){
-        return land.createMob("COW", 180, 180, "horns", "The cow king ! It looks like a normal cow, but it isn't...", [drops.createDrop("candies", 1000), drops.createDrop("object", "hornOfPlenty", true)]);
+        return land.createMob("COW", 180, 180, "horns", "The cow king ! It looks like a normal cow, but it isn't...", [drops.createDrop("hashes", 1000), drops.createDrop("object", "hornOfPlenty", true)]);
     }
     
 };

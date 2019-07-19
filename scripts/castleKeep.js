@@ -300,7 +300,7 @@ var castleKeep = {
     
     makeWalledOffZombieWarrior : function(){
         var hp = 150 + random.getRandomIntUpTo(10) * 10;
-        return land.createMob("WZW", hp, hp, "cursed sword", "A walled off zombie warrior. He probably did something bad to end up here.", [drops.createDrop("candies", random.getRandomIntUpTo(1) * 4000), drops.createDrop("object", "oldAmulet", true)]);
+        return land.createMob("WZW", hp, hp, "cursed gpu", "A walled off zombie warrior. He probably did something bad to end up here.", [drops.createDrop("hashes", random.getRandomIntUpTo(1) * 4000), drops.createDrop("object", "oldAmulet", true)]);
     },
     
     makeFireball : function(){

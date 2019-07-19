@@ -14,22 +14,22 @@ var inventory = {
             this.setMagicianHatLetter("     " + random.getRandomLetter());
         }
         
-        // Sword
-        switch(sword.name){
-            case "wooden sword": htmlInteraction.setInnerHtml("sword_without_button", sword.asciiWoodenSwordWithoutButton); break;
-            case "copper sword": htmlInteraction.setInnerHtml("sword_without_button", sword.asciiCopperSwordWithoutButton); break;
-            case "iron sword": htmlInteraction.setInnerHtml("sword_without_button", sword.asciiIronSwordWithoutButton); break;
-            case "silver sword": htmlInteraction.setInnerHtml("sword_without_button", sword.asciiSilverSwordWithoutButton); break;
-            case "diamond sword": htmlInteraction.setInnerHtml("sword_without_button", sword.asciiDiamondSwordWithoutButton); break;
-            case "candy diamond sword": htmlInteraction.setInnerHtml("sword_without_button", sword.asciiCandyDiamondSword); break;
-            case "polished candy diamond sword": htmlInteraction.setInnerHtml("sword_without_button", sword.asciiPolishedCandyDiamondSword); break;
-            case "chocolate sword": htmlInteraction.setInnerHtml("sword_without_button", sword.asciiChocolateSword); break;
-            case "sharp chocolate sword": htmlInteraction.setInnerHtml("sword_without_button", sword.asciiSharpChocolateSword); break;
-            case "Sword of Flames": htmlInteraction.setInnerHtml("sword_without_button", sword.asciiSwordOfFlames + "\n\nLevel : " + sword.specialPower); break;
-            case "Sword of Life": htmlInteraction.setInnerHtml("sword_without_button", sword.asciiSwordOfLife + "\n\nLevel : " + sword.specialPower); break;
-            case "Sword of Summoning": htmlInteraction.setInnerHtml("sword_without_button", sword.asciiSwordOfSummoning + "\n\nLevel : " + sword.specialPower); break;
-            case "Sword of Liflamesummoning": htmlInteraction.setInnerHtml("sword_without_button", sword.asciiSwordOfLiflamesummoning + "\n\nLevel : " + sword.specialPower); break;
-            case "Sword of Randomness": htmlInteraction.setInnerHtml("sword_without_button", sword.asciiSwordOfRandomness + "\n\nLevel : infinite + " + sword.specialPower); break;
+        // gpu
+        switch(gpu.name){
+            case "wooden gpu": htmlInteraction.setInnerHtml("gpu_without_button", gpu.asciiWoodengpuWithoutButton); break;
+            case "copper gpu": htmlInteraction.setInnerHtml("gpu_without_button", gpu.asciiCoppergpuWithoutButton); break;
+            case "iron gpu": htmlInteraction.setInnerHtml("gpu_without_button", gpu.asciiIrongpuWithoutButton); break;
+            case "silver gpu": htmlInteraction.setInnerHtml("gpu_without_button", gpu.asciiSilvergpuWithoutButton); break;
+            case "diamond gpu": htmlInteraction.setInnerHtml("gpu_without_button", gpu.asciiDiamondgpuWithoutButton); break;
+            case "hash diamond gpu": htmlInteraction.setInnerHtml("gpu_without_button", gpu.asciihashDiamondgpu); break;
+            case "polished hash diamond gpu": htmlInteraction.setInnerHtml("gpu_without_button", gpu.asciiPolishedhashDiamondgpu); break;
+            case "chocolate gpu": htmlInteraction.setInnerHtml("gpu_without_button", gpu.asciiChocolategpu); break;
+            case "sharp chocolate gpu": htmlInteraction.setInnerHtml("gpu_without_button", gpu.asciiSharpChocolategpu); break;
+            case "gpu of Flames": htmlInteraction.setInnerHtml("gpu_without_button", gpu.asciigpuOfFlames + "\n\nLevel : " + gpu.specialPower); break;
+            case "gpu of Life": htmlInteraction.setInnerHtml("gpu_without_button", gpu.asciigpuOfLife + "\n\nLevel : " + gpu.specialPower); break;
+            case "gpu of Summoning": htmlInteraction.setInnerHtml("gpu_without_button", gpu.asciigpuOfSummoning + "\n\nLevel : " + gpu.specialPower); break;
+            case "gpu of Liflamesummoning": htmlInteraction.setInnerHtml("gpu_without_button", gpu.asciigpuOfLiflamesummoning + "\n\nLevel : " + gpu.specialPower); break;
+            case "gpu of Randomness": htmlInteraction.setInnerHtml("gpu_without_button", gpu.asciigpuOfRandomness + "\n\nLevel : infinite + " + gpu.specialPower); break;
         }
         
         // Objects
@@ -37,7 +37,7 @@ var inventory = {
         this.updateObjectOnPage("inventory_boots", objects.list.boots, this.asciiBoots, this.asciiNoObject);
         this.updateObjectOnPage("inventory_magician_hat", objects.list.magicianHat, this.magicianHatLetter + "\n" + this.asciiMagicianHat, this.asciiNoObject);
         this.updateObjectOnPage("inventory_pink_ring", objects.list.pinkRing, this.asciiPinkRing, this.asciiNoObject);
-        this.updateObjectOnPage("inventory_candies_converter", objects.list.candiesConverter, this.asciiCandiesConverter, this.asciiNoObject);
+        this.updateObjectOnPage("inventory_hashes_converter", objects.list.hashesConverter, this.asciihashesConverter, this.asciiNoObject);
         this.updateObjectOnPage("inventory_plate_armour", objects.list.plateArmour, this.asciiPlateArmour, this.asciiNoObject);
         this.updateObjectOnPage("inventory_cauldron", objects.list.cauldron, this.asciiCauldron, this.asciiNoObject);
         this.updateObjectOnPage("inventory_magical_horn", objects.list.magicalHorn, this.asciiMagicalHorn, this.asciiNoObject);
@@ -117,7 +117,7 @@ var inventory = {
 ! ~  ~  ~ !\n\
  \'-~-~-~-\'",
  
-    asciiCandiesConverter : "   ______\n\
+    asciihashesConverter : "   ______\n\
   /+|  |+\\\n\
  |=={==}==|\n\
   \\_|__|_/",
@@ -152,9 +152,9 @@ var inventory = {
    \'cnd\'\n\
    \'. .\'",
    
-    asciiWon1 : "Bravo !\nYou won\nthe game :)\nYou now have\nall the\ncandies in\nthe world.",
+    asciiWon1 : "Bravo !\nYou won\nthe game :)\nYou now have\nall the\nhashes in\nthe world.",
    
-    asciiWon2 : "(you can now\nask the dev\nfor a real\ncandy, if you\nfind him !)",
+    asciiWon2 : "(you can now\nask the dev\nfor a real\nhash, if you\nfind him !)",
    
     asciiNoObject : "            \n            \n            "
 

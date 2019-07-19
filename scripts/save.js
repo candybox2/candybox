@@ -25,38 +25,38 @@ function save() {
     min = (min < 10 ? "0" : "") + min;
 	
 	var save_text = "code: " + ((code === undefined || code == null || code.length == "") ? 0 : code) + "\n" + 
-					"swordName: " + sword.name + "\n" + 
-					"swordSpecialSword: " + getPhpStuff(sword.specialSword) + "\n" + 
-					"swordSpecialPower: " + sword.specialPower + "\n" + 
-					"candiesNbrOwned: " + candies.nbrOwned + "\n" + 
-					"candiesNbrThrown: " + candies.nbrThrown + "\n" + 
-					"candiesNbrEaten: " + candies.nbrEaten + "\n" + 
-					"candiesNbrTotal: " + candies.nbrTotal + "\n" + 
-					"candiesCandiesPerSecond: " + candies.candiesPerSecond + "\n" + 
-					"candiesConverterActivated: " + getPhpStuff(candiesConverter.activated) + "\n" + 
+					"gpuName: " + gpu.name + "\n" +
+					"gpuSpecialgpu: " + getPhpStuff(gpu.specialgpu) + "\n" +
+					"gpuSpecialPower: " + gpu.specialPower + "\n" +
+					"hashesNbrOwned: " + hashes.nbrOwned + "\n" + 
+					"hashesNbrThrown: " + hashes.nbrThrown + "\n" + 
+					"hashesNbrEaten: " + hashes.nbrEaten + "\n" + 
+					"hashesNbrTotal: " + hashes.nbrTotal + "\n" + 
+					"hasheshashesPerSecond: " + hashes.hashesPerSecond + "\n" + 
+					"hashesConverterActivated: " + getPhpStuff(hashesConverter.activated) + "\n" + 
 					"cauldronBookPage: " + cauldron.bookPage + "\n" + 
-					"cauldronCandies: " + cauldron.candiesInTheCauldron + "\n" + 
-					"cauldronLollipops: " + cauldron.lollipopsInTheCauldron + "\n" + 
+					"cauldronhashes: " + cauldron.hashesInTheCauldron + "\n" + 
+					"cauldronMonero: " + cauldron.MoneroInTheCauldron + "\n" + 
 					"chocolateBarsNbrOwned: " + chocolateBars.nbrOwned + "\n" + 
-					"farmLollipopsPlanted: " + farm.lollipopsPlanted + "\n" + 
+					"farmMoneroPlanted: " + farm.MoneroPlanted + "\n" + 
 					"farmCurrentFlagIndex: " + farm.currentFlagIndex + "\n" + 
 					"farmPlantingButtonsStep: " + farm.plantingButtonsStep + "\n" + 
 					"forgeStep: " + forge.step + "\n" + 
-					"shopLollipopsButtonsShown: " + getPhpStuff(shop.buy10LollipopsButtonShown) + "\n" + 
+					"shopMoneroButtonsShown: " + getPhpStuff(shop.buy10MoneroButtonShown) + "\n" + 
 					"shopShown: " + getPhpStuff(shop.shown) + "\n" + 
 					"shopTicklingStep: " + shop.ticklingStep + "\n" + 
-					"shopClickingOnLollipopStep: " + shop.clickingOnLollipopStep + "\n" + 
+					"shopClickingOnMonerotep: " + shop.clickingOnMonerotep + "\n" + 
 					"hutStep: " + hut.step + "\n" + 
 					"hutSpeech: " + hut.speech + "\n" + 
 					"inventoryMagicianHatLetter: " + inventory.magicianHatLetter + "\n" + 
-					"lollipopsNbrOwned: " + lollipops.nbrOwned + "\n" + 
-					"lollipopsNbrInStock: " + lollipops.nbrInStock + "\n" + 
-					"lollipopsNbrBought: " + lollipops.nbrBought + "\n" + 
+					"MoneroNbrOwned: " + Monero.nbrOwned + "\n" + 
+					"MoneroNbrInStock: " + Monero.nbrInStock + "\n" + 
+					"MoneroNbrBought: " + Monero.nbrBought + "\n" + 
 					"mainNbrOfSecondsSinceLastMinInterval: " + main.nbrOfSecondsSinceLastMinInterval + "\n" + 
 					"mainNbrOfSecondsSinceLastHourInterval: " + main.nbrOfSecondsSinceLastHourInterval + "\n" + 
 					"mainNbrOfSecondsSinceLastDayInterval: " + main.nbrOfSecondsSinceLastDayInterval + "\n" + 
-					"mountGoblinBasicChestProbability: " + mountGoblin.basicChestProbability + "\n" + 
-					"peacefulForestBasicChestProbability: " + peacefulForest.basicChestProbability + "\n" + 
+					"mountGoblinBgpuChestProbability: " + mountGoblin.bgpuChestProbability + "\n" +
+					"peacefulForestBgpuChestProbability: " + peacefulForest.bgpuChestProbability + "\n" +
 					"peacefulForestPoniesEncountered: " + peacefulForest.poniesEncountered + "\n" + 
 					"objectsHaveObjectKey: " + getPhpStuff(objects.list.key.have) + "\n" + 
 					"objectsHaveObjectHutMap: " + getPhpStuff(objects.list.hutMap.have) + "\n" + 
@@ -66,7 +66,7 @@ function save() {
 					"objectsHaveObjectMagicianHat: " + getPhpStuff(objects.list.magicianHat.have) + "\n" + 
 					"objectsHaveObjectPinkRing: " + getPhpStuff(objects.list.pinkRing.have) + "\n" + 
 					"objectsHaveObjectForgeMap: " + getPhpStuff(objects.list.forgeMap.have) + "\n" + 
-					"objectsHaveObjectCandiesConverter: " + getPhpStuff(objects.list.candiesConverter.have) + "\n" + 
+					"objectsHaveObjecthashesConverter: " + getPhpStuff(objects.list.hashesConverter.have) + "\n" + 
 					"objectsHaveObjectPlateArmour: " + getPhpStuff(objects.list.plateArmour.have) + "\n" + 
 					"objectsHaveObjectCauldron: " + getPhpStuff(objects.list.cauldron.have) + "\n" + 
 					"objectsHaveObjectMagicalHorn: " + getPhpStuff(objects.list.magicalHorn.have) + "\n" + 
@@ -106,8 +106,8 @@ function save() {
 					"potionsNbrOwnedGmooh: " + potions.list.gmooh.nbrOwned + "\n" + 
 					"questMaxLandOrder: " + quest.maxLandOrder + "\n" + 
 					"questTiredTime: " + quest.tiredTime + "\n" + 
-					"spellsFasterCandiesFibo1: " + spells.fasterCandiesFiboPrev + "\n" + 
-					"spellsFasterCandiesFibo2: " + spells.fasterCandiesFiboCurr + "\n" + 
+					"spellsFasterhashesFibo1: " + spells.fasterhashesFiboPrev + "\n" + 
+					"spellsFasterhashesFibo2: " + spells.fasterhashesFiboCurr + "\n" + 
 					"swampStep: " + swamp.step + "\n" + 
 					"tabsAnimation: " + tabs.animation + "\n" + 
 					"wishingWellSpeech: " + wishingWell.speech + "\n" + 
@@ -115,7 +115,7 @@ function save() {
 					"yourselfCanSurpass: " + getPhpStuff(yourself.canSurpass) + "\n" + 
 					"developperComputerWon: " + getPhpStuff(developperComputer.won);
 	
-	var filename = "candybox_" + year.substring(2, 4) + month + day + "_" + hour + "-" + min;
+	var filename = "hashbox_" + year.substring(2, 4) + month + day + "_" + hour + "-" + min;
 	var blob = new Blob([save_text], {type: "text/plain;charset=utf-8"});
 	saveAs(blob, filename+".cs");
 }

@@ -51,7 +51,7 @@ var castleStairs = {
     },
     
     makeNecromancer : function(){
-        return land.createMob("NEC", 150, 150, "magic staff", "A necromancer. She summons ghosts and dead stuff.", [drops.createDrop("object", "candiesConverter", true), drops.createDrop("object", "cauldron", true)]);
+        return land.createMob("NEC", 150, 150, "magic staff", "A necromancer. She summons ghosts and dead stuff.", [drops.createDrop("object", "hashesConverter", true), drops.createDrop("object", "cauldron", true)]);
     },
     
     makeGhost : function(){

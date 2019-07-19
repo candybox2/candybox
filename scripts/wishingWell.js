@@ -32,7 +32,7 @@ var wishingWell = {
         switch(this.step){
             case 0:
                 // Button
-                text += "\n\n<button id=\"wishingWell_throw_candy\" onClick=\"wishingWell.throwCandy();\">Throw a candy in the well</button>";
+                text += "\n\n<button id=\"wishingWell_throw_hash\" onClick=\"wishingWell.throwhash();\">Throw a hash in the well</button>";
             break;
             case 1:
                 // Speech
@@ -40,8 +40,8 @@ var wishingWell = {
                 text += speech.makeSpeechFromText(this.speech, 23, "");
                 
                 // Buttons
-                text += "\n\n<button onClick=\"wishingWell.candiesBy5();\">Multiply my candies by 5</button>";
-                text += "\n<button onClick=\"wishingWell.lollipopsBy8();\">Multiply my lollipops by 8</button>";
+                text += "\n\n<button onClick=\"wishingWell.hashesBy5();\">Multiply my hashes by 5</button>";
+                text += "\n<button onClick=\"wishingWell.MoneroBy8();\">Multiply my Monero by 8</button>";
                 text += "\n<button onClick=\"wishingWell.potionsAndScrolls();\">Give me lots of potions and scrolls</button>";
             break;
             case 2:
@@ -106,22 +106,22 @@ var wishingWell = {
         this.updateOnPage();
     },
     
-    candiesBy5 : function(){
-        candies.setNbrOwned(candies.nbrOwned * 5);
+    hashesBy5 : function(){
+        hashes.setNbrOwned(hashes.nbrOwned * 5);
         this.setStep(2);
-        this.setSpeech("Multiplicatus, multiplicata, multiplicatum ! Your candies are now multiplied !");
+        this.setSpeech("Multiplicatus, multiplicata, multiplicatum ! Your hashes are now multiplied !");
         this.updateOnPage();
     },
     
-    lollipopsBy8 : function(){
-        lollipops.setNbrOwned(lollipops.nbrOwned * 8);
+    MoneroBy8 : function(){
+        Monero.setNbrOwned(Monero.nbrOwned * 8);
         this.setStep(2);
-        this.setSpeech("Multiplicatus, multiplicata, multiplicatum ! Your lollipops are now multiplied !");
+        this.setSpeech("Multiplicatus, multiplicata, multiplicatum ! Your Monero are now multiplied !");
         this.updateOnPage();
     },
     
-    throwCandy : function(){
-        candies.setNbrOwned(candies.nbrOwned - 1);
+    throwhash : function(){
+        hashes.setNbrOwned(hashes.nbrOwned - 1);
         this.setStep(1);
         this.setSpeech("I will grant you one wish ! So choose carefully from the list below.");
         this.updateOnPage();

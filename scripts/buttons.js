@@ -23,14 +23,14 @@ var buttons = {
     
     checkEatAndThrowButtons : function(){
         // Show the eat button
-        if(candies.nbrOwned >= 1){
+        if(hashes.nbrOwned >= 1){
             htmlInteraction.showButton("eat");
             this.enableButton("eat");
         }
         else htmlInteraction.disableButton("eat");
         
         // Show the throw button
-        if(candies.nbrOwned >= 10){
+        if(hashes.nbrOwned >= 10){
             htmlInteraction.showButton("throw_10");
             this.enableButton("throw_10");
         }
@@ -40,34 +40,34 @@ var buttons = {
     checkHomeEnabled : function(){
         this.checkEatAndThrowButtons();
         this.checkQuestBuyingButtons();
-        this.checkEncrustSwordButton();
-        this.checkPolishSwordButton();
-        this.checkCoatSwordButton();
-        this.checkLollipopsStockShortage();
+        this.checkEncrustgpuButton();
+        this.checkPolishgpuButton();
+        this.checkCoatgpuButton();
+        this.checkMoneroStockShortage();
         this.checkObjects();
-        this.checkLollipopsPlantingButtons();
+        this.checkMoneroPlantingButtons();
         this.checkQuestTiredTime();
     },
     
-    checkCandies : function(){
+    checkhashes : function(){
         this.checkEatAndThrowButtons();
         this.checkQuestBuyingButtons();
-        this.checkEncrustSwordButton();
-        this.checkLollipopsStockShortage();
+        this.checkEncrustgpuButton();
+        this.checkMoneroStockShortage();
         this.checkWishingWell();
     },
     
-    checkSword : function(){
+    checkgpu : function(){
         this.checkQuestBuyingButtons();
-        this.checkEncrustSwordButton();
-        this.checkPolishSwordButton();
-        this.checkCoatSwordButton();
+        this.checkEncrustgpuButton();
+        this.checkPolishgpuButton();
+        this.checkCoatgpuButton();
         this.checkTabPanel();
     },
     
     checkTabPanel : function(){
-        // If we have a sword
-        if(sword.name != "none"){
+        // If we have a gpu
+        if(gpu.name != "none"){
             // We enable the tab bar
             htmlInteraction.setElementDisplay("tabBar", "");
             // And we enable some tabs
@@ -80,28 +80,28 @@ var buttons = {
     },
     
     checkQuestBuyingButtons : function(){
-        // Enable/disable quest buying buttons (show/hide is handle by sword&shop algorithms)
+        // Enable/disable quest buying buttons (show/hide is handle by gpu&shop algorithms)
         
-        // Swords
-        if(shop.currentSwordButtonId != "none"){ // If the merchant is selling a sword right now
-            if(candies.nbrOwned >= shop.currentSwordPrice) this.enableButton(shop.currentSwordButtonId);
-            else htmlInteraction.disableButton(shop.currentSwordButtonId);
+        // gpus
+        if(shop.currentgpuButtonId != "none"){ // If the merchant is selling a gpu right now
+            if(hashes.nbrOwned >= shop.currentgpuPrice) this.enableButton(shop.currentgpuButtonId);
+            else htmlInteraction.disableButton(shop.currentgpuButtonId);
         }
         
         // Potions & scrolls
-        if(candies.nbrOwned >= 600) this.enableButton("buy_health_potion");
+        if(hashes.nbrOwned >= 600) this.enableButton("buy_health_potion");
         else htmlInteraction.disableButton("buy_health_potion");
         
-        if(candies.nbrOwned >= 150) this.enableButton("buy_escape_potion");
+        if(hashes.nbrOwned >= 150) this.enableButton("buy_escape_potion");
         else htmlInteraction.disableButton("buy_escape_potion");
         
-        if(candies.nbrOwned >= 400) this.enableButton("buy_scroll");
+        if(hashes.nbrOwned >= 400) this.enableButton("buy_scroll");
         else htmlInteraction.disableButton("buy_scroll");
     },
     
-    checkEncrustSwordButton : function(){
-        // Show the encrust the diamond sword button
-        if(candies.nbrOwned >= 101 && sword.name == "diamond sword"){
+    checkEncrustgpuButton : function(){
+        // Show the encrust the diamond gpu button
+        if(hashes.nbrOwned >= 101 && gpu.name == "diamond gpu"){
             htmlInteraction.showButton("encrust");
             this.enableButton("encrust");
             htmlInteraction.setElementDisplay("encrust", "inline");
@@ -111,9 +111,9 @@ var buttons = {
         else htmlInteraction.disableButton("encrust");
     },
     
-    checkPolishSwordButton : function(){
-        // Show the polish the diamond sword button
-        if(lollipops.nbrOwned >= 30 && sword.name == "candy diamond sword"){
+    checkPolishgpuButton : function(){
+        // Show the polish the diamond gpu button
+        if(Monero.nbrOwned >= 30 && gpu.name == "hash diamond gpu"){
             htmlInteraction.showButton("polish");
             this.enableButton("polish");
             htmlInteraction.setElementDisplay("encrust", "none");
@@ -123,16 +123,16 @@ var buttons = {
         else htmlInteraction.disableButton("polish");
     },
     
-    checkLollipops : function(){
-        this.checkPolishSwordButton();
-        this.checkLollipopsPlantingButtons();
+    checkMonero : function(){
+        this.checkPolishgpuButton();
+        this.checkMoneroPlantingButtons();
         this.checkHut();
-        this.checkLollipopsStockShortage();
+        this.checkMoneroStockShortage();
         this.checkComputer();
     },
     
     checkComputer : function(){
-        if(lollipops.nbrOwned >= 1000000){
+        if(Monero.nbrOwned >= 1000000){
             htmlInteraction.showButton("computer_bug_1");
             htmlInteraction.showButton("computer_comment_1");
         }
@@ -140,7 +140,7 @@ var buttons = {
             htmlInteraction.hideButton("computer_bug_1");
         }
         
-        if(lollipops.nbrOwned >= 10000000){
+        if(Monero.nbrOwned >= 10000000){
             htmlInteraction.showButton("computer_bug_2");
             htmlInteraction.showButton("computer_comment_2");
         }
@@ -148,7 +148,7 @@ var buttons = {
             htmlInteraction.hideButton("computer_bug_2");
         }
         
-        if(lollipops.nbrOwned >= 100000000){
+        if(Monero.nbrOwned >= 100000000){
             htmlInteraction.showButton("computer_bug_3");
             htmlInteraction.showButton("computer_comment_3");
         }
@@ -156,7 +156,7 @@ var buttons = {
             htmlInteraction.hideButton("computer_bug_3");
         }
         
-        if(lollipops.nbrOwned >= 1000000000){
+        if(Monero.nbrOwned >= 1000000000){
             htmlInteraction.showButton("computer_bug_4");
             htmlInteraction.showButton("computer_comment_4");
         }
@@ -164,7 +164,7 @@ var buttons = {
             htmlInteraction.hideButton("computer_bug_4");
         }
         
-        if(lollipops.nbrOwned >= 10000000000){
+        if(Monero.nbrOwned >= 10000000000){
             htmlInteraction.showButton("computer_bug_5");
             htmlInteraction.showButton("computer_comment_5");
             htmlInteraction.showButton("computer_note");
@@ -173,19 +173,19 @@ var buttons = {
             htmlInteraction.hideButton("computer_bug_5");
         }
         
-        if(lollipops.nbrOwned >= 100000000000) htmlInteraction.showButton("computer_bug_6");
+        if(Monero.nbrOwned >= 100000000000) htmlInteraction.showButton("computer_bug_6");
         else htmlInteraction.hideButton("computer_bug_6");
         
-        if(lollipops.nbrOwned >= 1000000000000) htmlInteraction.showButton("computer_bug_7");
+        if(Monero.nbrOwned >= 1000000000000) htmlInteraction.showButton("computer_bug_7");
         else htmlInteraction.hideButton("computer_bug_7");
         
-        if(lollipops.nbrOwned >= 10000000000000) htmlInteraction.showButton("computer_bug_8");
+        if(Monero.nbrOwned >= 10000000000000) htmlInteraction.showButton("computer_bug_8");
         else htmlInteraction.hideButton("computer_bug_8");
     },
     
-    checkCoatSwordButton : function(){
-        // Show the coat the diamond blbl sword button
-        if(chocolateBars.nbrOwned >= 1 && sword.name == "polished candy diamond sword"){
+    checkCoatgpuButton : function(){
+        // Show the coat the diamond blbl gpu button
+        if(chocolateBars.nbrOwned >= 1 && gpu.name == "polished hash diamond gpu"){
             htmlInteraction.showButton("coat");
             this.enableButton("coat");
             htmlInteraction.setElementDisplay("encrust", "none");
@@ -196,37 +196,37 @@ var buttons = {
     },
     
     checkChocolateBars : function(){
-        this.checkCoatSwordButton();
+        this.checkCoatgpuButton();
     },
     
-    checkLollipopsStockShortage : function(){
+    checkMoneroStockShortage : function(){
         // If the shop is shown
         if(shop.shown){
-            // If there's a lollipops stock shortage
-            if(lollipops.stockShortage == true){
-                // We show the stock shortage and hide the buttons used to buy lollipops
-                htmlInteraction.setElementVisibility("lollipops_stock_shortage", true);
-                htmlInteraction.hideButton("buy_1_lollipop");
-                htmlInteraction.hideButton("buy_10_lollipops");
+            // If there's a Monero stock shortage
+            if(Monero.stockShortage == true){
+                // We show the stock shortage and hide the buttons used to buy Monero
+                htmlInteraction.setElementVisibility("Monero_stock_shortage", true);
+                htmlInteraction.hideButton("buy_1_Monero");
+                htmlInteraction.hideButton("buy_10_Monero");
             }
-            // Else, no lollipops stock shortage
+            // Else, no Monero stock shortage
             else{
                 // We don't show the stock shortage
-                htmlInteraction.setElementVisibility("lollipops_stock_shortage", false);
-                // We show and maybe enable the button to buy one lollipop
-                htmlInteraction.showButton("buy_1_lollipop");
-                if(candies.nbrOwned >= shop.oneLollipopPrice) this.enableButton("buy_1_lollipop");
-                else htmlInteraction.disableButton("buy_1_lollipop");
-                // We maybe show and maybe enable the button to buy 500 lollipops
-                if(candies.nbrOwned >= shop.tenLollipopsPrice || shop.buy10LollipopsButtonShown){
-                    shop.setBuy10LollipopsButtonShown(true);
-                    if(htmlInteraction.isElementVisible("buy_10_lollipops") == false){ // If it wasn't shown yet
-                        htmlInteraction.showButton("buy_10_lollipops");
-                        shop.setMerchantSpeech("There's now a discount for 10 lollipops! Buy them please.. I need candiiiies!");
+                htmlInteraction.setElementVisibility("Monero_stock_shortage", false);
+                // We show and maybe enable the button to buy one Monero
+                htmlInteraction.showButton("buy_1_Monero");
+                if(hashes.nbrOwned >= shop.oneMoneroPrice) this.enableButton("buy_1_Monero");
+                else htmlInteraction.disableButton("buy_1_Monero");
+                // We maybe show and maybe enable the button to buy 500 Monero
+                if(hashes.nbrOwned >= shop.tenMoneroPrice || shop.buy10MoneroButtonShown){
+                    shop.setBuy10MoneroButtonShown(true);
+                    if(htmlInteraction.isElementVisible("buy_10_Monero") == false){ // If it wasn't shown yet
+                        htmlInteraction.showButton("buy_10_Monero");
+                        shop.setMerchantSpeech("There's now a discount for 10 Monero! Buy them please.. I need candiiiies!");
                     }
-                    this.enableButton("buy_10_lollipops");
+                    this.enableButton("buy_10_Monero");
                 }
-                if(candies.nbrOwned < shop.tenLollipopsPrice) htmlInteraction.disableButton("buy_10_lollipops");
+                if(hashes.nbrOwned < shop.tenMoneroPrice) htmlInteraction.disableButton("buy_10_Monero");
             }
         }
     },
@@ -261,30 +261,30 @@ var buttons = {
         farm.checkVisibility();
         
         // Check some farm's buttons
-        this.checkLollipopsPlantingButtons();
+        this.checkMoneroPlantingButtons();
         
-        // Check the candies converter visibility
-        candiesConverter.checkVisibility();
+        // Check the hashes converter visibility
+        hashesConverter.checkVisibility();
         
         // Check the cauldron visibility
         cauldron.checkVisibility();
     },
     
-    checkLollipopsPlantingButtons : function(){
-        // If we have the key of the lollipop farm
+    checkMoneroPlantingButtons : function(){
+        // If we have the key of the Monero farm
         if(objects.list.key.have){
             // innerHtml of the lp_buttons span
             
             // Plant 1000 button
-            if(lollipops.nbrOwned >= 1000 && farm.plantingButtonsStep < 4){
+            if(Monero.nbrOwned >= 1000 && farm.plantingButtonsStep < 4){
                 farm.setPlantingButtonsStep(4);
             }
             // Plant 100 button
-            else if(lollipops.nbrOwned >= 100 && farm.plantingButtonsStep < 3){
+            else if(Monero.nbrOwned >= 100 && farm.plantingButtonsStep < 3){
                 farm.setPlantingButtonsStep(3);
             }
             // Plant 10 button
-            else if(lollipops.nbrOwned >= 10 && farm.plantingButtonsStep < 2){
+            else if(Monero.nbrOwned >= 10 && farm.plantingButtonsStep < 2){
                 farm.setPlantingButtonsStep(2);
             }
             // Plant 1 button
@@ -297,7 +297,7 @@ var buttons = {
             // Plant 1000 button
             if(farm.plantingButtonsStep >= 4){
                 htmlInteraction.showButton("plant_1000_lp");
-                if(lollipops.nbrOwned >= 1000){
+                if(Monero.nbrOwned >= 1000){
                     this.enableButton("plant_1000_lp");
                 }
                 else htmlInteraction.disableButton("plant_1000_lp");
@@ -305,7 +305,7 @@ var buttons = {
             // Plant 100 button
             if(farm.plantingButtonsStep >= 3){
                 htmlInteraction.showButton("plant_100_lp");
-                if(lollipops.nbrOwned >= 100){
+                if(Monero.nbrOwned >= 100){
                     this.enableButton("plant_100_lp");
                 }
                 else htmlInteraction.disableButton("plant_100_lp");
@@ -313,7 +313,7 @@ var buttons = {
             // Plant 10 button
             if(farm.plantingButtonsStep >= 2){
                 htmlInteraction.showButton("plant_10_lp");
-                if(lollipops.nbrOwned >= 10){
+                if(Monero.nbrOwned >= 10){
                     this.enableButton("plant_10_lp");
                 }
                 else htmlInteraction.disableButton("plant_10_lp");
@@ -321,7 +321,7 @@ var buttons = {
             // Plant 1 button
             if(farm.plantingButtonsStep >= 1){
                 htmlInteraction.showButton("plant_1_lp");
-                if(lollipops.nbrOwned >= 1){
+                if(Monero.nbrOwned >= 1){
                     this.enableButton("plant_1_lp");
                 }
                 else htmlInteraction.disableButton("plant_1_lp");
@@ -339,11 +339,11 @@ var buttons = {
         if(hut.shown){
             switch(hut.step){
                 case 0:
-                    htmlInteraction.showButton("hut_throw_lollipops");
-                    if(lollipops.nbrOwned >= 10){
-                        this.enableButton("hut_throw_lollipops");
+                    htmlInteraction.showButton("hut_throw_Monero");
+                    if(Monero.nbrOwned >= 10){
+                        this.enableButton("hut_throw_Monero");
                     }
-                    else htmlInteraction.disableButton("hut_throw_lollipops");
+                    else htmlInteraction.disableButton("hut_throw_Monero");
                 break;
                 case 2:
                     for(var i = 0; i < spells.list.length; i++){
@@ -354,7 +354,7 @@ var buttons = {
                     }
                     // Special surpass button
                     if(quest.maxLandOrder == 7 && yourself.canSurpass == false){
-                        if(lollipops.nbrOwned >= 1000000) this.enableButton("hut_surpass");
+                        if(Monero.nbrOwned >= 1000000) this.enableButton("hut_surpass");
                         else htmlInteraction.disableButton("hut_surpass");
                     }
                 break;
@@ -366,10 +366,10 @@ var buttons = {
         if(wishingWell.shown){
             switch(wishingWell.step){
                 case 0:
-                    if(candies.nbrOwned >= 1){
-                        this.enableButton("wishingWell_throw_candy");
+                    if(hashes.nbrOwned >= 1){
+                        this.enableButton("wishingWell_throw_hash");
                     }
-                    else htmlInteraction.disableButton("wishingWell_throw_candy");
+                    else htmlInteraction.disableButton("wishingWell_throw_hash");
                 break;
             }
         }

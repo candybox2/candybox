@@ -7,9 +7,9 @@ var drops = {
     getText : function(){
         var text = "";
         
-        // Candies found
-        if(quest.candiesFound != 1) text += "You found " + quest.candiesFound + " candies.";
-        else text += "You found 1 candy.";
+        // hashes found
+        if(quest.hashesFound != 1) text += "You found " + quest.hashesFound + " hashes.";
+        else text += "You found 1 hash.";
     
         // Objects found
         for(obj in objects.list){
@@ -25,8 +25,8 @@ var drops = {
     },
     
     gainDrops : function(){
-        // Gain the candies
-        candies.setNbrOwned(candies.nbrOwned + quest.candiesFound);
+        // Gain the hashes
+        hashes.setNbrOwned(hashes.nbrOwned + quest.hashesFound);
         
         // Gain the objects
         for(obj in objects.list){
@@ -39,8 +39,8 @@ var drops = {
     getAllDropsFromList : function(list){
         for(var i = 0; i < list.length; i++){
             switch(list[i].type){
-                case "candies":
-                    quest.setCandiesFound(quest.candiesFound + list[i].param1);
+                case "hashes":
+                    quest.sethashesFound(quest.hashesFound + list[i].param1);
                 break;
                 case "object":
                     if(list[i].param2 == true) this.foundObject(list[i].param1);
