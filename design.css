@@ -127,3 +127,29 @@ button.tooltip:hover span {
 #restartButton {
     margin-left: 30px;
 }
+
+.dark_mode {
+    background-color: #111;
+    color: #F1F1F1;
+}
+
+.dark_button {
+    background-color: #171717;
+    color: #9D9D9D !important;
+}
+
+.dark_button:disabled {
+    background-color: #404040;
+}
+
+.dark_link {
+    color: orange;
+}
+
+.dark_link:visited {
+    color: chocolate;
+}
+
+.dark_table {
+    border-color: #F1F1F1;
+}

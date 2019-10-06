@@ -60,6 +60,8 @@ var candies = {
         else if(this.nbrThrown <= 80) smiley = "...? <tt>:{</tt>";
         else if(this.nbrThrown <= 90) smiley = "...? <tt>:'(</tt>";
         else smiley = "...? <tt>(;_;)</tt>";
+
+        darkMode.check();
         
         if(this.nbrThrown != 1) htmlInteraction.setInnerHtml("candies_thrown", "You threw " + this.nbrThrown + " candies on the ground" + smiley);
         else htmlInteraction.setInnerHtml("candies_thrown", "You threw 1 candy on the ground" + smiley);
