@@ -88,6 +88,9 @@
 		<script type="text/javascript" src="./scripts/load.js"></script>
 		<script type="text/javascript" src="./scripts/cookie.js"></script>
 
+		<!-- Additions for Dark Mode -->
+		<script type="text/javascript" src="./scripts/darkMode.js"></script>
+
 		<!-- The main js file which calls the other ones -->
         <script type="text/javascript" src="./scripts/main.js"></script>
 
@@ -155,7 +158,8 @@
             <div>
                 <button class="home_button" id="saveButton" onclick="save();" style="visibility:visible">Save</button><span id="save"></span>
 				<button class="home_button" id="loadButton" onclick="load();" style="visibility:visible">Load</button><span id="load"></span>
-				<button class="home_button" id="restartButton" onclick="restart();" style="visibility:visible">Restart Game</button><span id="restart"></span><br/><br/>
+				<button class="home_button" id="restartButton" onclick="restart();" style="visibility:visible">Restart Game</button><span id="restart">
+                        <button class="home_button dark_mode_toggle" id="darkModeToggle" onclick="darkMode.toggle();" style="visibility:hidden">Dark Mode: OFF</button></span><br/><br/>
 				<input type="file" style="display:none" id="my_file" name="file" enctype="multipart/form-data" />
                 <span id="candies"></span><br/>
                 <pre id="candies_converter" style="display:none">
