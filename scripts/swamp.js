@@ -30,7 +30,7 @@ var swamp = {
                 text += "\n\n<button id=\"answer\" onClick=\"swamp.setStep(9);\">Next question!</button>";
             break;
             case 9:
-                text = speech.makeSpeechFromText("Third question. Consider 10 days. If I give you 1 candy on the first day, and each other day I give you twice more candies than the previous one, how much candies will I give you on the day number 10?", 29, "");
+                text = speech.makeSpeechFromText("Third question. Consider 10 days. If I give you 1 candy on the first day, and each day I give you twice more candies than the previous day, how much candies will I give you on day number 10?", 29, "");
                 text += answer_form;
             break;
             case 10:
