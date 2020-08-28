@@ -124,7 +124,7 @@ var computer = {
                     htmlInteraction.setInnerHtml("computer_comment_1", "You found 3 chocolate bars !!!!! \\o/ \\o/ \\o/ \\o/");
                 break;
                 case 3:
-                    htmlInteraction.setInnerHtml("computer_comment_1", "There's a bug with the bug, it didn't worked :/");
+                    htmlInteraction.setInnerHtml("computer_comment_1", "There's a bug with the bug, it didn't work :/");
                 break;
             }
         }
