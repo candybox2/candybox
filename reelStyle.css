@@ -31,3 +31,11 @@ body {
 .action_button {
     visibility: hidden;
 }
+
+#candies_eaten {
+    visibility: hidden;
+}
+
+#candies_thrown {
+    visibility: hidden;
+}
