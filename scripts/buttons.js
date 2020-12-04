@@ -60,6 +60,12 @@ var buttons = {
             htmlInteraction.setElementVisibility("openDispensaryBtn_container", true);
         }
         else htmlInteraction.disableButton("openDispensaryBtn");
+
+        if(candies.nbrOwned >= harvestLevel.price){
+            htmlInteraction.showButton("harvestLevelUpBtn");
+            this.enableButton("harvestLevelUpBtn");
+        }
+        else htmlInteraction.disableButton("harvestLevelUpBtn");
     },
     
     checkHomeEnabled : function(){
