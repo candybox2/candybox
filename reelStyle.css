@@ -74,7 +74,45 @@ body {
 }
 
 #candies {
-    font-size: 32px;
+    font-size: 52px;
+    color: #4A4A4A;
+}
+
+.candies_subtext {
+    font-size: 26px;
+    color: #4A4A4A; 
+    margin: 10px 0;
+}
+
+.nug_img {
+    background-image: url("./images/nug.jpg");
+    background-color: #fff;
+    height: 305px;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 35px;
+    background-size: contain;
+
+}
+
+.product_offer_text {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 25px; 
+    margin-bottom: 0;
+    color: #4A4A4A;
+}
+
+.product_offer {
+    background-image: url("./images/product.png");
+    background-color: #fff;
+    height: 225px;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 35px;
+    background-size: contain;
 }
 
 .actionsContainer {
