@@ -46,6 +46,21 @@ var candies = {
     setCandiesPerSecond : function(value){
         this.candiesPerSecond = value;
     },
+
+    addIndoorGrow : function(){
+        this.candiesPerSecond = this.candiesPerSecond + 3;
+        console.log(`candiesPerSecond is now ${this.candiesPerSecond}`);
+    },
+
+    addOutdoorGrow : function(){
+        this.candiesPerSecond = this.candiesPerSecond + 10;
+        console.log(`candiesPerSecond is now ${this.candiesPerSecond}`);
+    },
+
+    addDispensary : function(){
+        this.candiesPerSecond = this.candiesPerSecond + 20;
+        console.log(`candiesPerSecond is now ${this.candiesPerSecond}`);
+    },
     
     setNbrThrown : function(value){
         this.nbrThrown = value;

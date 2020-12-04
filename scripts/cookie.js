@@ -37,96 +37,12 @@ var cookie = {
 	getData : function() {
 		
 		return "" + ((code === undefined || code == null || code.length == "") ? 0 : code) +
-					":" + sword.name +
-					":" + getPhpStuff(sword.specialSword) +
-					":" + sword.specialPower +
 					":" + candies.nbrOwned +
 					":" + candies.nbrThrown +
 					":" + candies.nbrEaten +
 					":" + candies.nbrTotal +
 					":" + candies.candiesPerSecond +
-					":" + getPhpStuff(candiesConverter.activated) +
-					":" + cauldron.bookPage +
-					":" + cauldron.candiesInTheCauldron +
-					":" + cauldron.lollipopsInTheCauldron +
-					":" + chocolateBars.nbrOwned +
-					":" + farm.lollipopsPlanted +
-					":" + farm.currentFlagIndex +
-					":" + farm.plantingButtonsStep +
-					":" + forge.step +
-					":" + getPhpStuff(shop.buy10LollipopsButtonShown) +
-					":" + getPhpStuff(shop.shown) +
-					":" + shop.ticklingStep +
-					":" + shop.clickingOnLollipopStep +
-					":" + hut.step +
-					":" + hut.speech +
-					":" + inventory.magicianHatLetter +
-					":" + lollipops.nbrOwned +
-					":" + lollipops.nbrInStock +
-					":" + lollipops.nbrBought +
-					":" + main.nbrOfSecondsSinceLastMinInterval +
-					":" + main.nbrOfSecondsSinceLastHourInterval +
-					":" + main.nbrOfSecondsSinceLastDayInterval +
-					":" + mountGoblin.basicChestProbability +
-					":" + peacefulForest.basicChestProbability +
-					":" + peacefulForest.poniesEncountered +
-					":" + getPhpStuff(objects.list.key.have) +
-					":" + getPhpStuff(objects.list.hutMap.have) +
-					":" + getPhpStuff(objects.list.wellMap.have) +
-					":" + getPhpStuff(objects.list.swampMap.have) +
-					":" + getPhpStuff(objects.list.boots.have) +
-					":" + getPhpStuff(objects.list.magicianHat.have) +
-					":" + getPhpStuff(objects.list.pinkRing.have) +
-					":" + getPhpStuff(objects.list.forgeMap.have) +
-					":" + getPhpStuff(objects.list.candiesConverter.have) +
-					":" + getPhpStuff(objects.list.plateArmour.have) +
-					":" + getPhpStuff(objects.list.cauldron.have) +
-					":" + getPhpStuff(objects.list.magicalHorn.have) +
-					":" + getPhpStuff(objects.list.hornOfPlenty.have) +
-					":" + getPhpStuff(objects.list.oldAmulet.have) +
-					":" + getPhpStuff(potions.list.health.shown) +
-					":" + getPhpStuff(potions.list.escape.shown) +
-					":" + getPhpStuff(potions.list.berserk.shown) +
-					":" + getPhpStuff(potions.list.fireScroll.shown) +
-					":" + getPhpStuff(potions.list.acidRainScroll.shown) +
-					":" + getPhpStuff(potions.list.teleportScroll.shown) +
-					":" + getPhpStuff(potions.list.earthquakeScroll.shown) +
-					":" + getPhpStuff(potions.list.impInvocationScroll.shown) +
-					":" + getPhpStuff(potions.list.majorHealth.shown) +
-					":" + getPhpStuff(potions.list.invulnerability.shown) +
-					":" + getPhpStuff(potions.list.turtle.shown) +
-					":" + getPhpStuff(potions.list.jelly.shown) +
-					":" + getPhpStuff(potions.list.seed.shown) +
-					":" + getPhpStuff(potions.list.cloning.shown) +
-					":" + getPhpStuff(potions.list.superman.shown) +
-					":" + getPhpStuff(potions.list.gmooh.shown) +
-					":" + potions.list.health.nbrOwned +
-					":" + potions.list.escape.nbrOwned +
-					":" + potions.list.berserk.nbrOwned +
-					":" + potions.list.fireScroll.nbrOwned +
-					":" + potions.list.acidRainScroll.nbrOwned +
-					":" + potions.list.teleportScroll.nbrOwned + 
-					":" + potions.list.earthquakeScroll.nbrOwned +
-					":" + potions.list.impInvocationScroll.nbrOwned +
-					":" + potions.list.majorHealth.nbrOwned +
-					":" + potions.list.invulnerability.nbrOwned +
-					":" + potions.list.turtle.nbrOwned +
-					":" + potions.list.jelly.nbrOwned +
-					":" + potions.list.seed.nbrOwned +
-					":" + potions.list.cloning.nbrOwned +
-					":" + potions.list.superman.nbrOwned +
-					":" + potions.list.gmooh.nbrOwned +
-					":" + quest.maxLandOrder +
-					":" + quest.tiredTime +
-					":" + spells.fasterCandiesFiboPrev +
-					":" + spells.fasterCandiesFiboCurr +
-					":" + swamp.step +
-					":" + tabs.animation +
-					":" + wishingWell.speech +
-					":" + wishingWell.step +
-					":" + getPhpStuff(yourself.canSurpass) +
-					":" + getPhpStuff(developperComputer.won);
-		
+					":" + getPhpStuff(yourself.canSurpass)		
 	},
 	
 	setData : function() {
