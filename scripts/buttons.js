@@ -40,14 +40,15 @@ var buttons = {
         if(candies.nbrOwned >= 13){
             htmlInteraction.showButton("indoorGrowBtn");
             this.enableButton("indoorGrowBtn");
+            htmlInteraction.setElementVisibility("indoorGrowBtn_container", true);
         }
         else htmlInteraction.disableButton("indoorGrowBtn");
-
                 
         // Show the outdoor grow button
         if(candies.nbrOwned >= 20){
             htmlInteraction.showButton("outdoorGrowBtn");
             this.enableButton("outdoorGrowBtn");
+            htmlInteraction.setElementVisibility("outdoorGrowBtn_container", true);
         }
         else htmlInteraction.disableButton("outdoorGrowBtn");
 
@@ -56,9 +57,9 @@ var buttons = {
         if(candies.nbrOwned >= 30){
             htmlInteraction.showButton("openDispensaryBtn");
             this.enableButton("openDispensaryBtn");
+            htmlInteraction.setElementVisibility("openDispensaryBtn_container", true);
         }
         else htmlInteraction.disableButton("openDispensaryBtn");
-        
     },
     
     checkHomeEnabled : function(){

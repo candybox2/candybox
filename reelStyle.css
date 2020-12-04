@@ -87,8 +87,13 @@ body {
     visibility: hidden;
 }
 
-.action_button {
+.action_button_wrapper {
+    display: flex;
     visibility: hidden;
+    align-items: center;
+}
+
+.action_button {
     width: 320px;
     height: 100px;
     margin: 25px 0;
@@ -112,6 +117,29 @@ body {
 }
 
 .action_button:disabled {
+    background-color: #8e8e8e;
+}
+
+.action_modifier_button {
+    display: flex;
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    border: none;
+    color: white;
+    background: #01A8A3;
+    font-size: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+}
+
+.action_modifier_button:focus {
+    outline:0
+}
+
+.action_modifier_button:disabled {
     background-color: #8e8e8e;
 }
 
