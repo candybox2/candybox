@@ -107,6 +107,10 @@ body {
     box-shadow: 0px 4px 4px #00000026;
 }
 
+.action_button:focus {
+    outline:0
+}
+
 .action_button:disabled {
     background-color: #8e8e8e;
 }
