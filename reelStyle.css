@@ -24,6 +24,15 @@ body {
     width: 100%;
 }
 
+.wmHeader {
+    background-image: url("./images/wmheader.png");
+    background-color: #fff;
+    height: 90px;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 35px;
+}
+
 .bannerAd {
     background-image: url("./images/bannerAd.jpeg");
     background-color: #fff;
