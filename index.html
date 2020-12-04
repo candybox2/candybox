@@ -6,7 +6,7 @@
 <html>
 
 <head>
-    <title>Candy box !</title>
+    <title>Kief box !</title>
     <meta name="title" content="Candy Box">
     <meta name="keywords"
         content="Candy,Box,Candybox,Original,Legacy,1,Candybox 1,Candy Box 1,Candy Box,game,ascii,save">
@@ -31,9 +31,6 @@
     <!-- Buttons -->
     <script type="text/javascript" src="./scripts/buttons.js"></script>
 
-    <!-- Harvest & Crop related scripts -->
-    <script type="text/javascript" src="./scripts/harvestLevel.js"></script>
-
     <!-- Shop -->
     <script type="text/javascript" src="./scripts/shop.js"></script>
     <script type="text/javascript" src="./scripts/sword.js"></script>
@@ -41,6 +38,8 @@
     <!-- Inventory -->
     <script type="text/javascript" src="./scripts/inventory.js"></script>
 
+    <!-- HarvestLevel -->
+    <script type="text/javascript" src="./scripts/harvestLevel.js"></script>
     <!-- Quest stuff -->
     <script type="text/javascript" src="./scripts/damage.js"></script>
     <script type="text/javascript" src="./scripts/drops.js"></script>
@@ -100,373 +99,107 @@
     <script type="text/javascript" src="./scripts/main.js"></script>
 
     <!-- Design -->
-    <link rel="stylesheet" type="text/css" href="./design.css" />
+    <link rel="stylesheet" type="text/css" href="./reelStyle.css" />
 </head>
 
 <body>
-
-
-    <button class="toggle" style="visibility:hidden"></button>
-    <!-- ******** -->
-    <!-- TAB LIST -->
-    <!-- ******** -->
-
-    <div id="tabBar" style="display:none">
-        <ul id="tabs">
-            <li><button class="tab-0" tab="tab_candy_box">Candy box</button></li>
-            <li><button class="tab-1" tab="tab_inventory">Inventory</button></li>
-            <li><button class="tab-2" tab="tab_quest">Quest</button></li>
-            <li><button class="tab-3" tab="tab_cauldron">Cauldron</button></li>
-            <li><button class="tab-4" tab="tab_computer">Computer</button></li>
-        </ul>
-    </div>
-
-    <!-- *************** -->
-    <!-- TAB : CANDY BOX -->
-    <!-- *************** -->
-
-    <div id="tab_candy_box">
-
-        <!-- *************************************** -->
-        <!-- Right panel : the farm and some objects -->
-
-        <div style="float:right">
-            <span>
-                <span id="farm" style="visibility:hidden">
-                    <pre>
-                 _.-^-._     .'''.
-              .-'   _   '-. | <span id="farm_big_lollipop" onclick="farm.clickedOnTheBigLollipop();"> ~ </span> |
-             /     |_|     \ '._.'
-            /               \  |
-           /|     _____     |\ |
-            |    |==|==|    |  |
-|---|---|---|    |--|--|    |  |
-|---|---|---|    |==|==|    |  |
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-        
-        The lollipop farm
-        
-</pre>
-
-                    <span id="lp_planted"></span><br />
-                    <span id="lp_production"></span><br />
-                    <span id="lp_buttons"></span><br /><br />
-
-                </span>
-
-            </span>
-            <br class="clear" />
+    <div class="pageWrapper">
+        <div class="wmHeader">
         </div>
+        <div class="bannerAd">
+        </div>
+        <div class="contentWrapper">
 
-        <!-- ***************************************** -->
-        <!-- Left panel : some stats, and the merchant -->
-
-        <div>
-            <button class="home_button" id="saveButton" onclick="save();" style="visibility:visible">Save</button><span
-                id="save"></span>
-            <button class="home_button" id="loadButton" onclick="load();" style="visibility:visible">Load</button><span
-                id="load"></span>
-            <button class="home_button" id="restartButton" onclick="restart();" style="visibility:visible">Restart
-                Game</button><span id="restart">
-                <button class="home_button dark_mode_toggle" id="darkModeToggle" onclick="darkMode.toggle();"
-                    style="visibility:hidden">Dark Mode: OFF</button></span><br /><br />
-            <input type="file" style="display:none" id="my_file" name="file" enctype="multipart/form-data" />
-            <span id="candies"></span><br />
-            <pre id="candies_converter" style="display:none">
-  |
-  |  <input type="checkbox" id="candies_converter_checkbox" onclick="candiesConverter.checkedValueChange();"/> Candies converter
-  V
-</pre>
-            <span id="lollipops" style="visibility:hidden"></span><br />
-            <span id="chocolate_bars" style="visibility:hidden"></span><br /><br />
-
-            <span id="candies_eaten" style="visibility:hidden"></span><br />
-            <span id="candies_thrown" style="visibility:hidden"></span><br />
-            <span id="dispensaries_owned" style="visibility:hidden"></span><br />
-            <br />
-
-            <button class="home_button" id="eat" onclick="candies.eat();" style="visibility:hidden">Smoke all the
-                weed!</button><br />
-            <button class="home_button" id="throw_10" onclick="candies.throw10Candies();" style="visibility:hidden">Sell
-                10 grams to your buddy</button><br />
-            <button class="home_button" id="encrust" onclick="sword.encrust();" style="visibility:hidden;">Use 101
-                candies to encrust your diamond sword and make it even more powerful</button>
-            <button class="home_button" id="polish" onclick="sword.polish();"
-                style="visibility:hidden; display:none">Use 30 lollipops to make lollipop powder to polish your candy
-                sword and make it awesome (and more powerful)</button>
-            <button class="home_button" id="coat" onclick="sword.coat();" style="visibility:hidden; display:none">Use 1
-                chocolate bar to coat your sword with melted chocolate and make it incredibly powerful</button><br />
-
-            <pre id="shop" style="visibility:hidden; float:left;">
-        <span onclick="shop.clickedOnHat();">.---.</span>
-       <span onclick="shop.clickedOnHat();">|   '.|  __</span>
-       <span onclick="shop.clickedOnHat();">| ___.--'  )</span>
-     _.-'_` _%%%_/
-  .-'%%% a: a %%%
-      %%  L   %%_
-      _%\'-' |  /-.__
-   .-' / )--' #/     '\
-  /'  /  /---'(    :   \
- /   |  /( /|##|  \     |
-/   ||# | / | /|   \    \
-|   ||##| I \/ |   |   _|
-|   ||: | o  |#|   |  / |
-|   ||  / I  |:/  /   |/
-|   ||  | o   /  /    /
-|   \|  | I  |. /    /
- \  /|##| o  |.|    /
-  \/ \::|/\_ /  ---'|
-  
-   The candy merchant
-    
-<span id="merchant_speech"></span>
-</pre>
-
-            <div style="float:left;">
-
-                <pre id="lollipop" style="visibility:hidden">
-    _
-   (<span onclick="shop.clickedOnLollipop();">_</span>)  <button class="home_button" id="buy_1_lollipop" onclick="lollipops.buy1();"></button>
-    |   <span id="lollipops_stock_shortage" style="visibility:hidden">Stock shortage : we will be restocked soon.</span>
-    |   <button class="home_button" id="buy_10_lollipops" onclick="lollipops.buy10();" style="visibility:hidden"></button>
-    |</pre>
-
-                <pre id="sword_with_button"></pre>
-
-                <pre id="products_after_swords" style="visibility:hidden; display:none">
-
-    {}
-    )(   <button class="home_button" id="buy_health_potion" onclick="potions.buyPotion(potions.list.health, 600);">Buy a health potion (600 candies)</button>
-   (__)
-   
-    ()
-    ||   <button class="home_button" id="buy_escape_potion" onclick="potions.buyPotion(potions.list.escape, 150);">Buy an escape potion (150 candies)</button>
-   (__)
-
-    ,------.
-   (_\      \
-      |   c  |
-      | n    |  <button class="home_button" id="buy_scroll" onclick="potions.buyScroll(400);">Buy a scroll (400 candies)</button>
-     _|   d  |
-    (_/______/
-</pre>
-
+            <div class="textContainer">
+                <div class="textColumn">
+                    <span id="candies_eaten" class="actionText"></span>
+                    <span id="candies_thrown" class="actionText"></span>
+                    <div id="indoorGrowBox" class="actionText"><img src="./icons/indoorGrow.png" width="35" height="35">
+                        <span id="indoorGrow"></span>
+                    </div>
+                    <div id="outdoorGrowBox" class="actionText"><img src="./icons/outdoorGrow.png" width="35"
+                            height="35">
+                        <span id="outdoorGrow"></span>
+                    </div>
+                    <div id="dispensaryBox" class="actionText"><img src="./icons/dispensary.png" width="35" height="35">
+                        <span id="dispensary"></span>
+                    </div>
+                </div>
             </div>
 
+            <div class="middleContainer">
+                <div class="counter">
+                    <input type="file" style="display:none" id="my_file" name="file" enctype="multipart/form-data" />
+                    <span id="candies"></span><br />
+                    <p class="candies_subtext"><i>Do you think the neighbors are suspicious yet?</i></p>
+                </div>
+                <div style="display: flex; justify-content: center; flex-direction: column;">
+                    <div class="nug_img" alt="sweet sweet nug"></div>
+                    <span id="gps" style="text-align: center;"></span><br />
+                </div>
+                <div>
+                    <p class="product_offer_text">This deal expires in 15
+                        seconds...</p>
+                    <div class="product_offer"></div>
+                </div>
+            </div>
+            <div class="actionsContainer">
 
+                <!-- Harvest Level Up-->
+                <div class="action_button_wrapper" style="margin-right: 185px" id="harvestLevelUpBtn_container">
+                    <button id="harvestLevelUpBtn" class="action_button"
+                        onclick="harvestLevel.buttonAction('harvestLevelUpBtn')">
+                        Level Up Harvesting Skills <br> cost 1500
+                    </button>
+                </div>
+                <!-- Harvest Level Up End -->
 
-        </div> <!-- Close the left panel -->
-        <br class="clear" />
-    </div> <!-- Close the candy box tab -->
+                <div class="action_button_wrapper" id="eat_container">
+                    <button id="eat" class="action_button" onclick="candies.eat()">
+                        Smoke all the weed!
+                    </button>
+                    <div id="action_modifier_button" class="action_modifier_button" style="margin-left: 20px">
+                        <p>+3</p>
+                    </div>
+                </div>
 
-    <!-- *************** -->
-    <!-- TAB : INVENTORY -->
-    <!-- *************** -->
+                <div class="action_button_wrapper" id="throw_10_container">
+                    <button id="throw_10" class="action_button" onclick="candies.throw10Candies()">
+                        Sell 10 grams to your buddy
+                    </button>
+                    <div id="action_modifier_button" class="action_modifier_button" style="margin-left: 20px">
+                        <p>+3</p>
+                    </div>
+                </div>
 
-    <div id="tab_inventory">
-        <div style="float:left">
-            <table style="margin-right:10px;">
-                <tr>
-                    <td rowspan="4">
-                        <pre id="sword_without_button"></pre>
-                    </td>
-                    <td><span class="tooltip" id="inventory_key"></span></td>
-                    <td><span class="tooltip" id="inventory_plate_armour"></span></td>
-                    <td><span class="tooltip" id="inventory_horn_of_plenty"></td>
-                    <td><span class="tooltip" id="inventory_swamp_map"></span></td>
-                </tr>
-                <tr>
-                    <td><span class="tooltip" id="inventory_boots"></span></td>
-                    <td><span class="tooltip" id="inventory_candies_converter"></span></td>
-                    <td><span class="tooltip" id="inventory_old_amulet"></td>
-                    <td><span class="tooltip" id="inventory_hut_map"></span></td>
-                </tr>
-                <tr>
-                    <td><span class="tooltip" id="inventory_magician_hat"></span></td>
-                    <td><span class="tooltip" id="inventory_cauldron"></span></td>
-                    <td><span class="tooltip" id="inventory_won1"></span></td>
-                    <td><span class="tooltip" id="inventory_forge_map"></span></td>
-                </tr>
-                <tr>
-                    <td><span class="tooltip" id="inventory_pink_ring"></span></td>
-                    <td><span class="tooltip" id="inventory_magical_horn"></span></td>
-                    <td><span class="tooltip" id="inventory_won2"></span></td>
-                    <td><span class="tooltip" id="inventory_well_map"></span></td>
-                </tr>
-            </table>
+                <div class="action_button_wrapper" id="indoorGrowBtn_container">
+                    <button id="indoorGrowBtn" class="action_button" onclick="candies.addIndoorGrow()">
+                        Build indoor grow
+                    </button>
+                    <div id="action_modifier_button" class="action_modifier_button" style="margin-left: 20px">
+                        <p>+3</p>
+                    </div>
+                </div>
 
-            <span id="hardmode" style="visibility:hidden">If you want more challenge,<br />you can play the hard mode <a
-                    href="https://web.archive.org/web/20170610192852/http://candies-hardmode.aniwey.net/">here
-                    !</a></span>
-        </div>
-        <div style="overflow:auto">
+                <div class="action_button_wrapper" id="outdoorGrowBtn_container">
+                    <button id="outdoorGrowBtn" class="action_button" onclick="candies.addOutdoorGrow()">
+                        Build outdoor grow
+                    </button>
+                    <div class="action_modifier_button" style="margin-left: 20px">
+                        <p>+10</p>
+                    </div>
+                </div>
 
-            <span id="map_system">
-
-                <button class="home_button" id="go_to_swamp" onclick="swamp.enter();"
-                    style="visibility:hidden; display:none">Go to the Swampy Swamp</button>
-                <button class="home_button" id="go_to_hut" onclick="hut.enter();"
-                    style="visibility:hidden; display:none">Go to the sorceress' hut</button>
-                <button class="home_button" id="go_to_forge" onclick="forge.enter();"
-                    style="visibility:hidden; display:none">Go to the forge</button>
-                <button class="home_button" id="go_to_well" onclick="wishingWell.enter();"
-                    style="visibility:hidden; display:none">Go to the wishing well</button>
-
-                <pre id="map"></pre>
-
-            </span>
-
-        </div>
-        <br class="clear" />
-    </div> <!-- End of the inventory tab -->
-
-    <!-- *********** -->
-    <!-- TAB : QUEST -->
-    <!-- *********** -->
-
-    <div id="tab_quest">
-
-        <div id="tab_quest_left_panel" style="float:left">
-
-            <pre id="quest_potions"></pre>
-            <pre id="quest_potions_countdowns" style="visibility:hidden"></pre>
-
+                <div class="action_button_wrapper" id="openDispensaryBtn_container">
+                    <button id="openDispensaryBtn" class="action_button" onclick="candies.addDispensary()">Open a
+                        dispensary</button>
+                    <div class="action_modifier_button" style="margin-left: 20px">
+                        <p>+20</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div style="float:left">
-
-            <span id="sword"></span><br />
-            <span id="mood"></span><br />
-
-            <span id="quest_form">
-                <button class="home_button" id="quest_button" onclick="quest.begin(true);">Go for an epic
-                    quest!</button> <!-- "Go for an epic quest !" -->
-                Destination : <select id="quest_destination"></select> <!-- Quest list -->
-            </span>
-
-
-            <pre id="quest" style="visibility:hidden;"></pre>
-
-        </div>
-        <br class="clear" />
-    </div> <!-- Close the quest tab -->
-
-    <!-- ************** -->
-    <!-- TAB : CAULDRON -->
-    <!-- ************** -->
-
-    <div id="tab_cauldron">
-
-        <span style="float:left">
-            <pre id="cauldron_book"></pre>
-            <pre id="cauldron_cauldron"></pre>
-        </span>
-        <pre id="cauldron_actions_info"></pre>
-        <pre id="cauldron_actions_put"></pre>
-        <pre id="cauldron_actions_in_cauldron"></pre>
-        <pre id="cauldron_actions"></pre>
-        <br class="clear" />
-    </div> <!-- End of the cauldron tab -->
-
-    <!-- ************** -->
-    <!-- TAB : COMPUTER -->
-    <!-- ************** -->
-
-    <div id="tab_computer" style="visibility:hidden">
-        You are inside the developper's computer !<br />
-        This computer is able to affect the game in the strangest ways...<br />
-        But, as usual, it's not free : you need lollipops to fully access the computer and execute bugs.<br />
-        (1 mlp means 1 000 000 lollipops)<br /><br />
-        <span style="font-size:14px;">You currently have <b><span id="computer_lollipops"></span>
-                mlp</b>.</span><br /><br />
-        <button id="computer_bug_1" onclick="computer.bug1();" style="visibility:hidden">Make a level 1 bug (1
-            mlp)</button> <span id="computer_comment_1"></span><br />
-        <button id="computer_bug_2" onclick="computer.bug2();" style="visibility:hidden">Make a level 2 bug (10
-            mlp)</button> <span id="computer_comment_2"></span><br />
-        <button id="computer_bug_3" onclick="computer.bug3();" style="visibility:hidden">Make a level 3 bug (100
-            mlp)</button> <span id="computer_comment_3"></span><br />
-        <button id="computer_bug_4" onclick="computer.bug4();" style="visibility:hidden">Make a level 4 bug (1000
-            mlp)</button> <span id="computer_comment_4"></span><br />
-        <button id="computer_bug_5" onclick="computer.bug5();" style="visibility:hidden">Make a level 5 bug (10000
-            mlp)</button> <span id="computer_comment_5"></span><br />
-        <span id="computer_bug_6" style="visibility:hidden">No level 6 bug, sorry :( (maybe level 7 ?)</span><br />
-        <span id="computer_bug_7" style="visibility:hidden">Crap, no level 7 bug either :s Don't give up !</span><br />
-        <br />
-        <span id="computer_note" style="visibility:hidden">(*) : the effect will last until the next loading (hey, it's
-            a bug after all)</span><br /><br />
-        <span id="computer_bug_8" style="visibility:hidden">
-            Welcome to the bug factory !<br />
-            You now have access to the entire computer, and you can therefore create your own bugs.<br /><br />
-            Randomize...<br />
-            <button onclick="candies.setNbrOwned(random.pure());">candies</button>
-            <button onclick="candies.setNbrThrown(random.pure());">candies thrown</button>
-            <button onclick="candies.setNbrEaten(random.pure());">candies eaten</button>
-            <button onclick="candies.setCandiesPerSecond(random.pure());">candies per second</button><br />
-            <button onclick="lollipops.setNbrOwned(random.pure());">lollipops</button>
-            <button onclick="farm.setLollipopsPlanted(random.pure());">lollipops planted</button><br />
-            <button onclick="chocolateBars.setNbrOwned(random.pure());">chocolate bars</button><br />
-            <button
-                onclick="potions.setPotionNbrOwned(potions.list.impInvocationScroll, random.pure()); potions.setPotionNbrOwned(potions.list.earthquakeScroll, random.pure()); potions.setPotionNbrOwned(potions.list.teleportScroll, random.pure()); potions.setPotionNbrOwned(potions.list.fireScroll, random.pure()); potions.setPotionNbrOwned(potions.list.acidRainScroll, random.pure()); potions.updateOnPage();">scrolls</button>
-            <button
-                onclick="potions.setPotionNbrOwned(potions.list.gmooh, random.pure()); potions.setPotionNbrOwned(potions.list.superman, random.pure()); potions.setPotionNbrOwned(potions.list.cloning, random.pure()); potions.setPotionNbrOwned(potions.list.seed, random.pure()); potions.setPotionNbrOwned(potions.list.jelly, random.pure()); potions.setPotionNbrOwned(potions.list.turtle, random.pure()); potions.setPotionNbrOwned(potions.list.invulnerability, random.pure()); potions.setPotionNbrOwned(potions.list.majorHealth, random.pure()); potions.setPotionNbrOwned(potions.list.berserk, random.pure()); potions.setPotionNbrOwned(potions.list.escape, random.pure()); potions.setPotionNbrOwned(potions.list.health, random.pure()); potions.updateOnPage();">potions</button>
-            <button
-                onclick="sword.setName(random.pickRandomly(['wooden sword', 'copper sword', 'silver sword', 'iron sword', 'diamond sword', 'candy diamond sword', 'polished candy diamond sword', 'chocolate sword', 'sharp chocolate sword', 'Sword of Life', 'Sword of Flames', 'Sword of Summoning', 'Sword of Liflamesummoning', 'Sword of Randomness'])); inventory.updateOnPage();">sword</button>
-            <button onclick="sword.setSpecialPower(random.pure()); inventory.updateOnPage();">sword
-                power</button><br /><br />
-            Add a bug...<br />
-            <button onclick="computer.background();">background color (*)</button>
-            <button onclick="computer.textColor();">text color (*)</button>
-            <button onclick="computer.size();">text size (*)</button>
-            <br />
-            <button onclick="computer.addTab();">add a tab (dangerous) (*)</button>
-            <button onclick="document.body.contentEditable='true';document.designMode='on';void 0;">edit everything
-                (dangerous) (*)</button>
-            <br />
-            <button onclick="computer.random();">PURE RANDOM (seriously, don't save after this one)</button>
-        </span>
-
-    </div>
-
-    <div style="position: fixed; bottom: 0px; left: 10px; font-size: 12px;">
-        <br /><br /><br />
-        <a href="#" onclick='$("#faqs").toggle();'>F.A.Q.</a> -
-        <a target="_blank" href="./credits.html">credits</a> -
-        <a target="_blank" href="https://github.com/candybox2/candybox">source code</a> -
-        <b><a target="_blank" href="http://candybox2.github.io">Candy Box 2</a></b>
-        <br /><br />
-        <div id="faqs" style="display:none;">
-            <a target="_blank" href="./faq.html">english F.A.Q.</a> -
-            <a target="_blank" href="./cn/faq.html">chinese F.A.Q.</a> -
-            <a target="_blank" href="./cn-trad/faq.html">chinese (traditional) F.A.Q.</a> -
-            <a target="_blank" href="./hr/faq.html">croatian F.A.Q.</a> -
-            <a target="_blank" href="./hr/">croatian glossary</a> -
-            <a target="_blank" href="./cz/faq.html">czech F.A.Q.</a> -
-            <a target="_blank" href="./da/faq.html">dani</a><a target="_blank" href="da/faq2.html">sh F.A.Q.</a> -
-            <a target="_blank" href="./nl/faq.html">dutch F.A.Q.</a> -
-            <a target="_blank" href="./fr/faq.html">french F.A.Q.</a> -
-            <a target="_blank" href="./fr/">french glossary</a> -
-            <a target="_blank" href="./fi/faq.html">finnish F.A.Q.</a> -
-            <a target="_blank" href="./de/faq.html">german F.A.Q.</a> -
-            <a target="_blank" href="./de/">german glossary</a> -
-            <a target="_blank" href="./hu/faq.html">hungarian F.A.Q.</a> -
-            <a target="_blank" href="./id/faq.html">indonesian F.A.Q.</a> -
-            <a target="_blank" href="./it/faq.html">italian F.A.Q.</a> -
-            <a target="_blank" href="./it/">italian glossary</a> -
-            <a target="_blank" href="./jp/faq.html">japanese F.A.Q.</a> -
-            <a target="_blank" href="./pl/faq.html">polish F.A.Q.</a> -
-            <a target="_blank" href="./pl/">polish glossary</a> -
-            <a target="_blank" href="./pt/faq.html">portuguese F.A.Q.</a> -
-            <a target="_blank" href="./pt/">portuguese glossary</a> -
-            <a target="_blank" href="./si/faq.html">slovenian F.A.Q.</a> -
-            <a target="_blank" href="./ru/faq.html">russian F.A.Q.</a> -
-            <a target="_blank" href="./ru/">russian glossary</a> -
-            <a target="_blank" href="./es/faq.html">spanish F.A.Q.</a> -
-            <a target="_blank" href="./es/index.html">spanish glossary</a> -
-            <a target="_blank" href="./esla/faq.html">spanish (latinoamerica) F.A.Q.</a> -
-            <a target="_blank" href="./tr/faq.html">turkish F.A.Q.</a> -
-            <a target="_blank" href="./ua/faq.html">ukrainian F.A.Q.</a> -
-            <a target="_blank" href="./ua/">ukrainian glossary</a> -
-        </div>
     </div>
 
     <!-- Loading and saving -->
