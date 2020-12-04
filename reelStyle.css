@@ -1,0 +1,155 @@
+body {
+    background-color: #FFFFFF;
+    overflow-y:scroll;
+}
+
+#tabs {
+	text-align: center;
+	margin: auto;
+	padding: 0px;
+	margin-top: 5px;
+    margin-bottom:6px;
+}
+
+#tabs li {
+	list-style: none;
+	display: inline;
+}
+
+#tabs li button {
+    color:#282e32;
+	padding:8px 14px 8px 14px;
+	text-decoration:none;
+	font-size:9px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	text-transform:uppercase;
+	border:1px solid #464c54;
+}
+
+#tabs li button.active {
+	background-color:#f8f2b1;
+	color:#282e32;
+	border:1px solid #464c54;
+}
+
+#tab_candy_box {
+    display:block;
+}
+
+#tab_candy_box, #tab_quest, #tab_inventory, #tab_cauldron {
+    border: 2px solid transparent;
+}
+
+#tab_quest, #tab_inventory, #tab_cauldron { 
+    display:none; 
+}
+
+#my_file {
+    display: none;
+}
+
+.clear {
+	clear:both;
+}
+
+button {
+    border:1px solid #464c54;
+    margin-bottom:2px;
+    padding:2px;
+}
+
+button:hover {
+    border:2px solid #464c54;
+    padding:1px;
+}
+
+table {
+    border-collapse:collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+    padding:3px;
+}
+
+.tooltip {
+    text-decoration:none;
+}
+
+.tooltip span {
+    display: none;
+    white-space: normal; /* To force breaklines in tooltips */
+    text-align: left;
+}
+
+.tooltip:hover {
+    border: 0;
+    position: relative;
+    z-index: 500;
+    text-decoration: none;
+}
+
+.tooltip:hover span {
+    font-style: normal;
+    display: block;
+    position: absolute;
+    padding: 5px;
+    margin: 5px;
+    color: #000;
+    border: 1px solid #000000;
+    background: #ffffff;
+    font-family: monospace;
+}
+
+span.tooltip:hover span {
+    left: 70px;
+    width: 150px;
+}
+
+button.tooltip:hover span {
+    width: 300px;
+}
+
+.toggle {
+    font-size: 9px;
+    font-family: monospace;
+    background-color: white;
+    position: absolute;
+    top:5px; 
+    right:5px;
+}
+
+#tab_quest_left_panel {
+    margin-right:15px;
+}
+
+#restartButton {
+    margin-left: 30px;
+}
+
+.dark_mode {
+    background-color: #111;
+    color: #F1F1F1;
+}
+
+.dark_button {
+    background-color: #171717;
+    color: #9D9D9D !important;
+}
+
+.dark_button:disabled {
+    background-color: #404040;
+}
+
+.dark_link {
+    color: orange;
+}
+
+.dark_link:visited {
+    color: chocolate;
+}
+
+.dark_table {
+    border-color: #F1F1F1;
+}
