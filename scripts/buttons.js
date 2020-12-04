@@ -21,21 +21,6 @@ var buttons = {
         }
     },
     
-    checkEatAndThrowButtons : function(){
-        // Show the eat button
-        if(candies.nbrOwned >= 1){
-            htmlInteraction.showButton("eat");
-            this.enableButton("eat");
-        }
-        else htmlInteraction.disableButton("eat");
-        
-        // Show the throw button
-        if(candies.nbrOwned >= 10){
-            htmlInteraction.showButton("throw_10");
-            this.enableButton("throw_10");
-        }
-        else htmlInteraction.disableButton("throw_10");
-    },
     
     checkHomeEnabled : function(){
         this.checkEatAndThrowButtons();

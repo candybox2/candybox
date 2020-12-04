@@ -63,7 +63,7 @@ var cauldron = {
             tabs.enable(3);
         
             // And we update everything on page
-            this.updateCauldronOnPage();
+            // this.updateCauldronOnPage();
             this.updateBookOnPage();
             this.updateActionsInfoOnPage();
             this.updateActionsPutOnPage();
@@ -303,7 +303,7 @@ var cauldron = {
             }
         }
         
-        this.updateCauldronOnPage();
+        // this.updateCauldronOnPage();
     },
     
     drawActionsInfo : function(){
@@ -699,11 +699,11 @@ var cauldron = {
         this.updateActionsInCauldronOnPage();
     },
     
-    updateCauldronOnPage : function(){
-        this.resetCauldronText();
-        this.drawCauldron();
-        htmlInteraction.setInnerHtml("cauldron_cauldron", this.textCauldron.join(""));
-    },
+    // updateCauldronOnPage : function(){
+    //     this.resetCauldronText();
+    //     this.drawCauldron();
+    //     htmlInteraction.setInnerHtml("cauldron_cauldron", this.textCauldron.join(""));
+    // },
     
     updateBookOnPage : function(){
         this.resetBookText();

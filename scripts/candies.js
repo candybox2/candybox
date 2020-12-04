@@ -6,6 +6,7 @@ var candies = {
     nbrThrown : 0,
     nbrTotal : 0, // The total number we earned in all times
     candiesPerSecond : 1,
+    dispensary: 0,
     
     // Functions
     onload : function(){
@@ -28,22 +29,37 @@ var candies = {
         }
         
         this.nbrOwned = value;
-        if(this.nbrOwned != 1) htmlInteraction.setInnerHtml("candies", "You have " + this.nbrOwned + " candies!");
-        else htmlInteraction.setInnerHtml("candies", "You have 1 candy!");
-        buttons.checkCandies();
-        shop.check();
-        cauldron.updateActionsInfoOnPage();
+        if(this.nbrOwned != 1) htmlInteraction.setInnerHtml("candies", "You have " + this.nbrOwned + " grams!");
+        else htmlInteraction.setInnerHtml("candies", "You have 1 gram!");
+        // buttons.checkCandies();
+        // shop.check();
+        // cauldron.updateActionsInfoOnPage();
     },
     
     setNbrEaten : function(value){
         this.nbrEaten = value;
-        if(this.nbrEaten != 1) htmlInteraction.setInnerHtml("candies_eaten", "You have eaten " + this.nbrEaten + " candies!");
-        else htmlInteraction.setInnerHtml("candies_eaten", "You have eaten 1 candy!");
+        if(this.nbrEaten != 1) htmlInteraction.setInnerHtml("candies_eaten", "You have smoked " + this.nbrEaten + " grams!");
+        else htmlInteraction.setInnerHtml("candies_eaten", "You have smoked 1 gram!");
         htmlInteraction.setElementVisibility("candies_eaten", true);
     },
     
     setCandiesPerSecond : function(value){
         this.candiesPerSecond = value;
+    },
+
+    addIndoorGrow : function(){
+        this.candiesPerSecond = this.candiesPerSecond + 3;
+        console.log(`candiesPerSecond is now ${this.candiesPerSecond}`);
+    },
+
+    addOutdoorGrow : function(){
+        this.candiesPerSecond = this.candiesPerSecond + 10;
+        console.log(`candiesPerSecond is now ${this.candiesPerSecond}`);
+    },
+
+    addDispensary : function(){
+        this.candiesPerSecond = this.candiesPerSecond + 20;
+        console.log(`candiesPerSecond is now ${this.candiesPerSecond}`);
     },
     
     setNbrThrown : function(value){
@@ -54,7 +70,7 @@ var candies = {
         else if(this.nbrThrown <= 20) smiley = "...";
         else if(this.nbrThrown <= 30) smiley = "...?";
         else if(this.nbrThrown <= 40) smiley = "...? <tt>:|</tt>";
-        else if(this.nbrThrown <= 50) smiley = "...? <tt>:/</tt>";
+        else if(this.nbrThrown <= 50) this.setDispensaryCount(this.dispensary + 1);
         else if(this.nbrThrown <= 60) smiley = "...? <tt>:(</tt>";
         else if(this.nbrThrown <= 70) smiley = "...? <tt>:[</tt>";
         else if(this.nbrThrown <= 80) smiley = "...? <tt>:{</tt>";
@@ -63,8 +79,8 @@ var candies = {
 
         darkMode.check();
         
-        if(this.nbrThrown != 1) htmlInteraction.setInnerHtml("candies_thrown", "You threw " + this.nbrThrown + " candies on the ground" + smiley);
-        else htmlInteraction.setInnerHtml("candies_thrown", "You threw 1 candy on the ground" + smiley);
+        if(this.nbrThrown != 1) htmlInteraction.setInnerHtml("candies_thrown", "You sold " + this.nbrThrown + " grams to your buddy" + smiley);
+        else htmlInteraction.setInnerHtml("candies_thrown", "You sold 1 gram to your buddy" + smiley);
         htmlInteraction.setElementVisibility("candies_thrown", true);
     },
     
@@ -73,6 +89,13 @@ var candies = {
             this.setNbrOwned(this.nbrOwned - 10);
             this.setNbrThrown(this.nbrThrown + 10);
         }
+    },
+
+    setDispensaryCount : function(value){
+        this.nbrOwned = value;
+        if(this.nbrOwned != 1) htmlInteraction.setInnerHtml("dispensaries_owned", "You have " + this.nbrOwned + " dispensaries!");
+        else htmlInteraction.setInnerHtml("dispensaries_owned", "You've opened your first dispensary!");
+        htmlInteraction.setElementVisibility("dispensaries_owned", true);
     }
   
 };

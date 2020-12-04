@@ -12,28 +12,8 @@ var main = {
         htmlInteraction.enableButtonClass("home_button");
         
         // Various loads
-        peacefulForest.onload();
-        mountGoblin.onload();
-        underwaterCave.onload();
-        castleEntrance.onload();
-        castleStairs.onload();
-        castleKeep.onload();
-        cowLevel.onload();
-        sea.onload();
-        desert.onload();
-        hell.onload();
-        yourself.onload();
-        chuckNorris.onload();
-        developperGarden.onload();
-        developperMoat.onload();
-        developperComputer.onload();
-        shop.onload();
+     
         candies.onload();
-        spells.onload();
-        potions.onload();
-        sword.onload();
-        cauldron.onload();
-        tabs.onload();
         
         // Loading after various loads
         quest.onloadAfter(); // This must be call after other loads because it needs the different quests to be loaded
@@ -66,8 +46,8 @@ var main = {
         else candies.setNbrOwned(candies.nbrOwned + candies.candiesPerSecond*3);
         
         // Quest tired time
-        if(objects.list.pinkRing.have == false) quest.setTiredTime(quest.tiredTime - 1);
-        else quest.setTiredTime(quest.tiredTime - 2);
+        // if(objects.list.pinkRing.have == false) quest.setTiredTime(quest.tiredTime - 1);
+        // else quest.setTiredTime(quest.tiredTime - 2);
         
         // Lollipop farm
         if(farm.productionDelayType == "sec"){

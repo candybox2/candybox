@@ -389,7 +389,7 @@ var quest = {
         
         // We're tired after this quest
         if(this.things[index].hp < this.things[index].max_hp) this.setTiredFound(this.tiredFound + 200 * (1 - (this.things[index].hp / this.things[index].max_hp)));
-        if(this.escaping == false) this.setTiredTime(Math.floor(this.tiredFound));
+        // if(this.escaping == false) this.setTiredTime(Math.floor(this.tiredFound));
         
         // Nothing found anymore
         this.setCandiesFound(0);
@@ -397,23 +397,23 @@ var quest = {
         for(obj in objects.list) objects.list[obj].found = false;
     },
     
-    defineMood : function(){
-        if(this.tiredTime == 0) htmlInteraction.setInnerHtml("mood", "You're in the pink! Ready for fighting!");
-        else htmlInteraction.setInnerHtml("mood", "You're tired. You have to wait before doing another quest. Waiting time : " + this.tiredTime);
-        htmlInteraction.setElementVisibility("mood", true);
-    },
+    // defineMood : function(){
+    //     if(this.tiredTime == 0) htmlInteraction.setInnerHtml("mood", "You're in the pink! Ready for fighting!");
+    //     else htmlInteraction.setInnerHtml("mood", "You're tired. You have to wait before doing another quest. Waiting time : " + this.tiredTime);
+    //     htmlInteraction.setElementVisibility("mood", true);
+    // },
     
     setCandiesFound : function(value){
         this.candiesFound = value;
     },
     
-    setTiredTime : function(value){
-        if(value < 0) value = 0;
+    // setTiredTime : function(value){
+    //     if(value < 0) value = 0;
         
-        this.tiredTime = value;
-        this.defineMood();
-        buttons.checkQuestTiredTime();
-    },
+    //     this.tiredTime = value;
+    //     this.defineMood();
+    //     buttons.checkQuestTiredTime();
+    // },
     
     setTiredFound : function(value){
         this.tiredFound = value;
