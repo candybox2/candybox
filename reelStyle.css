@@ -31,28 +31,86 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-  }
+}
+
+.contentWrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    width: calc(100%/3);
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #4A4A4A;
+}
+
+.textColumn {
+    margin: 150px 0 0 160px;
+}
+
+
+.middleContainer {
+    width: calc(100%/3);
+    display: flex;
+    flex-direction: column;
+}
+
+.counter {
+    text-align: center;
+    margin-top: 30px;
+}
+
+#candies {
+    font-size: 32px;
+}
+
+.actionsContainer {
+    width: calc(100%/3);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
 
 #indoorGrowBox {
-    visibility: hidden;
+    /* visibility: hidden; */
 }
 
 #outdoorGrowBox {
-    visibility: hidden;
+    /* visibility: hidden; */
 }
 
 #dispensaryBox {
-    visibility: hidden;
+    /* visibility: hidden; */
 }
 
 .action_button {
-    visibility: hidden;
+    /* visibility: hidden; */
+    width: 320px;
+    height: 100px;
+    margin: 25px 0;
+    border-radius: 100px;
+    border: none;
+    color: white;
+    background: #01A8A3;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    padding: 20px;
+}
+
+.action_button:hover {
+    transform: scale(1.015);
+    box-shadow: 0px 4px 4px #00000026;
 }
 
 #candies_eaten {
-    visibility: hidden;
+    /* visibility: hidden; */
 }
 
 #candies_thrown {
-    visibility: hidden;
+    /* visibility: hidden; */
 }

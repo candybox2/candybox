@@ -106,22 +106,25 @@
         </div>
         <div class="contentWrapper">
 
-            <div class="statsContainer">
-                <span id="candies_eaten"></span><br />
-                <span id="candies_thrown"></span><br />
-                <div id="indoorGrowBox" class="actionText"><img src="./icons/indoorGrow.png" width="35" height="35">
-                    <span id="indoorGrow"></span>
-                </div>
-                <div id="outdoorGrowBox" class="actionText"><img src="./icons/outdoorGrow.png" width="35" height="35">
-                    <span id="outdoorGrow"></span>
-                </div>
-                <div id="dispensaryBox" class="actionText"><img src="./icons/dispensary.png" width="35" height="35">
-                    <span id="dispensary"></span>
+            <div class="textContainer">
+                <div class="textColumn">
+                    <span id="candies_eaten"></span><br />
+                    <span id="candies_thrown"></span><br />
+                    <div id="indoorGrowBox" class="actionText"><img src="./icons/indoorGrow.png" width="35" height="35">
+                        <span id="indoorGrow"></span>
+                    </div>
+                    <div id="outdoorGrowBox" class="actionText"><img src="./icons/outdoorGrow.png" width="35"
+                            height="35">
+                        <span id="outdoorGrow"></span>
+                    </div>
+                    <div id="dispensaryBox" class="actionText"><img src="./icons/dispensary.png" width="35" height="35">
+                        <span id="dispensary"></span>
+                    </div>
                 </div>
             </div>
 
             <div class="middleContainer">
-                <div>
+                <div class="counter">
                     <input type="file" style="display:none" id="my_file" name="file" enctype="multipart/form-data" />
                     <span id="candies"></span><br />
                     <p>Do you think the neighbors are suspicious yet?</p>
@@ -135,20 +138,24 @@
                     <img src="./images/product.png">
                 </div>
             </div>
-
             <div class="actionsContainer">
-                <button class="action_button" id="eat" onclick="candies.eat()">Smoke all the
-                    weed!</button><br />
-                <button class="action_button" id="throw_10" onclick="candies.throw10Candies()">Sell
-                    10 grams to your buddy</button><br />
-                <button class="action_button" id="indoorGrowBtn" onclick="candies.addIndoorGrow();">Build
-                    indoor grow</button><br />
-                <button class="action_button" id="outdoorGrowBtn" onclick="candies.addOutdoorGrow();">Build
-                    outdoor grow</button><br />
-                <button class="action_button" id="openDispensaryBtn" onclick="candies.addDispensary();">Open a
-                    dispensary</button><br />
+                <button class="action_button" id="eat" style="margin-right: 145px" onclick="candies.eat()">Smoke all the
+                    weed!</button>
+                <button class="action_button" id="throw_10" style="margin-right: 170px"
+                    onclick="candies.throw10Candies()">Sell
+                    10 grams to your buddy</button>
+                <button class="action_button" id="indoorGrowBtn" style="margin-right: 185px"
+                    onclick="candies.addIndoorGrow()">Build
+                    indoor grow</button>
+                <button class="action_button" id="outdoorGrowBtn" style="margin-right: 170px"
+                    onclick="candies.addOutdoorGrow()">Build
+                    outdoor grow</button>
+                <button class="action_button" id="openDispensaryBtn" style="margin-right: 145px"
+                    onclick="candies.addDispensary()">Open a
+                    dispensary</button>
             </div>
         </div>
+
     </div>
 
     <!-- Loading and saving -->
