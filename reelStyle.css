@@ -76,19 +76,19 @@ body {
 }
 
 #indoorGrowBox {
-    /* visibility: hidden; */
+    visibility: hidden;
 }
 
 #outdoorGrowBox {
-    /* visibility: hidden; */
+    visibility: hidden;
 }
 
 #dispensaryBox {
-    /* visibility: hidden; */
+    visibility: hidden;
 }
 
 .action_button {
-    /* visibility: hidden; */
+    visibility: hidden;
     width: 320px;
     height: 100px;
     margin: 25px 0;
@@ -107,10 +107,14 @@ body {
     box-shadow: 0px 4px 4px #00000026;
 }
 
+.action_button:disabled {
+    background-color: #8e8e8e;
+}
+
 #candies_eaten {
-    /* visibility: hidden; */
+    visibility: hidden;
 }
 
 #candies_thrown {
-    /* visibility: hidden; */
+    visibility: hidden;
 }
