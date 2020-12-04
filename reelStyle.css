@@ -9,6 +9,7 @@ body {
 .actionText {
     display: flex;
     align-items: center;
+    margin: 25px 0;
 }
 
 .actionText img {
