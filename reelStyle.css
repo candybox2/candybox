@@ -27,3 +27,7 @@ body {
 #dispensaryBox {
     visibility: hidden;
 }
+
+.action_button {
+    visibility: hidden;
+}

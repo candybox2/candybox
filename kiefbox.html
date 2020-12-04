@@ -107,8 +107,8 @@
         <div class="contentWrapper">
 
             <div class="statsContainer">
-                <p>You've smoked... 1178 grams of weed!</p>
-                <p>You sold 110 grams to friends</p>
+                <span id="candies_eaten" style="visibility:hidden"></span><br />
+                <span id="candies_thrown" style="visibility:hidden"></span><br />
                 <div id="indoorGrowBox" class="actionText"><img src="./icons/indoorGrow.png" width="35" height="35">
                     <span id="indoorGrow"></span>
                 </div>
@@ -137,6 +137,10 @@
             </div>
 
             <div class="actionsContainer">
+                <button class="action_button" id="eat" onclick="candies.eat()">Smoke all the
+                    weed!</button><br />
+                <button class="action_button" id="throw_10" onclick="candies.throw10Candies()">Sell
+                    10 grams to your buddy</button><br />
                 <button class="action_button" id="indoorGrowBtn" onclick="candies.addIndoorGrow();">Build
                     indoor grow</button><br />
                 <button class="action_button" id="outdoorGrowBtn" onclick="candies.addOutdoorGrow();">Build

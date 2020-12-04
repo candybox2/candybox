@@ -34,15 +34,15 @@ var candies = {
         this.nbrOwned = value;
         if(this.nbrOwned != 1) htmlInteraction.setInnerHtml("candies", "You have " + this.nbrOwned + " grams!");
         else htmlInteraction.setInnerHtml("candies", "You have 1 gram!");
-        // buttons.checkCandies();
+        buttons.checkCandies();
         // shop.check();
         // cauldron.updateActionsInfoOnPage();
     },
     
     setNbrEaten : function(value){
         this.nbrEaten = value;
-        if(this.nbrEaten != 1) htmlInteraction.setInnerHtml("candies_eaten", "You have smoked " + this.nbrEaten + " grams!");
-        else htmlInteraction.setInnerHtml("candies_eaten", "You have smoked 1 gram!");
+        if(this.nbrEaten != 1) htmlInteraction.setInnerHtml("candies_eaten", "You've smoked... " + this.nbrEaten + " grams of weed!");
+        else htmlInteraction.setInnerHtml("candies_eaten", "You have smoked exactly 1 gram!");
         htmlInteraction.setElementVisibility("candies_eaten", true);
     },
     
@@ -51,6 +51,9 @@ var candies = {
     },
 
     addIndoorGrow : function(){
+        if(this.nbrOwned >= 5){ // If we have at least 5 candies
+            this.setNbrOwned(this.nbrOwned - 5);
+        }
         this.candiesPerSecond = this.candiesPerSecond + 3;
         this.indoorGrow++
         htmlInteraction.setInnerHtml("gps", "( " + this.candiesPerSecond + " grams / second)");
@@ -60,6 +63,9 @@ var candies = {
     },
 
     addOutdoorGrow : function(){
+        if(this.nbrOwned >= 10){ // If we have at least 10 candies
+            this.setNbrOwned(this.nbrOwned - 10);
+        }
         this.candiesPerSecond = this.candiesPerSecond + 10;
         this.outdoorGrow++;
         htmlInteraction.setInnerHtml("gps", "( " + this.candiesPerSecond + " grams / second)");
@@ -69,6 +75,9 @@ var candies = {
     },
 
     addDispensary : function(){
+        if(this.nbrOwned >= 20){ // If we have at least 20 candies
+            this.setNbrOwned(this.nbrOwned - 20);
+        }
         this.candiesPerSecond = this.candiesPerSecond + 20;
         this.dispensary++
         htmlInteraction.setInnerHtml("gps", "( " + this.candiesPerSecond + " grams / second)");
@@ -94,7 +103,7 @@ var candies = {
 
         darkMode.check();
         
-        if(this.nbrThrown != 1) htmlInteraction.setInnerHtml("candies_thrown", "You sold " + this.nbrThrown + " grams to your buddy" + smiley);
+        if(this.nbrThrown != 1) htmlInteraction.setInnerHtml("candies_thrown", "You sold " + this.nbrThrown + " grams to friends" + smiley);
         else htmlInteraction.setInnerHtml("candies_thrown", "You sold 1 gram to your buddy" + smiley);
         htmlInteraction.setElementVisibility("candies_thrown", true);
     },
