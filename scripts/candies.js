@@ -47,6 +47,10 @@ var candies = {
         this.candiesPerSecond = value;
     },
 
+    getCandiesPerSecond : function(){
+        return this.candiesPerSecond
+    },
+
     addIndoorGrow : function(){
         this.candiesPerSecond = this.candiesPerSecond + 3;
         console.log(`candiesPerSecond is now ${this.candiesPerSecond}`);
