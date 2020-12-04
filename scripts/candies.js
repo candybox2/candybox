@@ -62,6 +62,10 @@ var candies = {
         console.log(`candiesPerSecond is now ${this.candiesPerSecond}`);
     },
     
+    getCandiesPerSecond : function(){
+        return this.candiesPerSecond
+    },
+    
     setNbrThrown : function(value){
         this.nbrThrown = value;
         
