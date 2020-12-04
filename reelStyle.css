@@ -1,155 +1,124 @@
 body {
     background-color: #FFFFFF;
     overflow-y:scroll;
+    margin: 0;
+    padding: 10px;
+    border: 8px solid #00cdbe;
 }
 
-#tabs {
-	text-align: center;
-	margin: auto;
-	padding: 0px;
-	margin-top: 5px;
-    margin-bottom:6px;
+.actionText {
+    display: flex;
+    align-items: center;
 }
 
-#tabs li {
-	list-style: none;
-	display: inline;
+.actionText img {
+    padding-right: 10px;
 }
 
-#tabs li button {
-    color:#282e32;
-	padding:8px 14px 8px 14px;
-	text-decoration:none;
-	font-size:9px;
-	font-family:Verdana, Arial, Helvetica, sans-serif;
-	font-weight:bold;
-	text-transform:uppercase;
-	border:1px solid #464c54;
+.actionText p {
+    display: inline;
 }
 
-#tabs li button.active {
-	background-color:#f8f2b1;
-	color:#282e32;
-	border:1px solid #464c54;
+.pageWrapper {
+    margin: 0 auto;
+    width: 100%;
 }
 
-#tab_candy_box {
-    display:block;
+.bannerAd {
+    background-image: url("./images/bannerAd.jpeg");
+    background-color: #fff;
+    height: 330px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
-#tab_candy_box, #tab_quest, #tab_inventory, #tab_cauldron {
-    border: 2px solid transparent;
+.contentWrapper {
+    display: flex;
+    justify-content: center;
 }
 
-#tab_quest, #tab_inventory, #tab_cauldron { 
-    display:none; 
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    width: calc(100%/3);
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #4A4A4A;
 }
 
-#my_file {
-    display: none;
+.textColumn {
+    margin: 150px 0 0 160px;
 }
 
-.clear {
-	clear:both;
+
+.middleContainer {
+    width: calc(100%/3);
+    display: flex;
+    flex-direction: column;
 }
 
-button {
-    border:1px solid #464c54;
-    margin-bottom:2px;
-    padding:2px;
+.counter {
+    text-align: center;
+    margin-top: 30px;
 }
 
-button:hover {
-    border:2px solid #464c54;
-    padding:1px;
+#candies {
+    font-size: 32px;
 }
 
-table {
-    border-collapse:collapse;
+.actionsContainer {
+    width: calc(100%/3);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
-table, th, td {
-    border: 1px solid black;
-    padding:3px;
+#indoorGrowBox {
+    visibility: hidden;
 }
 
-.tooltip {
-    text-decoration:none;
+#outdoorGrowBox {
+    visibility: hidden;
 }
 
-.tooltip span {
-    display: none;
-    white-space: normal; /* To force breaklines in tooltips */
-    text-align: left;
+#dispensaryBox {
+    visibility: hidden;
 }
 
-.tooltip:hover {
-    border: 0;
-    position: relative;
-    z-index: 500;
-    text-decoration: none;
+.action_button {
+    visibility: hidden;
+    width: 320px;
+    height: 100px;
+    margin: 25px 0;
+    border-radius: 100px;
+    border: none;
+    color: white;
+    background: #01A8A3;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    padding: 20px;
 }
 
-.tooltip:hover span {
-    font-style: normal;
-    display: block;
-    position: absolute;
-    padding: 5px;
-    margin: 5px;
-    color: #000;
-    border: 1px solid #000000;
-    background: #ffffff;
-    font-family: monospace;
+.action_button:hover {
+    transform: scale(1.015);
+    box-shadow: 0px 4px 4px #00000026;
 }
 
-span.tooltip:hover span {
-    left: 70px;
-    width: 150px;
+.action_button:focus {
+    outline:0
 }
 
-button.tooltip:hover span {
-    width: 300px;
+.action_button:disabled {
+    background-color: #8e8e8e;
 }
 
-.toggle {
-    font-size: 9px;
-    font-family: monospace;
-    background-color: white;
-    position: absolute;
-    top:5px; 
-    right:5px;
+#candies_eaten {
+    visibility: hidden;
 }
 
-#tab_quest_left_panel {
-    margin-right:15px;
-}
-
-#restartButton {
-    margin-left: 30px;
-}
-
-.dark_mode {
-    background-color: #111;
-    color: #F1F1F1;
-}
-
-.dark_button {
-    background-color: #171717;
-    color: #9D9D9D !important;
-}
-
-.dark_button:disabled {
-    background-color: #404040;
-}
-
-.dark_link {
-    color: orange;
-}
-
-.dark_link:visited {
-    color: chocolate;
-}
-
-.dark_table {
-    border-color: #F1F1F1;
+#candies_thrown {
+    visibility: hidden;
 }

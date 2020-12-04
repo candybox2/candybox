@@ -20,7 +20,46 @@ var buttons = {
             htmlInteraction.enableButton(name);
         }
     },
-    
+
+    checkActionButtons : function(){
+        // Show the eat button
+        if(candies.nbrOwned >= 1){
+            htmlInteraction.showButton("eat");
+            this.enableButton("eat");
+        }
+        else htmlInteraction.disableButton("eat");
+        
+        // Show the sell to friend button
+        if(candies.nbrOwned >= 10){
+            htmlInteraction.showButton("throw_10");
+            this.enableButton("throw_10");
+        }
+        else htmlInteraction.disableButton("throw_10");
+
+        // Show the indoor grow button
+        if(candies.nbrOwned >= 13){
+            htmlInteraction.showButton("indoorGrowBtn");
+            this.enableButton("indoorGrowBtn");
+        }
+        else htmlInteraction.disableButton("indoorGrowBtn");
+
+                
+        // Show the outdoor grow button
+        if(candies.nbrOwned >= 20){
+            htmlInteraction.showButton("outdoorGrowBtn");
+            this.enableButton("outdoorGrowBtn");
+        }
+        else htmlInteraction.disableButton("outdoorGrowBtn");
+
+
+        // Show the open dispensary button
+        if(candies.nbrOwned >= 30){
+            htmlInteraction.showButton("openDispensaryBtn");
+            this.enableButton("openDispensaryBtn");
+        }
+        else htmlInteraction.disableButton("openDispensaryBtn");
+        
+    },
     
     checkHomeEnabled : function(){
         this.checkEatAndThrowButtons();
@@ -35,11 +74,7 @@ var buttons = {
     },
     
     checkCandies : function(){
-        this.checkEatAndThrowButtons();
-        this.checkQuestBuyingButtons();
-        this.checkEncrustSwordButton();
-        this.checkLollipopsStockShortage();
-        this.checkWishingWell();
+        this.checkActionButtons();
     },
     
     checkSword : function(){
