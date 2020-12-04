@@ -53,7 +53,7 @@ var candies = {
     addIndoorGrow : function(){
         this.candiesPerSecond = this.candiesPerSecond + 3;
         this.indoorGrow++
-        console.log(`candiesPerSecond is now ${this.candiesPerSecond}`);
+        htmlInteraction.setInnerHtml("gps", "( " + this.candiesPerSecond + " grams / second)");
         if(this.indoorGrow != 1) htmlInteraction.setInnerHtml("indoorGrow", this.indoorGrow + " Indoor grows (+3 per), closer to home!");
         else htmlInteraction.setInnerHtml("indoorGrow", "Who needs candles when you grow indoors! (+3 gps)");
         htmlInteraction.setElementVisibility("indoorGrowBox", true);
@@ -62,7 +62,7 @@ var candies = {
     addOutdoorGrow : function(){
         this.candiesPerSecond = this.candiesPerSecond + 10;
         this.outdoorGrow++;
-        console.log(`candiesPerSecond is now ${this.candiesPerSecond}`);
+        htmlInteraction.setInnerHtml("gps", "( " + this.candiesPerSecond + " grams / second)");
         if(this.outdoorGrow != 1) htmlInteraction.setInnerHtml("outdoorGrow", this.outdoorGrow + " Outdoor grows (+10 per) - out on some secluded land!")
         else htmlInteraction.setInnerHtml("outdoorGrow", "Now you're growing - outside! (+10 gps)");
         htmlInteraction.setElementVisibility("outdoorGrowBox", true);
@@ -71,6 +71,7 @@ var candies = {
     addDispensary : function(){
         this.candiesPerSecond = this.candiesPerSecond + 20;
         this.dispensary++
+        htmlInteraction.setInnerHtml("gps", "( " + this.candiesPerSecond + " grams / second)");
         console.log(`candiesPerSecond is now ${this.candiesPerSecond}`);
         if(this.dispensary != 1) htmlInteraction.setInnerHtml("dispensary", + this.dispensary + " Dispensaries (+20 per) running - CASH MONEY!");
         else htmlInteraction.setInnerHtml("dispensary", "You've got your FIRST dispensary up and running! (+20 gps)");
