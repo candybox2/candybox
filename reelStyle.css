@@ -1,6 +1,9 @@
 body {
     background-color: #FFFFFF;
     overflow-y:scroll;
+    margin: 0;
+    padding: 10px;
+    border: 8px solid #00cdbe;
 }
 
 .actionText {
@@ -15,6 +18,20 @@ body {
 .actionText p {
     display: inline;
 }
+
+.pageWrapper {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.bannerAd {
+    background-image: url("./images/bannerAd.jpeg");
+    background-color: #fff;
+    height: 330px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
 
 #indoorGrowBox {
     visibility: hidden;
