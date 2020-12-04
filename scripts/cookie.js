@@ -33,6 +33,7 @@ var cookie = {
 		
 	},
 	
+	// TODO: Update this method to stop logging errors finding undefined
 	getData : function() {
 		
 		return "" + ((code === undefined || code == null || code.length == "") ? 0 : code) +

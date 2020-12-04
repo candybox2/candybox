@@ -31,9 +31,9 @@ var candies = {
         this.nbrOwned = value;
         if(this.nbrOwned != 1) htmlInteraction.setInnerHtml("candies", "You have " + this.nbrOwned + " grams!");
         else htmlInteraction.setInnerHtml("candies", "You have 1 gram!");
-        buttons.checkCandies();
-        shop.check();
-        cauldron.updateActionsInfoOnPage();
+        // buttons.checkCandies();
+        // shop.check();
+        // cauldron.updateActionsInfoOnPage();
     },
     
     setNbrEaten : function(value){
