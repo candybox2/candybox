@@ -4,11 +4,13 @@ body {
     margin: 0;
     padding: 10px;
     border: 8px solid #00cdbe;
+    height: 97.3vh;
 }
 
 .actionText {
     display: flex;
     align-items: center;
+    margin: 25px 0;
 }
 
 .actionText img {
@@ -22,6 +24,15 @@ body {
 .pageWrapper {
     margin: 0 auto;
     width: 100%;
+}
+
+.wmHeader {
+    background-image: url("./images/wmheader.png");
+    background-color: #fff;
+    height: 90px;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 35px;
 }
 
 .bannerAd {
@@ -65,7 +76,46 @@ body {
 }
 
 #candies {
-    font-size: 32px;
+    font-size: 52px;
+    color: #4A4A4A;
+}
+
+.candies_subtext {
+    font-size: 26px;
+    color: #4A4A4A; 
+    margin: 10px 0;
+}
+
+.nug_img {
+    background-image: url("./images/nug.jpg");
+    background-color: #fff;
+    height: 305px;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 35px;
+    background-size: contain;
+
+}
+
+.product_offer_text {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 25px; 
+    margin-bottom: 0;
+    color: #4A4A4A;
+}
+
+.product_offer {
+    background-image: url("./images/product.png");
+    background-color: #fff;
+    height: 225px;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 35px;
+    background-size: contain;
+    box-shadow: 0px 4px 4px #00000026;
 }
 
 .actionsContainer {
@@ -73,6 +123,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    margin-top: 80px;
 }
 
 #indoorGrowBox {
@@ -87,19 +138,85 @@ body {
     visibility: hidden;
 }
 
-.action_button {
+.action_button_wrapper {
+    display: flex;
     visibility: hidden;
-    width: 320px;
-    height: 100px;
-    margin: 25px 0;
+    align-items: center;
+}
+
+.action_button {
+    width: 200px;
+    height: 80px;
+    margin: 20px 0;
     border-radius: 100px;
     border: none;
     color: white;
     background: #01A8A3;
-    font-size: 20px;
+    font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    padding: 20px;
+    padding: 15px;
+}
+
+@media only screen and (min-width: 2400px) {
+    #eat_container {
+        margin-right: 145px
+    }
+    
+    #throw_10_container {
+        margin-right: 170px
+    }
+    
+    #indoorGrowBtn_container {
+        margin-right: 185px
+    }
+    
+    #outdoorGrowBtn_container {
+        margin-right: 170px
+    }
+    
+    #openDispensaryBtn_container {
+        margin-right: 145px
+    }
+
+    .action_button {
+        width: 320px;
+        height: 100px;
+        margin: 25px 0;
+        border-radius: 100px;
+        border: none;
+        color: white;
+        background: #01A8A3;
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        padding: 20px;
+    }
+}
+
+
+.actionsWrapper {
+    margin-top: 50px;
+}
+
+#eat_container {
+    margin-right: 15px
+}
+
+#throw_10_container {
+    margin-right: 60px
+}
+
+#indoorGrowBtn_container {
+    margin-right: 95px
+}
+
+#outdoorGrowBtn_container {
+    margin-right: 60px
+}
+
+#openDispensaryBtn_container {
+    margin-right: 15px
 }
 
 .action_button:hover {
@@ -112,6 +229,29 @@ body {
 }
 
 .action_button:disabled {
+    background-color: #8e8e8e;
+}
+
+.action_modifier_button {
+    display: flex;
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    border: none;
+    color: white;
+    background: #01A8A3;
+    font-size: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+}
+
+.action_modifier_button:focus {
+    outline:0
+}
+
+.action_modifier_button:disabled {
     background-color: #8e8e8e;
 }
 

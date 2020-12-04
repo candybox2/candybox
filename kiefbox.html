@@ -102,14 +102,16 @@
 
 <body>
     <div class="pageWrapper">
+        <div class="wmHeader">
+        </div>
         <div class="bannerAd">
         </div>
         <div class="contentWrapper">
 
             <div class="textContainer">
                 <div class="textColumn">
-                    <span id="candies_eaten"></span><br />
-                    <span id="candies_thrown"></span><br />
+                    <span id="candies_eaten" class="actionText"></span>
+                    <span id="candies_thrown" class="actionText"></span>
                     <div id="indoorGrowBox" class="actionText"><img src="./icons/indoorGrow.png" width="35" height="35">
                         <span id="indoorGrow"></span>
                     </div>
@@ -127,32 +129,62 @@
                 <div class="counter">
                     <input type="file" style="display:none" id="my_file" name="file" enctype="multipart/form-data" />
                     <span id="candies"></span><br />
-                    <p>Do you think the neighbors are suspicious yet?</p>
+                    <p class="candies_subtext"><i>Do you think the neighbors are suspicious yet?</i></p>
+                </div>
+                <div style="display: flex; justify-content: center; flex-direction: column;">
+                    <div class="nug_img" alt="sweet sweet nug"></div>
+                    <span id="gps" style="text-align: center;"></span><br />
                 </div>
                 <div>
-                    <img src="./images/nug.jpg" alt="sweet sweet nug">
-                    <span id="gps"></span><br />
-                </div>
-                <div>
-                    <p>This deal expires in 15 seconds...</p>
-                    <img src="./images/product.png">
+                    <p class="product_offer_text">This deal expires in 15
+                        seconds...</p>
+                    <div class="product_offer"></div>
                 </div>
             </div>
             <div class="actionsContainer">
-                <button class="action_button" id="eat" style="margin-right: 145px" onclick="candies.eat()">Smoke all the
-                    weed!</button>
-                <button class="action_button" id="throw_10" style="margin-right: 170px"
-                    onclick="candies.throw10Candies()">Sell
-                    10 grams to your buddy</button>
-                <button class="action_button" id="indoorGrowBtn" style="margin-right: 185px"
-                    onclick="candies.addIndoorGrow()">Build
-                    indoor grow</button>
-                <button class="action_button" id="outdoorGrowBtn" style="margin-right: 170px"
-                    onclick="candies.addOutdoorGrow()">Build
-                    outdoor grow</button>
-                <button class="action_button" id="openDispensaryBtn" style="margin-right: 145px"
-                    onclick="candies.addDispensary()">Open a
-                    dispensary</button>
+                <div class="action_button_wrapper" id="eat_container">
+                    <button id="eat" class="action_button" onclick="candies.eat()">
+                        Smoke all the weed!
+                    </button>
+                    <div id="action_modifier_button" class="action_modifier_button" style="margin-left: 20px">
+                        <p>+3</p>
+                    </div>
+                </div>
+
+                <div class="action_button_wrapper" id="throw_10_container">
+                    <button id="throw_10" class="action_button" onclick="candies.throw10Candies()">
+                        Sell 10 grams to your buddy
+                    </button>
+                    <div id="action_modifier_button" class="action_modifier_button" style="margin-left: 20px">
+                        <p>+3</p>
+                    </div>
+                </div>
+
+                <div class="action_button_wrapper" id="indoorGrowBtn_container">
+                    <button id="indoorGrowBtn" class="action_button" onclick="candies.addIndoorGrow()">
+                        Build indoor grow
+                    </button>
+                    <div id="action_modifier_button" class="action_modifier_button" style="margin-left: 20px">
+                        <p>+3</p>
+                    </div>
+                </div>
+
+                <div class="action_button_wrapper" id="outdoorGrowBtn_container">
+                    <button id="outdoorGrowBtn" class="action_button" onclick="candies.addOutdoorGrow()">
+                        Build outdoor grow
+                    </button>
+                    <div class="action_modifier_button" style="margin-left: 20px">
+                        <p>+10</p>
+                    </div>
+                </div>
+
+                <div class="action_button_wrapper" id="openDispensaryBtn_container">
+                    <button id="openDispensaryBtn" class="action_button" onclick="candies.addDispensary()">Open a
+                        dispensary</button>
+                    <div class="action_modifier_button" style="margin-left: 20px">
+                        <p>+20</p>
+                    </div>
+                </div>
             </div>
         </div>
 
