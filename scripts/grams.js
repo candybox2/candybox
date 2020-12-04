@@ -6,10 +6,7 @@ var candies = {
     nbrThrown : 0,
     nbrTotal : 0, // The total number we earned in all times
     candiesPerSecond : 1,
-    indoorGrow: 0,
-    outdoorGrow: 0,
     dispensary: 0,
-
     
     // Functions
     onload : function(){
@@ -52,29 +49,17 @@ var candies = {
 
     addIndoorGrow : function(){
         this.candiesPerSecond = this.candiesPerSecond + 3;
-        this.indoorGrow++
         console.log(`candiesPerSecond is now ${this.candiesPerSecond}`);
-        if(this.indoorGrow != 1) htmlInteraction.setInnerHtml("indoorGrow", this.indoorGrow + " Indoor grows (+3 per), closer to home!");
-        else htmlInteraction.setInnerHtml("indoorGrow", "Who needs candles when you grow indoors! (+3 gps)");
-        htmlInteraction.setElementVisibility("indoorGrowBox", true);
     },
 
     addOutdoorGrow : function(){
         this.candiesPerSecond = this.candiesPerSecond + 10;
-        this.outdoorGrow++;
         console.log(`candiesPerSecond is now ${this.candiesPerSecond}`);
-        if(this.outdoorGrow != 1) htmlInteraction.setInnerHtml("outdoorGrow", this.outdoorGrow + " Outdoor grows (+10 per) - out on some secluded land!")
-        else htmlInteraction.setInnerHtml("outdoorGrow", "Now you're growing - outside! (+10 gps)");
-        htmlInteraction.setElementVisibility("outdoorGrowBox", true);
     },
 
     addDispensary : function(){
         this.candiesPerSecond = this.candiesPerSecond + 20;
-        this.dispensary++
         console.log(`candiesPerSecond is now ${this.candiesPerSecond}`);
-        if(this.dispensary != 1) htmlInteraction.setInnerHtml("dispensary", + this.dispensary + " Dispensaries (+20 per) running - CASH MONEY!");
-        else htmlInteraction.setInnerHtml("dispensary", "You've got your FIRST dispensary up and running! (+20 gps)");
-        htmlInteraction.setElementVisibility("dispensaryBox", true);
     },
     
     setNbrThrown : function(value){
@@ -85,6 +70,7 @@ var candies = {
         else if(this.nbrThrown <= 20) smiley = "...";
         else if(this.nbrThrown <= 30) smiley = "...?";
         else if(this.nbrThrown <= 40) smiley = "...? <tt>:|</tt>";
+        else if(this.nbrThrown <= 50) this.setDispensaryCount(this.dispensary + 1);
         else if(this.nbrThrown <= 60) smiley = "...? <tt>:(</tt>";
         else if(this.nbrThrown <= 70) smiley = "...? <tt>:[</tt>";
         else if(this.nbrThrown <= 80) smiley = "...? <tt>:{</tt>";

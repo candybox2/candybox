@@ -109,31 +109,39 @@
             <div class="statsContainer">
                 <p>You've smoked... 1178 grams of weed!</p>
                 <p>You sold 110 grams to friends</p>
-                <div>
-                    <img>
-                    <p>That's 2 dispensaries running - Cash money!</p>
+                <div id="indoorGrowBox" class="actionText"><img src="./icons/indoorGrow.png" width="35" height="35">
+                    <span id="indoorGrow"></span>
+                </div>
+                <div id="outdoorGrowBox" class="actionText"><img src="./icons/outdoorGrow.png" width="35" height="35">
+                    <span id="outdoorGrow"></span>
+                </div>
+                <div id="dispensaryBox" class="actionText"><img src="./icons/dispensary.png" width="35" height="35">
+                    <span id="dispensary"></span>
                 </div>
             </div>
 
-            <div>
+            <div class="middleContainer">
                 <div>
                     <input type="file" style="display:none" id="my_file" name="file" enctype="multipart/form-data" />
                     <span id="candies"></span><br />
-
+                    <p>Do you think the neighbors are suspicious yet?</p>
                 </div>
-                <!-- <p>You've harvested 338,082 grams!</p> -->
-                <p>Do you think the neighbors are suspicious yet?</p>
-                <img src="./images/nug.jpg" alt="sweet sweet nug">
-                <p>This deal expires in 15 seconds...</p>
-                <img src="./images/product.png">
+                <div>
+                    <img src="./images/nug.jpg" alt="sweet sweet nug">
+                    <p>(58 grams / second)</p>
+                </div>
+                <div>
+                    <p>This deal expires in 15 seconds...</p>
+                    <img src="./images/product.png">
+                </div>
             </div>
 
             <div class="actionsContainer">
-                <button class="action_button" id="indoorGrow" onclick="candies.addIndoorGrow();">Build
+                <button class="action_button" id="indoorGrowBtn" onclick="candies.addIndoorGrow();">Build
                     indoor grow</button><br />
-                <button class="action_button" id="outdoorGrow" onclick="candies.addOutdoorGrow();">Build
+                <button class="action_button" id="outdoorGrowBtn" onclick="candies.addOutdoorGrow();">Build
                     outdoor grow</button><br />
-                <button class="action_button" id="openDispensary" onclick="candies.addDispensary();">Open a
+                <button class="action_button" id="openDispensaryBtn" onclick="candies.addDispensary();">Open a
                     dispensary</button><br />
             </div>
         </div>
