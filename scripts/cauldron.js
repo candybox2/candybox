@@ -296,7 +296,7 @@ var cauldron = {
                 // We switch its orientation
                 if(this.smokeOrientation == true) this.smokeOrientation = false;
                 else this.smokeOrientation = true;
-                // If it's too high : there's no smoke anymore
+                // If it's too high: there's no smoke anymore
                 if(this.cauldronPosY - this.smokePosY > 3){
                     this.smokeBool = false;
                 }
@@ -307,11 +307,11 @@ var cauldron = {
     },
     
     drawActionsInfo : function(){
-        this.textActionsInfo = "<br/><b>What you have :</b><br/>";
+        this.textActionsInfo = "<br/><b>What you have:</b><br/>";
         
         // Add candies and lollipops info
-        this.textActionsInfo += "    Candies :   " + candies.nbrOwned;
-        this.textActionsInfo += "<br/>    Lollipops : " + lollipops.nbrOwned;
+        this.textActionsInfo += "    Candies:   " + candies.nbrOwned;
+        this.textActionsInfo += "<br/>    Lollipops: " + lollipops.nbrOwned;
     },
     
     drawActionsPut : function(){
@@ -322,13 +322,13 @@ var cauldron = {
     },
     
     drawActionsInCauldron : function(){
-        this.textActionsInCauldron += "<b>What is in the cauldron :</b><br/>";
-        this.textActionsInCauldron += "    Candies :   " + this.candiesInTheCauldron;
-        this.textActionsInCauldron += "<br/>    Lollipops : " + this.lollipopsInTheCauldron + "<br/>";
+        this.textActionsInCauldron += "<b>What is in the cauldron:</b><br/>";
+        this.textActionsInCauldron += "    Candies:   " + this.candiesInTheCauldron;
+        this.textActionsInCauldron += "<br/>    Lollipops: " + this.lollipopsInTheCauldron + "<br/>";
     },
     
     drawActions : function(){
-        this.textActions += "<b>What you can do with it :</b><br/>";
+        this.textActions += "<b>What you can do with it:</b><br/>";
         this.textActions += "<button id=\"cauldron_mix\" onclick=\"cauldron.setWeAreMixing(true)\">Mix</button><button id=\"cauldron_boil\" onclick=\"cauldron.setWeAreBoiling(true)\">Boil</button><button disabled=\"disabled\" id=\"cauldron_stop\" onclick=\"cauldron.stopActions()\">Stop</button><br/><br/>";
         this.textActions += "<span id=\"cauldron_action_text\"></span>";
         this.textActions += "<button id=\"cauldron_put_into_bottles\" onclick=\"cauldron.putIntoBottles()\">Put everything into bottles</button><br/><br/>";
@@ -354,7 +354,7 @@ var cauldron = {
                 // Else
                 else{
                     // We show a special message
-                    htmlInteraction.setInnerHtml("cauldron_timer", this.actionTimer + " ... You do realize that you're not mixing anything, right ?");
+                    htmlInteraction.setInnerHtml("cauldron_timer", this.actionTimer + " ... You do realize that you're not mixing anything, right?");
                 }
             }
             else
@@ -370,15 +370,15 @@ var cauldron = {
             else if(this.actionTimer < 11)
                 htmlInteraction.setInnerHtml("cauldron_timer", "very hot...");
             else if(this.actionTimer < 13)
-                htmlInteraction.setInnerHtml("cauldron_timer", "very very hot !");
+                htmlInteraction.setInnerHtml("cauldron_timer", "very very hot!");
             else if(this.actionTimer < 14)
                 htmlInteraction.setInnerHtml("cauldron_timer", "bubbles begin to appear...");
             else if(this.actionTimer < 15)
                 htmlInteraction.setInnerHtml("cauldron_timer", "bubbles begin to appear... and..");
             else if(this.actionTimer < 32)
-                htmlInteraction.setInnerHtml("cauldron_timer", "BOILING !");
+                htmlInteraction.setInnerHtml("cauldron_timer", "BOILING!");
             else
-                htmlInteraction.setInnerHtml("cauldron_timer", "the water is burnt ! How is that even possible ?");
+                htmlInteraction.setInnerHtml("cauldron_timer", "the water is burnt! How is that even possible?");
         }
     },
     
@@ -568,7 +568,7 @@ var cauldron = {
             for(var i = 0; i < resultsList.length; i++){
                 if(resultsList[i].special != true){
                     if(resultsList[i].nbr > 1){
-                        resultsText += "You made " + resultsList[i].nbr + " " + resultsList[i].type + " potions !<br/>";
+                        resultsText += "You made " + resultsList[i].nbr + " " + resultsList[i].type + " potions!<br/>";
                     }
                     else{
                         resultsText += "You made a " + resultsList[i].type + " potion.<br/>";
@@ -576,7 +576,7 @@ var cauldron = {
                 }
                 else{
                     if(resultsList[i].nbr > 1){
-                        resultsText += "You made " + resultsList[i].nbr + " " + resultsList[i].plural + " !<br/>";
+                        resultsText += "You made " + resultsList[i].nbr + " " + resultsList[i].plural + "!<br/>";
                     }
                     else{
                         resultsText += "You made a " + resultsList[i].type + ".<br/>";
@@ -586,7 +586,7 @@ var cauldron = {
             htmlInteraction.setInnerHtml("cauldron_results_text", resultsText);
         }
         else{
-            htmlInteraction.setInnerHtml("cauldron_results_text", "You don't manage to get anything interesting with that preparation.<br/>Did you follow the manual's instructions ?");
+            htmlInteraction.setInnerHtml("cauldron_results_text", "You don't manage to get anything interesting with that preparation.<br/>Did you follow the manual's instructions?");
         }
         
         // We empty the cauldron
@@ -668,11 +668,11 @@ var cauldron = {
         }
         // Else, if we don't have enough candies or lollipops to put all that in the cauldron
         else if(candiesQuantity > candies.nbrOwned || lollipopsQuantity > lollipops.nbrOwned){
-            htmlInteraction.setInnerHtml("cauldron_comment", "You don't have enough to put all that in the cauldron !");
+            htmlInteraction.setInnerHtml("cauldron_comment", "You don't have enough to put all that in the cauldron!");
         }
         // Else, if one if the value is negative
         else if(candiesQuantity < 0 || lollipopsQuantity < 0){
-            htmlInteraction.setInnerHtml("cauldron_comment", "Don't put negative values !");
+            htmlInteraction.setInnerHtml("cauldron_comment", "Don't put negative values!");
         }
         // Else, we put all that in the cauldron !
         else{
@@ -774,7 +774,7 @@ var cauldron = {
 "Welcome to the",
 "potions brewing",
 "manual for",
-"beginners !",
+"beginners!",
 "",
 " (second edition)",
 "",
@@ -790,7 +790,7 @@ var cauldron = {
 "manual will focus",
 "on potions that",
 "require materials",
-"such as : ",
+"such as: ",
 " - candies",
 " - lollipops",
 ],
@@ -941,13 +941,13 @@ var cauldron = {
 
     asciiMinorHealthPotionP4 :
 [
-"Congratulations !",
+"Congratulations!",
 "You just made",
 "your first minor",
-"health potion !",
+"health potion!",
 "",
 "",
-"N.B. : use 200",
+"N.B.: use 200",
 "candies for 2",
 "potions, 300 for",
 "3, etc."
@@ -969,7 +969,7 @@ var cauldron = {
 
     asciiMajorHealthPotionP2 :
 [
-"efficient : by",
+"efficient: by",
 "drinking it",
 "during a quest,",
 "you will gain",
@@ -978,7 +978,7 @@ var cauldron = {
 "",
 "How to make a",
 "major health",
-"potion :"
+"potion:"
 ],
 
     asciiMajorHealthPotionP3 :
@@ -1005,7 +1005,7 @@ var cauldron = {
 "5. Put the result",
 "into bottles.",
 "",
-"6. You're done !"
+"6. You're done!"
 ],
 
     asciiInvulnerabilityPotionP1 :
@@ -1024,7 +1024,7 @@ var cauldron = {
     asciiInvulnerabilityPotionP2 :
 [
 "The recipe is",
-"simple : just",
+"simple: just",
 "put 2000 candies",
 "inside your",
 "cauldron and mix",
@@ -1049,10 +1049,10 @@ var cauldron = {
 [
 "  Turtle potion",
 "-----------------",
-"A turtle !",
-"A turtle !",
+"A turtle!",
+"A turtle!",
 "Do you want to",
-"become a turtle ?",
+"become a turtle?",
 "",
 "You'll be able to",
 "become one with",
@@ -1061,7 +1061,7 @@ var cauldron = {
 
     asciiTurtlePotionP2 :
 [
-"potion !",
+"potion!",
 "",
 "When you will be",
 "a turtle, you",
@@ -1117,7 +1117,7 @@ var cauldron = {
 "put into a bottle,",
 "begin a quest,",
 "drink the potion,",
-"you're a turtle !!",
+"you're a turtle!!",
 "",
 "   _  .----.",
 "  (_\\/      \\_,",
@@ -1165,7 +1165,7 @@ var cauldron = {
 
     asciiCloningPotionP4 :
 [
-"Steps :",
+"Steps:",
 "",
 "Burn the water in",
 "your cauldron.",
@@ -1179,11 +1179,11 @@ var cauldron = {
 
     asciiCloningPotionP5 :
 [
-"It's simple : the",
+"It's simple: the",
 "more candies you",
 "put, the more",
 "potions you'll",
-"get !",
+"get!",
 "",
 "(be sure to put",
 "   a minimum",
@@ -1226,9 +1226,9 @@ var cauldron = {
 "Maybe it will",
 "be safer, maybe",
 "it won't. Who",
-"knows ?",
+"knows?",
 "Quite exciting",
-"isn't it ?"
+"isn't it?"
 ],
 
     asciiGMOOHPotionP3 :
@@ -1255,7 +1255,7 @@ var cauldron = {
 "bottles.",
 "",
 "Enjoy your random",
-"potions !"
+"potions!"
 ],
 
     asciiSupermanPotionP1 :
@@ -1278,10 +1278,10 @@ var cauldron = {
 "",
 "We respond them",
 "that it is just",
-"so cooooool !",
+"so cooooool!",
 "",
 "Anyway, to make",
-"one :",
+"one:",
 "",
 "Put 180 candies"
 ],
@@ -1302,7 +1302,7 @@ var cauldron = {
 
     asciiSupermanPotionP4 :
 [
-"You're done !",
+"You're done!",
 "",
 "   ___________",
 "  /.\'_______` \\",
@@ -1366,7 +1366,7 @@ var cauldron = {
 "a bottle.",
 "",
 "Now, plant some",
-"trees !"
+"trees!"
 ],
 
     asciiJellyP1 :
@@ -1378,14 +1378,14 @@ var cauldron = {
 "some kind of bomb",
 "that you could",
 "use during a",
-"quest ? If so,",
+"quest? If so,",
 "then this magical",
 "jelly should"
 ],
 
     asciiJellyP2 :
 [
-"please you !",
+"please you!",
 "",
 "It is a bit hard",
 "to prepare, but",
@@ -1408,7 +1408,7 @@ var cauldron = {
 "layers of the",
 "jelly.",
 "",
-"First step :"
+"First step:"
 ],
 
     asciiJellyP4 :
@@ -1417,7 +1417,7 @@ var cauldron = {
 "boil the water,",
 "stop boiling.",
 "",
-"Second step :",
+"Second step:",
 "",
 "Add 6 000",
 "lollipops,",
@@ -1427,7 +1427,7 @@ var cauldron = {
 
     asciiJellyP5 :
 [
-"Third step :",
+"Third step:",
 "",
 "Repeat first step.",
 "",
@@ -1436,7 +1436,7 @@ var cauldron = {
 "jelly behind you.",
 "",
 "Good luck for",
-"your quests !"
+"your quests!"
 ],
 
     asciiEndP1 :
@@ -1445,17 +1445,17 @@ var cauldron = {
 "-----------------",
 "",
 "   Thanks for",
-"    reading !",
+"    reading!",
 "",
 "We hope this book",
 "helped you. Feel",
 "     free to",
-"redistribute it !",
+"redistribute it!",
 ],
 
     asciiEndP2 :
 [
-"Co-authors :",
+"Co-authors:",
 "",
 "- the sorceress",
 "- the necromancer",

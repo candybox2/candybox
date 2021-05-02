@@ -87,6 +87,9 @@ var castleEntrance = {
         
         // We reset the time spent
         this.timeSpent = 0;
+        
+        // We remove the magic ball
+        this.thereIsAMagicBall = false;
     },
     
     makeGuard : function(){

@@ -78,7 +78,7 @@ var farm = {
         this.lollipopsPlanted = value;
         
         // We update on page
-        htmlInteraction.setInnerHtml("lp_planted", "Lp planted : " + this.lollipopsPlanted);
+        htmlInteraction.setInnerHtml("lp_planted", "Lp planted: " + this.lollipopsPlanted);
         
         // We re calculate stuff
         this.calculateLollipopsPerDay();
@@ -110,7 +110,7 @@ var farm = {
     
     setLollipopsProduction : function(value){
         this.lollipopsProduction = value;
-        htmlInteraction.setInnerHtml("lp_production", "Production : " + this.lollipopsProduction + " lp/" + this.productionDelayType);
+        htmlInteraction.setInnerHtml("lp_production", "Production: " + this.lollipopsProduction + " lp/" + this.productionDelayType);
     },
     
     setMaxLollipopsPerDay : function(value){

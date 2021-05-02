@@ -62,7 +62,7 @@ var castleStairs = {
         var life = 140;
         life += random.getRandomIntUpTo(4) * 20;
         
-        return land.createMob("POC", life, life, "none", "A pile of corpses. It doesn't hurt you, but damn, it's hard to remove !", []);
+        return land.createMob("POC", life, life, "none", "A pile of corpses. It doesn't hurt you, but damn, it's hard to remove!", []);
     },
     
     getText : function(){

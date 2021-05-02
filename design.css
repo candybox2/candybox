@@ -4,33 +4,33 @@ body {
 }
 
 #tabs {
-	text-align: center;
-	margin: auto;
-	padding: 0px;
-	margin-top: 5px;
+    text-align: center;
+    margin: auto;
+    padding: 0px;
+    margin-top: 5px;
     margin-bottom:6px;
 }
 
 #tabs li {
-	list-style: none;
-	display: inline;
+    list-style: none;
+    display: inline;
 }
 
 #tabs li button {
     color:#282e32;
-	padding:8px 14px 8px 14px;
-	text-decoration:none;
-	font-size:9px;
-	font-family:Verdana, Arial, Helvetica, sans-serif;
-	font-weight:bold;
-	text-transform:uppercase;
-	border:1px solid #464c54;
+    padding:8px 14px 8px 14px;
+    text-decoration:none;
+    font-size:9px;
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+    font-weight:bold;
+    text-transform:uppercase;
+    border:1px solid #464c54;
 }
 
 #tabs li button.active {
-	background-color:#f8f2b1;
-	color:#282e32;
-	border:1px solid #464c54;
+    background-color:#f8f2b1;
+    color:#282e32;
+    border:1px solid #464c54;
 }
 
 #tab_candy_box {
@@ -41,8 +41,8 @@ body {
     border: 2px solid transparent;
 }
 
-#tab_quest, #tab_inventory, #tab_cauldron { 
-    display:none; 
+#tab_quest, #tab_inventory, #tab_cauldron {
+    display:none;
 }
 
 #my_file {
@@ -50,7 +50,7 @@ body {
 }
 
 .clear {
-	clear:both;
+    clear:both;
 }
 
 button {
@@ -111,13 +111,17 @@ button.tooltip:hover span {
     width: 300px;
 }
 
+.main_toggles {
+    position: absolute;
+    top:5px;
+    right:5px;
+    text-align: right;
+}
+
 .toggle {
     font-size: 9px;
     font-family: monospace;
     background-color: white;
-    position: absolute;
-    top:5px; 
-    right:5px;
 }
 
 #tab_quest_left_panel {

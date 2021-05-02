@@ -99,7 +99,7 @@ var computer = {
     },
     
     addTab : function(){
-        var text = "<li><button>" + random.pickRandomly(["tab", "i'm a tab", "hey look at me !", "i'm the best tab ever", "tabtab", "tab tab", "tabtabtab", "tab tab tab", "t", "a", "b", "taaaaab", "tabby tabby", "tabs are great", "pony", "mlp is great", "tabs will rule the world", "fake cauldron", "candy box", "did you found the 3 secrets on the candy box ?", "did you find the wooden pony ?", "c", "n", "d", "being a tab is all my life", "you're a tab", "i'm a tab", "thanks to Joufflu", "thanks to Cedric", "thanks to dixsept", "thank you", "no credits", "aniwey", "aniwey@gmail.com", "quit", "exit", "i wanna be a tab", "tab forever", "tab forevah", "a tab is like a box of chocolates", "chuck norTAB", "diablo", "usb key", "linux", "archlinux", "tab tab tab tab tab tab", "", "button", "don't click", "click me", "CLICKCK MEEE", "fake", "fake tab", "i'm not a tab", "you're the tab", "bat", "atb", "bta", "bat the tab", "supertab", "megatab", "metatab", "the whale was a fake", "the devil was a fake", "aniwey.net", "candies.aniwey.net", "1/(vicious circle)", "hp = 100+(candies_eaten^0.4) * 2.1", "candies per second <=> fibonacci", "dev = aniwey@gmail.com", "eat the dev", "kill the dev", "candy", "candies", "lollipops", "best tab ever", "i'm clickable ;)", "click a tab", "tabby mabby", "tab01", "tab02", "tab03", "tab04", "tab05", "tab06", "tab07", "tab08", "tab09", "tab10", "tab11", "tab12", "tab13", "tab14", "tab15", "tab16", "tab17", "i'm searching for tab04 ?!", "where's tab15 ??"]) + "</button></li>";
+        var text = "<li><button>" + random.pickRandomly(["tab", "i'm a tab", "hey look at me!", "i'm the best tab ever", "tabtab", "tab tab", "tabtabtab", "tab tab tab", "t", "a", "b", "taaaaab", "tabby tabby", "tabs are great", "pony", "mlp is great", "tabs will rule the world", "fake cauldron", "candy box", "did you found the 3 secrets on the candy box?", "did you find the wooden pony?", "c", "n", "d", "being a tab is all my life", "you're a tab", "i'm a tab", "thanks to Joufflu", "thanks to Cedric", "thanks to dixsept", "thank you", "no credits", "aniwey", "aniwey@gmail.com", "quit", "exit", "i wanna be a tab", "tab forever", "tab forevah", "a tab is like a box of chocolates", "chuck norTAB", "diablo", "usb key", "linux", "archlinux", "tab tab tab tab tab tab", "", "button", "don't click", "click me", "CLICKCK MEEE", "fake", "fake tab", "i'm not a tab", "you're the tab", "bat", "atb", "bta", "bat the tab", "supertab", "megatab", "metatab", "the whale was a fake", "the devil was a fake", "aniwey.net", "candies.aniwey.net", "1/(vicious circle)", "hp = 100+(candies_eaten^0.4) * 2.1", "candies per second <=> fibonacci", "dev = aniwey@gmail.com", "eat the dev", "kill the dev", "candy", "candies", "lollipops", "best tab ever", "i'm clickable ;)", "click a tab", "tabby mabby", "tab01", "tab02", "tab03", "tab04", "tab05", "tab06", "tab07", "tab08", "tab09", "tab10", "tab11", "tab12", "tab13", "tab14", "tab15", "tab16", "tab17", "i'm searching for tab04?!", "where's tab15??"]) + "</button></li>";
         
         if(random.flipACoin())
             htmlInteraction.getElement("tabs").innerHTML += text;
@@ -113,15 +113,15 @@ var computer = {
             switch(random.getRandomIntUpTo(3)){
                 case 0:
                     chocolateBars.setNbrOwned(chocolateBars.nbrOwned + 1);
-                    htmlInteraction.setInnerHtml("computer_comment_1", "You found 1 chocolate bar !!");
+                    htmlInteraction.setInnerHtml("computer_comment_1", "You found 1 chocolate bar!!");
                 break;
                 case 1:
                     chocolateBars.setNbrOwned(chocolateBars.nbrOwned + 2);
-                    htmlInteraction.setInnerHtml("computer_comment_1", "You found 2 chocolate bars !!! \\o/");
+                    htmlInteraction.setInnerHtml("computer_comment_1", "You found 2 chocolate bars!!! \\o/");
                 break;
                 case 2:
                     chocolateBars.setNbrOwned(chocolateBars.nbrOwned + 3);
-                    htmlInteraction.setInnerHtml("computer_comment_1", "You found 3 chocolate bars !!!!! \\o/ \\o/ \\o/ \\o/");
+                    htmlInteraction.setInnerHtml("computer_comment_1", "You found 3 chocolate bars!!!!! \\o/ \\o/ \\o/ \\o/");
                 break;
                 case 3:
                     htmlInteraction.setInnerHtml("computer_comment_1", "There's a bug with the bug, it didn't work :/");
@@ -144,12 +144,12 @@ var computer = {
                 case 1:
                     rndrnd = 2 + random.getRandomIntUpTo(50000000);
                     candies.setNbrOwned(candies.nbrOwned + rndrnd);
-                    htmlInteraction.setInnerHtml("computer_comment_2", "You met " + random.pickRandomly(["an architect", "a fireman", "a butcher", "an electrician", "a writer", "a student", "a farmer", "a shoemaker", "a monk", "a journalist", "a reporter", "a priest", "a translator", "a vet"]) + ". He gave you " + rndrnd + " candies !");
+                    htmlInteraction.setInnerHtml("computer_comment_2", "You met " + random.pickRandomly(["an architect", "a fireman", "a butcher", "an electrician", "a writer", "a student", "a farmer", "a shoemaker", "a monk", "a journalist", "a reporter", "a priest", "a translator", "a vet"]) + ". He gave you " + rndrnd + " candies!");
                 break;
                 case 2:
                     farm.setMaxLollipopsPerDay(864000000);
                     htmlInteraction.showButton("computer_note");
-                    htmlInteraction.setInnerHtml("computer_comment_2", "The production limit of your lollipop farm has increased ! (*)");
+                    htmlInteraction.setInnerHtml("computer_comment_2", "The production limit of your lollipop farm has increased! (*)");
                 break;
             }
         }
@@ -162,7 +162,7 @@ var computer = {
                 case 0:
                     if(sword.name != "Sword of Liflamesummoning" && sword.name != "Sword of Randomness"){
                         sword.setName("Sword of Liflamesummoning");
-                        htmlInteraction.setInnerHtml("computer_comment_3", "You found a new sword : the Sword of Liflamesummoning !");
+                        htmlInteraction.setInnerHtml("computer_comment_3", "You found a new sword: the Sword of Liflamesummoning!");
                     }
                     else{
                         htmlInteraction.setInnerHtml("computer_comment_3", "There's a bug with the bug, it didn't work :/");
@@ -170,7 +170,7 @@ var computer = {
                 break;
                 case 1:
                     candies.setNbrOwned(candies.nbrOwned * 3);
-                    htmlInteraction.setInnerHtml("computer_comment_3", "Your candies were multiplied by 3 !");
+                    htmlInteraction.setInnerHtml("computer_comment_3", "Your candies were multiplied by 3!");
                 break;
                 case 2:
                     if(sword.specialSword == true){
@@ -181,7 +181,7 @@ var computer = {
                         }
                         else{
                             sword.setSpecialPower(sword.specialPower + 1);
-                            htmlInteraction.setInnerHtml("computer_comment_3", "The level of your sword increased by 1 !");
+                            htmlInteraction.setInnerHtml("computer_comment_3", "The level of your sword increased by 1!");
                             inventory.updateOnPage();
                         }
                     }
@@ -196,7 +196,7 @@ var computer = {
     bug4 : function(){
         if(lollipops.nbrOwned >= 1000000000){
             lollipops.setNbrOwned(lollipops.nbrOwned - 1000000000);
-            htmlInteraction.setInnerHtml("computer_comment_4", "Fake bug ! I guess you'll need 10000 mpl :)");
+            htmlInteraction.setInnerHtml("computer_comment_4", "Fake bug! I guess you'll need 10000 mpl :)");
         }
     },
     
@@ -207,7 +207,7 @@ var computer = {
                 case 0:
                     if(land.ponyTime == false){
                         land.ponyTime = true;
-                        htmlInteraction.setInnerHtml("computer_comment_5", "It's pony time !! Everyone is a pony now ! (*)");
+                        htmlInteraction.setInnerHtml("computer_comment_5", "It's pony time!! Everyone is a pony now! (*)");
                         htmlInteraction.showButton("computer_note");
                     }
                     else{
@@ -217,7 +217,7 @@ var computer = {
                 case 1:
                     if(sword.name != "Sword of Randomness"){
                         sword.setName("Sword of Randomness");
-                        htmlInteraction.setInnerHtml("computer_comment_5", "You found a new sword : the Sword of Randomness !");
+                        htmlInteraction.setInnerHtml("computer_comment_5", "You found a new sword : the Sword of Randomness!");
                     }
                     else{
                         htmlInteraction.setInnerHtml("computer_comment_5", "There's a bug with the bug, it didn't work :/");

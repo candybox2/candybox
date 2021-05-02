@@ -79,7 +79,7 @@ var peacefulForest = {
     },
     
     makeWoodPoney : function(){
-        return land.createMob("WPY", 12, 12, "hooves", "A wood poney ! It's a poney ! It the woods !", [drops.createDrop("candies", 42)]);
+        return land.createMob("WPY", 12, 12, "hooves", "A wood poney! It's a poney! It the woods!", [drops.createDrop("candies", 42)]);
     }
     
 };

@@ -8,9 +8,9 @@ var spells = {
     // Functions
     onload : function(){
         // We add the spells
-        this.addSpell("Candies, faster candies !", this.getFasterCandiesPrice.bind(this), this.fasterCandies.bind(this), "Congratulations ! You will now gain more candies each second !", []);
-        this.addSpell("Candies, more candies !", this.getMoreCandiesPrice.bind(this), this.moreCandies.bind(this), "///", []);
-        this.addSpell("Sword, better sword !", this.getBetterSwordPrice.bind(this), this.betterSword.bind(this), "///", ["specialSword"]);
+        this.addSpell("Candies, faster candies!", this.getFasterCandiesPrice.bind(this), this.fasterCandies.bind(this), "Congratulations! You will now gain more candies each second!", []);
+        this.addSpell("Candies, more candies!", this.getMoreCandiesPrice.bind(this), this.moreCandies.bind(this), "///", []);
+        this.addSpell("Sword, better sword!", this.getBetterSwordPrice.bind(this), this.betterSword.bind(this), "///", ["specialSword"]);
     
         // We sort the list
         this.sortListDependingOnPrice();
@@ -58,7 +58,7 @@ var spells = {
                 hut.setSpeech("Your Sword of Flames is now more powerful.")
             break;
             case "Sword of Summoning":
-                hut.setSpeech("You can now summon " + sword.summonList[sword.getIndexOfBetterToSummon()].name + " !");
+                hut.setSpeech("You can now summon " + sword.summonList[sword.getIndexOfBetterToSummon()].name + "!");
             break;
         }
     },
@@ -70,7 +70,7 @@ var spells = {
         if(nbr > 300000) nbr = 300000;
         
         candies.setNbrOwned(candies.nbrOwned + nbr);
-        hut.setSpeech("Here's " + nbr + " candies for you !");
+        hut.setSpeech("Here's " + nbr + " candies for you!");
     },
     
     nextFasterCandiesFiboStep : function(){

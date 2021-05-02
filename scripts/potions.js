@@ -10,21 +10,21 @@ var potions = {
     },
     
     onload : function(){
-        this.addPotion("health", "Health potion", "#ff0000", "potions.heal(50);", "Use this minor health potion during combats to regain some of your health points !", "potion");
-        this.addPotion("escape", "Escape potion", "#51c90f", "potions.escape();", "The escape potion allow escaping from a quest while avoiding any time penalty. It makes you flee really really fast !", "potion");
-        this.addPotion("berserk", "Berserk potion", "#000000", "potions.berserk();", "The berserk potions transforms you into a.. BERSERKEEEER !", "potion");
+        this.addPotion("health", "Health potion", "#ff0000", "potions.heal(50);", "Use this minor health potion during combats to regain some of your health points!", "potion");
+        this.addPotion("escape", "Escape potion", "#51c90f", "potions.escape();", "The escape potion allow escaping from a quest while avoiding any time penalty. It makes you flee really really fast!", "potion");
+        this.addPotion("berserk", "Berserk potion", "#000000", "potions.berserk();", "The berserk potions transforms you into a.. BERSERKEEEER!", "potion");
         this.addPotion("fireScroll", "Fire scroll", "#dc3e00", "potions.fireScroll();", "This powerful fire scroll will burn your enemy if you use it during a fight.", "scroll");
         this.addPotion("acidRainScroll", "Acid rain scroll", "#68980b", "potions.acidRainScroll();", "This acid rain scroll will instantly damage everyone in the whole land (including yourself).", "scroll");
-        this.addPotion("teleportScroll", "Teleport scroll", "#7ca0b5", "potions.teleportScroll();", "This teleport scroll will make you go back to the beginning of a quest. Useful to rest a little bit !", "scroll");
+        this.addPotion("teleportScroll", "Teleport scroll", "#7ca0b5", "potions.teleportScroll();", "This teleport scroll will make you go back to the beginning of a quest. Useful to rest a little bit!", "scroll");
         this.addPotion("earthquakeScroll", "Earthquake scroll", "#470b0b", "potions.earthquakeScroll();", "This earthquake scroll will inflict a lot of damage to everyone in the whole land.", "scroll");
         this.addPotion("impInvocationScroll", "Imp invocation scroll", "#ff6600", "potions.impInvocationScroll();", "This imp invocation scroll will, if there's enough place, invoke in front of you an imp which will fight for you.", "scroll");
         this.addPotion("majorHealth", "Major health potion", "#ff0000", "potions.heal(100);", "This major health potion is twice more efficient than the minor one.", "potion");
-        this.addPotion("invulnerability", "Invulnerability potion", "#ef893b", "potions.invulnerability();", "This invulnerability potion will make you invincible for some time, but it fills your stomach : you won't be able to drink another potion for a long time after using it.", "potion");
-        this.addPotion("turtle", "Turtle potion", "#008a13", "potions.turtle();", "When you drink a turtle potion, you become a turtle. Drawback : you walk slower. Benefit : you're way more resistant to your ennemies' attacks.", "potion");
+        this.addPotion("invulnerability", "Invulnerability potion", "#ef893b", "potions.invulnerability();", "This invulnerability potion will make you invincible for some time, but it fills your stomach: you won't be able to drink another potion for a long time after using it.", "potion");
+        this.addPotion("turtle", "Turtle potion", "#008a13", "potions.turtle();", "When you drink a turtle potion, you become a turtle. Drawback: you walk slower. Benefit: you're way more resistant to your ennemies' attacks.", "potion");
         this.addPotion("jelly", "Jelly", "#9500b5", "potions.jelly();", "This skillfully prepared jelly explodes on contact of anything trying to go through it, dealing high damage. Using it will place it behind you.", "special");
         this.addPotion("seed", "Seed", "#3dab3a", "potions.seed();", "This seed is able to make grow a candy tree. The candy tree is made of candies, and it takes a lot of time to cut it down. Using the seed will grow a tree in front of you, if there's enough place.", "special");
         this.addPotion("cloning", "Cloning potion", "#6d6d6d", "potions.cloning();", "This cloning potion will, well... clone you. Your clone will have the same health points as you when you drank the potion, but he won't have your armor nor your sword. He will fight using a \"cloned sword\", which deals a correct amount of damage. The clone will be placed in front of you, if there's enough place.", "potion");
-        this.addPotion("superman", "Superman potion", "#ddef17", "potions.superman();", "This superman potion will give you a cape and make you look like superman for the rest of the quest !", "potion");
+        this.addPotion("superman", "Superman potion", "#ddef17", "potions.superman();", "This superman potion will give you a cape and make you look like superman for the rest of the quest!", "potion");
         this.addPotion("gmooh", "G.M.O.O.H. potion", "#ff00c0", "potions.gmooh();", "This \"Get Me Out Of Here\" potion will teleport you somewhere else. The destination isn't predictable at all.", "potion");
     },
     
@@ -41,13 +41,13 @@ var potions = {
         var text = "";
         
         // Potions
-        if(quest.berserk) text += "Berserk mode : " + quest.berserkCountdown + "\n";
+        if(quest.berserk) text += "Berserk mode: " + quest.berserkCountdown + "\n";
         if(quest.turtle) text += "You're a turtle : " + quest.turtleCountdown + "\n";
-        if(quest.invulnerability) text += "Invincible : " + quest.invulnerabilityCountdown + "\n";
-        if(this.list.health.shown || this.list.escape.shown || this.list.berserk.shown || this.list.majorHealth.shown || this.list.invulnerability.shown || this.list.turtle.shown || this.list.cloning.shown || this.list.superman.shown || this.list.gmooh.shown) text += "Potion countdown : " + quest.potionUseCountdown + "\n";
+        if(quest.invulnerability) text += "Invincible: " + quest.invulnerabilityCountdown + "\n";
+        if(this.list.health.shown || this.list.escape.shown || this.list.berserk.shown || this.list.majorHealth.shown || this.list.invulnerability.shown || this.list.turtle.shown || this.list.cloning.shown || this.list.superman.shown || this.list.gmooh.shown) text += "Potion countdown: " + quest.potionUseCountdown + "\n";
         
         // Scrolls
-        if(this.list.fireScroll.shown || this.acidRainScroll.shown || this.teleportScroll.shown || this.earthquakeScroll.shown || this.impInvocationScroll.shown) text += "Scroll countdown : " + quest.scrollUseCountdown;
+        if(this.list.fireScroll.shown || this.acidRainScroll.shown || this.teleportScroll.shown || this.earthquakeScroll.shown || this.impInvocationScroll.shown) text += "Scroll countdown: " + quest.scrollUseCountdown;
         
         return text;
     },
@@ -150,7 +150,7 @@ var potions = {
     },
     
     makeJelly : function(){
-        return land.createTrap("JEL", 1, 1, "powerful explosion", "A jelly !! Go away !", []);
+        return land.createTrap("JEL", 1, 1, "powerful explosion", "A jelly!! Go away!", []);
     },
     
     makeClone : function(hp, max_hp){

@@ -267,11 +267,11 @@ var castleKeep = {
     },
     
     makeKomodoDragon : function(){
-        return land.createMob("KOM", 5, 5, "foots and tail", "A Komodo dragon. Did you heard about island gigantism ?", []);
+        return land.createMob("KOM", 5, 5, "foots and tail", "A Komodo dragon. Did you heard about island gigantism?", []);
     },
                                     
     makeRhinoceros : function(){
-        return land.createMob("RHI", 160, 160, "horn", "A " + random.pickRandomly(["white", "black", "indian", "javan", "sumatran"]) + " rhinoceros. Watch out for his horn !", []);
+        return land.createMob("RHI", 160, 160, "horn", "A " + random.pickRandomly(["white", "black", "indian", "javan", "sumatran"]) + " rhinoceros. Watch out for his horn!", []);
     },
     
     makeGaur : function(){
@@ -279,7 +279,7 @@ var castleKeep = {
     },
     
     makeDromornisStirtoni : function(){
-        return land.createMob("DST", 70, 70, "giant beak", "A Dromornis Stirtoni ! A 400kg flightless bird !", []);
+        return land.createMob("DST", 70, 70, "giant beak", "A Dromornis Stirtoni! A 400kg flightless bird!", []);
     },
     
     makeGorilla : function(){
@@ -287,11 +287,11 @@ var castleKeep = {
     },
     
     makeCapybara : function(){
-        return land.createMob("CPY", 20, 20, "its teeth", "A capybara : the largest rodent in the world !", []);
+        return land.createMob("CPY", 20, 20, "its teeth", "A capybara: the largest rodent in the world!", []);
     },
     
     makeDoedicurus : function(){
-        return land.createMob("DOE", 120, 120, "spiky tail", "A Doedicurus : your favorite glyptodont !", []);
+        return land.createMob("DOE", 120, 120, "spiky tail", "A Doedicurus: your favorite glyptodont!", []);
     },
     
     makeStoneWall : function(){
@@ -304,19 +304,19 @@ var castleKeep = {
     },
     
     makeFireball : function(){
-        return land.createMob("FBL", 1, 1, "itself", "A fireball !! Watch out !", []);
+        return land.createMob("FBL", 1, 1, "itself", "A fireball!! Watch out!", []);
     },
     
     makeFakeDoorMonster : function(){
-        return land.createMob("| |", 70, 70, "sharp teeth", "It's not a door ! It's a monster ! (an ugly one)", []);
+        return land.createMob("| |", 70, 70, "sharp teeth", "It's not a door! It's a monster! (an ugly one)", []);
     },
     
     makeUnicorn : function(){
-        return land.createMob("UNI", 100, 100, "magical horn", "A unicorn !! They exist !", []);
+        return land.createMob("UNI", 100, 100, "magical horn", "A unicorn!! They exist!", []);
     },
     
     makeCharlieTheUnicorn : function(){
-        return land.createMob("UNI", 100, 100, "magical horn", "A unicorn !! It has no kidney.", [drops.createDrop("object", "magicalHorn", true)]);
+        return land.createMob("UNI", 100, 100, "magical horn", "A unicorn!! It has no kidney.", [drops.createDrop("object", "magicalHorn", true)]);
     },
     
     makeTroll : function(){
@@ -324,7 +324,7 @@ var castleKeep = {
     },
     
     makeDragon : function(){
-        return land.createMob(",((", 1000, 1000, "flames", "A dragon !! Kill him and the castle will be yours.", []);
+        return land.createMob(",((", 1000, 1000, "flames", "A dragon!! Kill him and the castle will be yours.", []);
     },
     
     asciiDragon :

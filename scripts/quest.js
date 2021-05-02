@@ -399,7 +399,7 @@ var quest = {
     
     defineMood : function(){
         if(this.tiredTime == 0) htmlInteraction.setInnerHtml("mood", "You're in the pink! Ready for fighting!");
-        else htmlInteraction.setInnerHtml("mood", "You're tired. You have to wait before doing another quest. Waiting time : " + this.tiredTime);
+        else htmlInteraction.setInnerHtml("mood", "You're tired. You have to wait before doing another quest. Waiting time: " + this.tiredTime);
         htmlInteraction.setElementVisibility("mood", true);
     },
     
@@ -424,11 +424,11 @@ var quest = {
     },
     
     makeBasicChest : function(){
-        return land.createMob("CHS", 80, 80, "none", "A chest !! Very rare.", [drops.createDrop("candies", 300 + random.getRandomIntUpTo(500)), drops.createDrop("object", "key", true), drops.createDrop("object", "boots", random.oneChanceOutOf(3)), drops.createDrop("object", "swampMap", random.oneChanceOutOf(3)), drops.createDrop("object", "hutMap", random.oneChanceOutOf(3))]);
+        return land.createMob("CHS", 80, 80, "none", "A chest!! Very rare.", [drops.createDrop("candies", 300 + random.getRandomIntUpTo(500)), drops.createDrop("object", "key", true), drops.createDrop("object", "boots", random.oneChanceOutOf(3)), drops.createDrop("object", "swampMap", random.oneChanceOutOf(3)), drops.createDrop("object", "hutMap", random.oneChanceOutOf(3))]);
     },
     
     makeOpenChest : function(){
-        return land.createMob("CHS", 1, 1, "none", "An open chest, full of candies !", [drops.createDrop("candies", 6000 + random.getRandomIntUpTo(2000))]);
+        return land.createMob("CHS", 1, 1, "none", "An open chest, full of candies!", [drops.createDrop("candies", 6000 + random.getRandomIntUpTo(2000))]);
     },
     
     makeImp : function(){
@@ -445,7 +445,7 @@ var quest = {
     },
     
     makeChupacabra : function(){
-        return land.createAlly("CBA", 30, 30, "fangs", "A chupacabra. A real goat sucker !", []);
+        return land.createAlly("CBA", 30, 30, "fangs", "A chupacabra. A real goat sucker!", []);
     },
     
     makeGolem : function(){
@@ -454,7 +454,7 @@ var quest = {
     
     makeChimera : function(){
         var hp = 50 + random.getRandomIntUpTo(7);
-        return land.createAlly("CHI", hp, hp, "fire", "A chimera : lion, serpent and goat at the same time.", []);
+        return land.createAlly("CHI", hp, hp, "fire", "A chimera: lion, serpent and goat at the same time.", []);
     },
     
     makeCandyMonster : function(){

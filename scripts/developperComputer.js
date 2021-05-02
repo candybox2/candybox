@@ -76,11 +76,11 @@ var developperComputer = {
     },
     
     makeBug : function(){
-        return land.createMob(random.pickRandomly(["B", "U", "G"]) + random.pickRandomly(["B", "U", "G"]) + random.pickRandomly(["B", "U", "G"]), 300 + random.getRandomIntUpTo(10000000), 300, random.pickRandomly(["itself", "religion", "flames", "sharp teeth", "cursed sword", "claws", "dagger", "fins", "hooves", "magic staff", "horn", "silver sword", "chocolate sword", "demon claws"]), "A bug !", [drops.createDrop("candies", 100000000)]);
+        return land.createMob(random.pickRandomly(["B", "U", "G"]) + random.pickRandomly(["B", "U", "G"]) + random.pickRandomly(["B", "U", "G"]), 300 + random.getRandomIntUpTo(10000000), 300, random.pickRandomly(["itself", "religion", "flames", "sharp teeth", "cursed sword", "claws", "dagger", "fins", "hooves", "magic staff", "horn", "silver sword", "chocolate sword", "demon claws"]), "A bug!", [drops.createDrop("candies", 100000000)]);
     },
     
     makeDev : function(){
-        return land.createMob("DEV", 100000000000000, 100000000000000, "bugs", "The developper (hey, he made this game !)", [drops.createDrop("candies", 1000000)]);
+        return land.createMob("DEV", 100000000000000, 100000000000000, "bugs", "The developper (hey, he made this game!)", [drops.createDrop("candies", 1000000)]);
     },
     
     // Ascii

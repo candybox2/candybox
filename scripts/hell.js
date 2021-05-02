@@ -257,7 +257,7 @@ var hell = {
     },
     
     makeDevil : function(){
-        return land.createMob("DEV", 250, 250, "religion", "It's the devil itself !", [drops.createDrop("candies", 100000)]);
+        return land.createMob("DEV", 250, 250, "religion", "It's the devil itself!", [drops.createDrop("candies", 100000)]);
     },
     
     makeTeleportingGate : function(){
@@ -354,7 +354,7 @@ var hell = {
     },
     
     makeSpikyDoor : function(){
-        return land.createMob("|-|", 300, 300, "spikes", "A strong door. Hard to break. There are spikes on it, it hurts !", []);
+        return land.createMob("|-|", 300, 300, "spikes", "A strong door. Hard to break. There are spikes on it, it hurts!", []);
     },
     
     getText : function(){

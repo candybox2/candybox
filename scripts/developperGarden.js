@@ -49,7 +49,7 @@ var developperGarden = {
     },
     
     makeCheatedGardenGnome : function(){
-        return land.createMob("CGG", 70, 70, "ultra plasma gun", "A cheated garden gnome. Since when garden gnomes have guns like that ?", []);
+        return land.createMob("CGG", 70, 70, "ultra plasma gun", "A cheated garden gnome. Since when garden gnomes have guns like that?", []);
     },
     
     getText : function(){

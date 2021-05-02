@@ -105,7 +105,7 @@ var hut = {
     surpass : function(){
         if(lollipops.nbrOwned >= 1000000){
             lollipops.setNbrOwned(lollipops.nbrOwned - 1000000);
-            this.setSpeech("You are now able to surpass yourself. Congratulations !");
+            this.setSpeech("You are now able to surpass yourself. Congratulations!");
             yourself.setCanSurpass(true);
             this.updateOnPage();
         }

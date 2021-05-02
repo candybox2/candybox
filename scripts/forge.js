@@ -60,19 +60,19 @@ var forge = {
         // We possibly change the speech depending on the new step
         switch(this.step){
             case 1:
-                this.speech = "You could enchant your sword using this anvil, but be careful : you can only enchant a sword once !";
+                this.speech = "You could enchant your sword using this anvil, but be careful: you can only enchant a sword once!";
             break;
             case 2:
                 // At this step, the speech is based on the sword name
                 switch(sword.name){
                     case "Sword of Flames":
-                        this.speech = "You now have the Sword of Flames ! Your sword is covered by a permanent blaze, damaging your enemies more than ever.";
+                        this.speech = "You now have the Sword of Flames! Your sword is covered by a permanent blaze, damaging your enemies more than ever.";
                     break;
                     case "Sword of Life":
-                        this.speech = "You now have the Sword of Life ! This powerful charm will drain the life of your enemies to regain yours.";
+                        this.speech = "You now have the Sword of Life! This powerful charm will drain the life of your enemies to regain yours.";
                     break;
                     case "Sword of Summoning":
-                        this.speech = "You now have the Sword of Summoning ! Your sword will sometimes spawn ally creatures in place of your dead enemies.";
+                        this.speech = "You now have the Sword of Summoning! Your sword will sometimes spawn ally creatures in place of your dead enemies.";
                     break;
                 }
             break;

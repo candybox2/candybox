@@ -29,7 +29,7 @@ var sword = {
                         shop.hideProduct("sword");
                     }
                     else{
-                        shop.setMerchantSpeech("You don't have enough candies. You should save up candies to buy it : swords are useful nowadays.");
+                        shop.setMerchantSpeech("You don't have enough candies. You should save up candies to buy it: swords are useful nowadays.");
                         return;
                     }
                 break;

@@ -1,11 +1,11 @@
 var buttons = {
-  
+
     // Variables
-    
+
     homeButtonsDisabled : false, // Block any enabling home button process when true
-    
+
     // Functions
-    
+
     enableHomeButtons : function(){
         if(this.homeButtonsDisabled == true){
             this.homeButtonsDisabled = false;
@@ -13,14 +13,14 @@ var buttons = {
             this.checkHomeEnabled();
         }
     },
-    
+
     enableButton : function(name){
         // If the home buttons are enabled or our button isn't a home button
         if(this.homeButtonsDisabled == false || htmlInteraction.getElement(name).className != "home_button"){
             htmlInteraction.enableButton(name);
         }
     },
-    
+
     checkEatAndThrowButtons : function(){
         // Show the eat button
         if(candies.nbrOwned >= 1){
@@ -28,7 +28,7 @@ var buttons = {
             this.enableButton("eat");
         }
         else htmlInteraction.disableButton("eat");
-        
+
         // Show the throw button
         if(candies.nbrOwned >= 10){
             htmlInteraction.showButton("throw_10");
@@ -36,7 +36,7 @@ var buttons = {
         }
         else htmlInteraction.disableButton("throw_10");
     },
-    
+
     checkHomeEnabled : function(){
         this.checkEatAndThrowButtons();
         this.checkQuestBuyingButtons();
@@ -48,7 +48,7 @@ var buttons = {
         this.checkLollipopsPlantingButtons();
         this.checkQuestTiredTime();
     },
-    
+
     checkCandies : function(){
         this.checkEatAndThrowButtons();
         this.checkQuestBuyingButtons();
@@ -56,7 +56,7 @@ var buttons = {
         this.checkLollipopsStockShortage();
         this.checkWishingWell();
     },
-    
+
     checkSword : function(){
         this.checkQuestBuyingButtons();
         this.checkEncrustSwordButton();
@@ -64,41 +64,41 @@ var buttons = {
         this.checkCoatSwordButton();
         this.checkTabPanel();
     },
-    
+
     checkTabPanel : function(){
         // If we have a sword
         if(sword.name != "none"){
             // We enable the tab bar
             htmlInteraction.setElementDisplay("tabBar", "");
             // And we enable some tabs
-	        tabs.enable(0);
+            tabs.enable(0);
             tabs.enable(1);
             tabs.enable(2);
             // And we show the switch tabs button
-            htmlInteraction.showButtonClass("toggle");
+            htmlInteraction.showButton("slide_effect_toggle");
         }
     },
-    
+
     checkQuestBuyingButtons : function(){
         // Enable/disable quest buying buttons (show/hide is handle by sword&shop algorithms)
-        
+
         // Swords
         if(shop.currentSwordButtonId != "none"){ // If the merchant is selling a sword right now
             if(candies.nbrOwned >= shop.currentSwordPrice) this.enableButton(shop.currentSwordButtonId);
             else htmlInteraction.disableButton(shop.currentSwordButtonId);
         }
-        
+
         // Potions & scrolls
         if(candies.nbrOwned >= 600) this.enableButton("buy_health_potion");
         else htmlInteraction.disableButton("buy_health_potion");
-        
+
         if(candies.nbrOwned >= 150) this.enableButton("buy_escape_potion");
         else htmlInteraction.disableButton("buy_escape_potion");
-        
+
         if(candies.nbrOwned >= 400) this.enableButton("buy_scroll");
         else htmlInteraction.disableButton("buy_scroll");
     },
-    
+
     checkEncrustSwordButton : function(){
         // Show the encrust the diamond sword button
         if(candies.nbrOwned >= 101 && sword.name == "diamond sword"){
@@ -110,7 +110,7 @@ var buttons = {
         }
         else htmlInteraction.disableButton("encrust");
     },
-    
+
     checkPolishSwordButton : function(){
         // Show the polish the diamond sword button
         if(lollipops.nbrOwned >= 30 && sword.name == "candy diamond sword"){
@@ -122,7 +122,7 @@ var buttons = {
         }
         else htmlInteraction.disableButton("polish");
     },
-    
+
     checkLollipops : function(){
         this.checkPolishSwordButton();
         this.checkLollipopsPlantingButtons();
@@ -130,7 +130,7 @@ var buttons = {
         this.checkLollipopsStockShortage();
         this.checkComputer();
     },
-    
+
     checkComputer : function(){
         if(lollipops.nbrOwned >= 1000000){
             htmlInteraction.showButton("computer_bug_1");
@@ -139,7 +139,7 @@ var buttons = {
         else{
             htmlInteraction.hideButton("computer_bug_1");
         }
-        
+
         if(lollipops.nbrOwned >= 10000000){
             htmlInteraction.showButton("computer_bug_2");
             htmlInteraction.showButton("computer_comment_2");
@@ -147,7 +147,7 @@ var buttons = {
         else{
             htmlInteraction.hideButton("computer_bug_2");
         }
-        
+
         if(lollipops.nbrOwned >= 100000000){
             htmlInteraction.showButton("computer_bug_3");
             htmlInteraction.showButton("computer_comment_3");
@@ -155,7 +155,7 @@ var buttons = {
         else{
             htmlInteraction.hideButton("computer_bug_3");
         }
-        
+
         if(lollipops.nbrOwned >= 1000000000){
             htmlInteraction.showButton("computer_bug_4");
             htmlInteraction.showButton("computer_comment_4");
@@ -163,7 +163,7 @@ var buttons = {
         else{
             htmlInteraction.hideButton("computer_bug_4");
         }
-        
+
         if(lollipops.nbrOwned >= 10000000000){
             htmlInteraction.showButton("computer_bug_5");
             htmlInteraction.showButton("computer_comment_5");
@@ -172,17 +172,17 @@ var buttons = {
         else{
             htmlInteraction.hideButton("computer_bug_5");
         }
-        
+
         if(lollipops.nbrOwned >= 100000000000) htmlInteraction.showButton("computer_bug_6");
         else htmlInteraction.hideButton("computer_bug_6");
-        
+
         if(lollipops.nbrOwned >= 1000000000000) htmlInteraction.showButton("computer_bug_7");
         else htmlInteraction.hideButton("computer_bug_7");
-        
+
         if(lollipops.nbrOwned >= 10000000000000) htmlInteraction.showButton("computer_bug_8");
         else htmlInteraction.hideButton("computer_bug_8");
     },
-    
+
     checkCoatSwordButton : function(){
         // Show the coat the diamond blbl sword button
         if(chocolateBars.nbrOwned >= 1 && sword.name == "polished candy diamond sword"){
@@ -194,11 +194,11 @@ var buttons = {
         }
         else htmlInteraction.disableButton("coat");
     },
-    
+
     checkChocolateBars : function(){
         this.checkCoatSwordButton();
     },
-    
+
     checkLollipopsStockShortage : function(){
         // If the shop is shown
         if(shop.shown){
@@ -230,7 +230,7 @@ var buttons = {
             }
         }
     },
-    
+
     checkObjects : function(){
         // Show the button to go to the swamp map
         if(objects.list.swampMap.have){
@@ -256,25 +256,25 @@ var buttons = {
             htmlInteraction.showButton("go_to_forge");
             this.enableButton("go_to_forge");
         }
-        
+
         // Check the farm visibility
         farm.checkVisibility();
-        
+
         // Check some farm's buttons
         this.checkLollipopsPlantingButtons();
-        
+
         // Check the candies converter visibility
         candiesConverter.checkVisibility();
-        
+
         // Check the cauldron visibility
         cauldron.checkVisibility();
     },
-    
+
     checkLollipopsPlantingButtons : function(){
         // If we have the key of the lollipop farm
         if(objects.list.key.have){
             // innerHtml of the lp_buttons span
-            
+
             // Plant 1000 button
             if(lollipops.nbrOwned >= 1000 && farm.plantingButtonsStep < 4){
                 farm.setPlantingButtonsStep(4);
@@ -291,9 +291,9 @@ var buttons = {
             else if(farm.plantingButtonsStep < 1){
                 farm.setPlantingButtonsStep(1);
             }
-            
+
             // Buttons activation
-            
+
             // Plant 1000 button
             if(farm.plantingButtonsStep >= 4){
                 htmlInteraction.showButton("plant_1000_lp");
@@ -328,13 +328,13 @@ var buttons = {
             }
         }
     },
-    
+
     checkQuestTiredTime : function(){
         // Buttons related to the quest tired time
         if(quest.tiredTime == 0 && quest.weAreQuestingRightNow == false) this.enableButton("quest_button");
         else htmlInteraction.disableButton("quest_button");
     },
-    
+
     checkHut : function(){
         if(hut.shown){
             switch(hut.step){
@@ -361,7 +361,7 @@ var buttons = {
             }
         }
     },
-    
+
     checkWishingWell : function(){
         if(wishingWell.shown){
             switch(wishingWell.step){
@@ -374,7 +374,7 @@ var buttons = {
             }
         }
     },
-    
+
     checkForge : function(){
         if(forge.shown && forge.step == 1){
             // Health
@@ -382,13 +382,13 @@ var buttons = {
                 this.enableButton("enchant_health");
             }
             else htmlInteraction.disableButton("enchant_health");
-            
+
             // Fire
             if(potions.list.fireScroll.shown && potions.list.fireScroll.nbrOwned >= 1){
                 this.enableButton("enchant_fire");
             }
             else htmlInteraction.disableButton("enchant_fire");
-            
+
             // Imp invocation
             if(potions.list.impInvocationScroll.shown && potions.list.impInvocationScroll.nbrOwned >= 1){
                 this.enableButton("enchant_imp_invocation");
@@ -396,5 +396,5 @@ var buttons = {
             else htmlInteraction.disableButton("enchant_imp_invocation");
         }
     }
-  
+
 };

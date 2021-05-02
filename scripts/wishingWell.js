@@ -102,28 +102,28 @@ var wishingWell = {
         
         // Usual stuff
         this.setStep(2);
-        this.setSpeech("Here's " + total + " various potions and scrolls for you !!");
+        this.setSpeech("Here's " + total + " various potions and scrolls for you!!");
         this.updateOnPage();
     },
     
     candiesBy5 : function(){
         candies.setNbrOwned(candies.nbrOwned * 5);
         this.setStep(2);
-        this.setSpeech("Multiplicatus, multiplicata, multiplicatum ! Your candies are now multiplied !");
+        this.setSpeech("Multiplicatus, multiplicata, multiplicatum! Your candies are now multiplied!");
         this.updateOnPage();
     },
     
     lollipopsBy8 : function(){
         lollipops.setNbrOwned(lollipops.nbrOwned * 8);
         this.setStep(2);
-        this.setSpeech("Multiplicatus, multiplicata, multiplicatum ! Your lollipops are now multiplied !");
+        this.setSpeech("Multiplicatus, multiplicata, multiplicatum! Your lollipops are now multiplied!");
         this.updateOnPage();
     },
     
     throwCandy : function(){
         candies.setNbrOwned(candies.nbrOwned - 1);
         this.setStep(1);
-        this.setSpeech("I will grant you one wish ! So choose carefully from the list below.");
+        this.setSpeech("I will grant you one wish! So choose carefully from the list below.");
         this.updateOnPage();
     },
     

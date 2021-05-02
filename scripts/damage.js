@@ -150,7 +150,7 @@ var damage = {
             if(howManyDamage > 0) quest.things[i].hp -= howManyDamage; // If we should still take damage, we take it
         }
         
-        // Berserk bonuses : second hit
+        // Berserk bonuses: second hit
         if(quest.berserk && theFirstIsTheCharacter) quest.things[j].hp -= this.getWeaponDamage(quest.things[i].weapon);
         
         // We correct health points if they're < 0

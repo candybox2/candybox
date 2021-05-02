@@ -9,7 +9,7 @@ var inventory = {
     },
     
     updateOnPage : function(){
-        // Check for the magician hat letter : if we have the magician hat but no letter is set yet
+        // Check for the magician hat letter: if we have the magician hat but no letter is set yet
         if(objects.list.magicianHat.have && this.magicianHatLetter == ""){
             this.setMagicianHatLetter("     " + random.getRandomLetter());
         }
@@ -25,11 +25,11 @@ var inventory = {
             case "polished candy diamond sword": htmlInteraction.setInnerHtml("sword_without_button", sword.asciiPolishedCandyDiamondSword); break;
             case "chocolate sword": htmlInteraction.setInnerHtml("sword_without_button", sword.asciiChocolateSword); break;
             case "sharp chocolate sword": htmlInteraction.setInnerHtml("sword_without_button", sword.asciiSharpChocolateSword); break;
-            case "Sword of Flames": htmlInteraction.setInnerHtml("sword_without_button", sword.asciiSwordOfFlames + "\n\nLevel : " + sword.specialPower); break;
-            case "Sword of Life": htmlInteraction.setInnerHtml("sword_without_button", sword.asciiSwordOfLife + "\n\nLevel : " + sword.specialPower); break;
-            case "Sword of Summoning": htmlInteraction.setInnerHtml("sword_without_button", sword.asciiSwordOfSummoning + "\n\nLevel : " + sword.specialPower); break;
-            case "Sword of Liflamesummoning": htmlInteraction.setInnerHtml("sword_without_button", sword.asciiSwordOfLiflamesummoning + "\n\nLevel : " + sword.specialPower); break;
-            case "Sword of Randomness": htmlInteraction.setInnerHtml("sword_without_button", sword.asciiSwordOfRandomness + "\n\nLevel : infinite + " + sword.specialPower); break;
+            case "Sword of Flames": htmlInteraction.setInnerHtml("sword_without_button", sword.asciiSwordOfFlames + "\n\nLevel: " + sword.specialPower); break;
+            case "Sword of Life": htmlInteraction.setInnerHtml("sword_without_button", sword.asciiSwordOfLife + "\n\nLevel: " + sword.specialPower); break;
+            case "Sword of Summoning": htmlInteraction.setInnerHtml("sword_without_button", sword.asciiSwordOfSummoning + "\n\nLevel: " + sword.specialPower); break;
+            case "Sword of Liflamesummoning": htmlInteraction.setInnerHtml("sword_without_button", sword.asciiSwordOfLiflamesummoning + "\n\nLevel: " + sword.specialPower); break;
+            case "Sword of Randomness": htmlInteraction.setInnerHtml("sword_without_button", sword.asciiSwordOfRandomness + "\n\nLevel: infinite + " + sword.specialPower); break;
         }
         
         // Objects
@@ -152,9 +152,9 @@ var inventory = {
    \'cnd\'\n\
    \'. .\'",
    
-    asciiWon1 : "Bravo !\nYou won\nthe game :)\nYou now have\nall the\ncandies in\nthe world.",
+    asciiWon1 : "Bravo!\nYou won\nthe game :)\nYou now have\nall the\ncandies in\nthe world.",
    
-    asciiWon2 : "(you can now\nask the dev\nfor a real\ncandy, if you\nfind him !)",
+    asciiWon2 : "(you can now\nask the dev\nfor a real\ncandy, if you\nfind him!)",
    
     asciiNoObject : "            \n            \n            "
 

@@ -14,7 +14,7 @@ var swamp = {
                 text += "\n\n<button id=\"answer\" onClick=\"swamp.setStep(5);\">Let's go, then</button>";
             break;
             case 5:
-                text = speech.makeSpeechFromText("First question : do you _really_ love candies?", 29, "");
+                text = speech.makeSpeechFromText("First question: do you _really_ love candies?", 29, "");
                 text += answer_form;
             break;
             case 6:
@@ -22,7 +22,7 @@ var swamp = {
                 text += "\n\n<button id=\"answer\" onClick=\"swamp.setStep(7);\">Second question!</button>";
             break;
             case 7:
-                text = speech.makeSpeechFromText("Second question : if A implies B and B implies C, and D implies A, and E implies D, what does A imply?", 29, "");
+                text = speech.makeSpeechFromText("Second question: if A implies B and B implies C, and D implies A, and E implies D, what does A imply?", 29, "");
                 text += answer_form;
             break;
             case 8:
@@ -34,11 +34,11 @@ var swamp = {
                 text += answer_form;
             break;
             case 10:
-                text = speech.makeSpeechFromText("Exactly. Let's speed up the process : here's your 512 candies right now! Playing with you is so exciting! Next question is for 1000 candies.", 29, "");
+                text = speech.makeSpeechFromText("Exactly. Let's speed up the process: here's your 512 candies right now! Playing with you is so exciting! Next question is for 1000 candies.", 29, "");
                 text += "\n\n<button id=\"answer\" onClick=\"swamp.setStep(11);\">Candiiiiies!</button>";
             break;
             case 11:
-                text = speech.makeSpeechFromText("Fourth question : if you could be whatever you want, what would you be?", 29, "");
+                text = speech.makeSpeechFromText("Fourth question: if you could be whatever you want, what would you be?", 29, "");
                 text += answer_form;
             break;
             case 12:
@@ -46,7 +46,7 @@ var swamp = {
                 text += "\n\n<button id=\"answer\" onClick=\"swamp.setStep(13);\">Any more enigma?</button>";
             break;
             case 13:
-                text = speech.makeSpeechFromText("Here's a story : there's a fox, a lion and a wolf inside a lunar crater. The fox is about to bite the lion, which is about to bite the wolf, which is about to bite the fox. It's snowing and a shrub is watching the scene. Who's enjoying the story?", 29, "");
+                text = speech.makeSpeechFromText("Here's a story: there's a fox, a lion and a wolf inside a lunar crater. The fox is about to bite the lion, which is about to bite the wolf, which is about to bite the fox. It's snowing and a shrub is watching the scene. Who's enjoying the story?", 29, "");
                 text += answer_form;
             break;
             case 14:
@@ -54,12 +54,12 @@ var swamp = {
                 text += "\n\n<button id=\"answer\" onClick=\"swamp.setStep(15);\">Thanks, Frog!</button>";
             break;
             case 15:
-                text = speech.makeSpeechFromText("Now, just type the answer to that question and I'll give you a very special present : what is the only thing to go beyond the limits of our universe ?", 29, "");
+                text = speech.makeSpeechFromText("Now, just type the answer to that question and I'll give you a very special present: what is the only thing to go beyond the limits of our universe?", 29, "");
                 text += answer_form;
             break;
             case 16:
-                text = speech.makeSpeechFromText("Yes it is ! Now, here's 5 very special potions. They'll be very useful during quests.", 29, "");
-                text += "\n\n<button id=\"answer\" onClick=\"swamp.setStep(17);\">Yay !!</button>";
+                text = speech.makeSpeechFromText("Yes it is! Now, here's 5 very special potions. They'll be very useful during quests.", 29, "");
+                text += "\n\n<button id=\"answer\" onClick=\"swamp.setStep(17);\">Yay!!</button>";
             break;
             default:
                 text = speech.makeSpeechFromText("I have no more sweets to give you. It was a real pleasure to play with you. Thanks a lot.", 29, "");
